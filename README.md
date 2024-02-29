@@ -1,0 +1,2 @@
+# Desktop-App
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e36ee0031f745d4b7b938ed31ad0a78)](https://app.codacy.com/gh/CMP315/Desktop-App?utm_source=github.com&utm_medium=referral&utm_content=CMP315/Desktop-App&utm_campaign=Badge_Grade)
