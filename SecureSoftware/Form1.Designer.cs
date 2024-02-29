@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Email1));
             panel1 = new Panel();
-            label1 = new Label();
+            LoginDetail = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label2 = new Label();
@@ -47,7 +47,7 @@
             // panel1
             // 
             panel1.BackColor = Color.DarkViolet;
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(LoginDetail);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -55,17 +55,17 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-            // label1
+            // LoginDetail
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(86, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(167, 30);
-            label1.TabIndex = 5;
-            label1.Text = "Logged in as ......";
-            label1.Click += label1_Click;
+            LoginDetail.AutoSize = true;
+            LoginDetail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            LoginDetail.ForeColor = SystemColors.Control;
+            LoginDetail.Location = new Point(86, 19);
+            LoginDetail.Name = "LoginDetail";
+            LoginDetail.Size = new Size(167, 30);
+            LoginDetail.TabIndex = 5;
+            LoginDetail.Text = "Logged in as ......";
+            LoginDetail.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -114,7 +114,7 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
             flowLayoutPanel1.Controls.Add(checkedListBox1);
-            flowLayoutPanel1.Location = new Point(310, 87);
+            flowLayoutPanel1.Location = new Point(310, 86);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(1062, 770);
             flowLayoutPanel1.TabIndex = 2;
@@ -154,7 +154,7 @@
         private Panel panel2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
-        private Label label1;
+        private Label LoginDetail;
         private Label label2;
         private FlowLayoutPanel flowLayoutPanel1;
         private CheckedListBox checkedListBox1;

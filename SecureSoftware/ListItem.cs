@@ -20,12 +20,20 @@ namespace SecureSoftware
         #region Properties 
         private string _name;
         private string _email;
+        private string _id;
 
         [Category("Custom Props")]
         public string AccountNameProp
         {
             get { return _name; }
             set { _name = value; AccountName.Text = value; }
+        }
+
+        [Category("Custom Props")]
+        public string IDProp
+        {
+            get { return _id; }
+            set { _id = value; }
         }
 
         [Category("Custom Props")]
@@ -37,7 +45,14 @@ namespace SecureSoftware
         }
         #endregion
 
-        private void ListItem_Load(object sender, EventArgs e)
+
+        private void ViewPass_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("CaaCaa",_id);
+
+        }
+
+        private void AccountName_Click(object sender, EventArgs e)
         {
 
         }

@@ -30,56 +30,73 @@
         {
             AccountName = new Label();
             AccountEmail = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            ViewPass = new Button();
+            EditPass = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // AccountName
             // 
             AccountName.AutoSize = true;
-            AccountName.Location = new Point(86, 25);
+            AccountName.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            AccountName.Location = new Point(113, 31);
             AccountName.Name = "AccountName";
-            AccountName.Size = new Size(84, 15);
+            AccountName.Size = new Size(150, 26);
             AccountName.TabIndex = 0;
             AccountName.Text = "AccountName";
+            AccountName.Click += AccountName_Click;
             // 
             // AccountEmail
             // 
             AccountEmail.AutoSize = true;
-            AccountEmail.Location = new Point(89, 50);
+            AccountEmail.Font = new Font("Franklin Gothic Medium", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            AccountEmail.Location = new Point(109, 61);
             AccountEmail.Name = "AccountEmail";
-            AccountEmail.Size = new Size(81, 15);
+            AccountEmail.Size = new Size(154, 30);
             AccountEmail.TabIndex = 1;
             AccountEmail.Text = "AccountEmail";
             // 
-            // button1
+            // ViewPass
             // 
-            button1.Location = new Point(534, 46);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            ViewPass.Location = new Point(508, 46);
+            ViewPass.Name = "ViewPass";
+            ViewPass.Size = new Size(101, 67);
+            ViewPass.TabIndex = 2;
+            ViewPass.Text = "View Password";
+            ViewPass.UseVisualStyleBackColor = true;
+            ViewPass.Click += ViewPass_Click;
             // 
-            // button2
+            // EditPass
             // 
-            button2.Location = new Point(648, 46);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            EditPass.Location = new Point(615, 46);
+            EditPass.Name = "EditPass";
+            EditPass.Size = new Size(103, 67);
+            EditPass.TabIndex = 3;
+            EditPass.Text = "Edit Password";
+            EditPass.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(7, 31);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 82);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // ListItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button2);
-            Controls.Add(button1);
+            BackColor = Color.Khaki;
+            Controls.Add(pictureBox1);
+            Controls.Add(EditPass);
+            Controls.Add(ViewPass);
             Controls.Add(AccountEmail);
             Controls.Add(AccountName);
             Name = "ListItem";
             Size = new Size(764, 150);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -88,7 +105,8 @@
 
         private Label AccountName;
         private Label AccountEmail;
-        private Button button1;
-        private Button button2;
+        private Button ViewPass;
+        private Button EditPass;
+        private PictureBox pictureBox1;
     }
 }
