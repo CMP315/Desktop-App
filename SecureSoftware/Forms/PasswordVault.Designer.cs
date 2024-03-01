@@ -1,6 +1,6 @@
 ﻿namespace SecureSoftware
 {
-    partial class Email1
+    partial class PasswordVault
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Email1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordVault));
             panel1 = new Panel();
             LoginDetail = new Label();
             pictureBox1 = new PictureBox();
@@ -107,31 +107,33 @@
             sideBarMenuItem1.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem1.BackgroundColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem1.BackgroundImageLayout = ImageLayout.None;
-            sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.TruckMonster;
+            sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Mosque;
             sideBarMenuItem1.Label = "Password Vault";
             sideBarMenuItem1.Location = new Point(0, 0);
             sideBarMenuItem1.Margin = new Padding(0);
             sideBarMenuItem1.Name = "sideBarMenuItem1";
             sideBarMenuItem1.Size = new Size(297, 58);
             sideBarMenuItem1.TabIndex = 0;
+            sideBarMenuItem1.Load += sideBarMenuItem1_Load;
             // 
             // sideBarMenuItem2
             // 
             sideBarMenuItem2.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem2.BackgroundColor = Color.FromArgb(100, 48, 122);
-            sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Medal;
+            sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Fedora;
             sideBarMenuItem2.Label = "Secure Notes";
             sideBarMenuItem2.Location = new Point(0, 58);
             sideBarMenuItem2.Margin = new Padding(0);
             sideBarMenuItem2.Name = "sideBarMenuItem2";
             sideBarMenuItem2.Size = new Size(297, 58);
             sideBarMenuItem2.TabIndex = 1;
+            sideBarMenuItem2.Load += sideBarMenuItem2_Load;
             // 
             // sideBarMenuItem3
             // 
             sideBarMenuItem3.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem3.BackgroundColor = Color.FromArgb(100, 48, 122);
-            sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.Socks;
+            sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
             sideBarMenuItem3.Label = "Generate Password";
             sideBarMenuItem3.Location = new Point(0, 116);
             sideBarMenuItem3.Margin = new Padding(0);

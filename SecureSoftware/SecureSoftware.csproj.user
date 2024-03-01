@@ -7,6 +7,9 @@
     <Compile Update="Components\UserAccountListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\PasswordVault.cs">
       <SubType>Form</SubType>
     </Compile>

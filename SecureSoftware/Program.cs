@@ -1,3 +1,5 @@
+using SecureSoftware.Forms;
+
 namespace SecureSoftware
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace SecureSoftware
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Email1());
+            Application.Run(new Login());
         }
     }
 }

@@ -12,28 +12,28 @@ namespace SecureSoftware.Classes
 {
     public class MasterAccount
     {
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public string Salt { get; set; }
-        public string CreatedAt { get; set; }
+        public string _id { get; set; }
+        public string name { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string salt { get; set; }
+        public string created_at { get; set; }
 
 
 
-        public MasterAccount(string id, string name, string password, string email, string salt, string createdat)
+        public MasterAccount(string _id, string name, string email, string password = "", string salt = "", string created_at = "")
         {
-            ID = id;
-            Name = name;
-            Password = password;
-            Email = email;
-            Salt = salt;
-            CreatedAt = createdat;
+            this._id = _id;
+            this.name = name;
+            this.password = password;
+            this.email = email;
+            this.salt = salt;
+            this.created_at = created_at;
         }
 
         public async Task<UserAccount[]?> GetAccountsAsync()
         {
-            string apiUrl = $"{Globals.API_BASE_URL}/passwords/{ID}";
+            string apiUrl = $"{Globals.API_BASE_URL}/passwords/{_id}";
 
             using var httpClient = new HttpClient();
             try

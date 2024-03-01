@@ -5,11 +5,11 @@ using System.Drawing.Text;
 
 namespace SecureSoftware
 {
-    public partial class Email1 : Form
+    public partial class PasswordVault : Form
     {
 
         readonly MasterAccount User = new("65df9bdab07bae1fe1adfec4", "TestUser123", "$2b$12$Hqutbzot.cElHf3MQdNiP.5a7naCEYAb5h8oPEBSP1ygU2pP28xeC", "abc@test.com", "b'$2b$12$Hqutbzot.cElHf3MQdNiP.'", "2024-02-28T20:47:22.918+00:00");
-        public Email1()
+        public PasswordVault()
         {
             InitializeComponent();
             CreatePanels();
@@ -18,12 +18,12 @@ namespace SecureSoftware
 
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
             //this.MaximizeBox = false;
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoginDetail.Text = ("Logged in As : " + User.Name);
+            LoginDetail.Text = ("Logged in As : " + User.name);
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -44,17 +44,17 @@ namespace SecureSoftware
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-           
+
         }
 
         async private void CreatePanels()
         {
             UserAccount[]? accounts = await User.GetAccountsAsync();
-            if(accounts is not null)
+            if (accounts is not null)
             {
                 foreach (var account in accounts)
                 {
-                    UserAccountListItem panel = new(MainPanel, User.ID)
+                    UserAccountListItem panel = new(MainPanel, User._id)
                     {
                         ID = account._id,
                         SiteNameProp = account.site_name,
@@ -64,6 +64,16 @@ namespace SecureSoftware
                     MainPanel.Controls.Add(panel);
                 }
             }
+        }
+
+        private void sideBarMenuItem2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sideBarMenuItem1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

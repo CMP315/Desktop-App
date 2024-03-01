@@ -21,7 +21,7 @@ namespace SecureSoftware.Classes
             string _id,
             string user_id,
             string username,
-            string created_at,
+            string created_at = "",
             string password = "",
             string last_edited_at = "",
             string site_name = "",
