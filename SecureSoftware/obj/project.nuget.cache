@@ -1,10 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "ij22u55rc1LcoelLa2A7ADi8E96erUM4DWpKOnQSlfVFCsip9jhWjnUgZlDdc8eJdNHzp/tmOgLBcP4zO0eg3g==",
+  "dgSpecHash": "bUSN3ik+0QEYlzhM6C2DQFDw4bKOg5xpAFkrkjRfN6PuLukRCkNCNCzJ8BbF4oTsb0/xyeCShbNEm2/Pj9MtBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owen\\Desktop\\UNI\\SecureSoftware\\SecureSoftware\\SecureSoftware\\SecureSoftware.csproj",
+  "projectFilePath": "U:\\Abertay\\CMP315\\Desktop App\\SecureSoftware\\SecureSoftware.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Owen\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\mongodb.bson\\2.24.0\\mongodb.bson.2.24.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

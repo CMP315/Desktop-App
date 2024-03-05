@@ -21,7 +21,6 @@ namespace SecureSoftware.Components
         private string _label;
         private FontAwesome.Sharp.IconChar _icon;
         private Color _backgroundColor;
-        private Color _hoverBackgroundColor;
 
         [Category("Custom Props")]
         public string Label

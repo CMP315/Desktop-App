@@ -1,13 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Components\CustomMaximiseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Components\ProgressPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Components\SideBarMenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Components\UserAccountListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Forms\CreatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\LoginOrRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\PasswordVault.cs">

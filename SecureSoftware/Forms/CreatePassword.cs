@@ -1,5 +1,7 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
+using SecureSoftware.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,29 +12,33 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
 
 namespace SecureSoftware.Forms
 {
-    public partial class Login : Form
+    public partial class CreatePassword : Form
     {
-        public MasterAccount? user;
-        public Login()
+        private readonly MasterAccount User;
+        private readonly PasswordVault Vault;
+        public CreatePassword(MasterAccount user, PasswordVault vault)
         {
             InitializeComponent();
+            this.User = user;
+            this.Vault = vault;
             this.FormBorderStyle = FormBorderStyle.None;
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
-        private async void LoginButton_ClickAsync(object sender, EventArgs e)
-        {
 
-            string apiUrl = $"{Globals.API_BASE_URL}/login";
+        async private void CreateButton_Click(object sender, EventArgs e)
+        {
+            string apiUrl = $"{Globals.API_BASE_URL}/passwords/{this.User._id}";
             var requestBody = new
             {
-                email = UsernameBox.Text,
-                password = PasswordBox.Text
+                username = NameInput.Text,
+                password = PasswordInput.Text,
+                site_name = SiteNameInput.Text,
+                notes = NotesInput.Text
             };
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
@@ -46,14 +52,21 @@ namespace SecureSoftware.Forms
                     string jsonString = await response.Content.ReadAsStringAsync();
                     try
                     {
-                        MasterAccount? user = BsonSerializer.Deserialize<MasterAccount>(jsonString);
-                        if (user is null)
+                        UserAccount? account = BsonSerializer.Deserialize<UserAccount>(jsonString);
+                        if (account is null)
                         {
                             return;
                         }
-                        this.user = user;
-                        this.Close();
 
+                        UserAccountListItem panel = new(Vault.Panel, account, Vault)
+                        {
+                            ID = account._id,
+                            SiteNameProp = account.site_name,
+                            UsernameProp = account.username,
+                            IconProp = FontAwesome.Sharp.IconChar.Github
+                        };
+                        
+                        Vault.Panel.Controls.Add(panel);
                     }
                     catch (Exception ex)
                     {
@@ -70,9 +83,13 @@ namespace SecureSoftware.Forms
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
+            finally
+            {
+                this.Close();
+            }
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }

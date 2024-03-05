@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
@@ -17,12 +18,37 @@ namespace SecureSoftware.Classes
         public string password { get; set; }
         public string email { get; set; }
         public string salt { get; set; }
-        public string created_at { get; set; }
+        public DateTime created_at { get; set; }
 
 
 
-        public MasterAccount(string _id, string name, string email, string password = "", string salt = "", string created_at = "")
+        public MasterAccount(string _id, string name, string email, string password, string salt, DateTime created_at)
         {
+            if (string.IsNullOrEmpty(_id))
+            {
+                throw new ArgumentException($"'{nameof(_id)}' cannot be null or empty.", nameof(_id));
+            }
+
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException($"'{nameof(name)}' cannot be null or empty.", nameof(name));
+            }
+
+            if (string.IsNullOrEmpty(email))
+            {
+                throw new ArgumentException($"'{nameof(email)}' cannot be null or empty.", nameof(email));
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new ArgumentException($"'{nameof(password)}' cannot be null or empty.", nameof(password));
+            }
+
+            if (string.IsNullOrEmpty(salt))
+            {
+                throw new ArgumentException($"'{nameof(salt)}' cannot be null or empty.", nameof(salt));
+            }
+
             this._id = _id;
             this.name = name;
             this.password = password;
@@ -44,7 +70,7 @@ namespace SecureSoftware.Classes
                     string jsonString = await response.Content.ReadAsStringAsync();
                     try
                     {
-                        UserAccount[]? jsonObject = JsonSerializer.Deserialize<UserAccount[]>(jsonString);
+                        UserAccount[]? jsonObject = BsonSerializer.Deserialize<UserAccount[]>(jsonString);
                         if (jsonObject is not null)
                         {
                             return jsonObject;

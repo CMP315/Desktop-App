@@ -29,44 +29,102 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordVault));
-            panel1 = new Panel();
-            LoginDetail = new Label();
+            TopBarPanel = new Panel();
+            TopBarTableLayout = new TableLayoutPanel();
+            panel3 = new Panel();
+            GlobalEmail = new Label();
+            GlobalUsername = new Label();
             pictureBox1 = new PictureBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            label4 = new Label();
+            ContextMenuButtonsTable = new TableLayoutPanel();
+            iconButton1 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             sideBarMenuItem1 = new Components.SideBarMenuItem();
             sideBarMenuItem2 = new Components.SideBarMenuItem();
             sideBarMenuItem3 = new Components.SideBarMenuItem();
             MainPanel = new FlowLayoutPanel();
-            panel1.SuspendLayout();
+            ProgressPanel = new Components.ProgressPanel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            RefreshPasswordsButton = new Button();
+            CreatePasswordButton = new Button();
+            TopBarPanel.SuspendLayout();
+            TopBarTableLayout.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
+            ContextMenuButtonsTable.SuspendLayout();
             panel2.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
+            MainPanel.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // TopBarPanel
             // 
-            panel1.BackColor = Color.DarkViolet;
-            panel1.Controls.Add(LoginDetail);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1384, 90);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            TopBarPanel.BackColor = Color.DarkOrchid;
+            TopBarPanel.Controls.Add(TopBarTableLayout);
+            TopBarPanel.Dock = DockStyle.Top;
+            TopBarPanel.Location = new Point(0, 0);
+            TopBarPanel.Margin = new Padding(0);
+            TopBarPanel.Name = "TopBarPanel";
+            TopBarPanel.Size = new Size(1384, 130);
+            TopBarPanel.TabIndex = 0;
             // 
-            // LoginDetail
+            // TopBarTableLayout
             // 
-            LoginDetail.AutoSize = true;
-            LoginDetail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            LoginDetail.ForeColor = SystemColors.Control;
-            LoginDetail.Location = new Point(86, 19);
-            LoginDetail.Name = "LoginDetail";
-            LoginDetail.Size = new Size(167, 30);
-            LoginDetail.TabIndex = 5;
-            LoginDetail.Text = "Logged in as ......";
-            LoginDetail.Click += label1_Click;
+            TopBarTableLayout.BackColor = Color.FromArgb(100, 48, 122);
+            TopBarTableLayout.ColumnCount = 1;
+            TopBarTableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            TopBarTableLayout.Controls.Add(panel3, 0, 1);
+            TopBarTableLayout.Controls.Add(tableLayoutPanel3, 0, 0);
+            TopBarTableLayout.Dock = DockStyle.Fill;
+            TopBarTableLayout.Location = new Point(0, 0);
+            TopBarTableLayout.Margin = new Padding(0);
+            TopBarTableLayout.Name = "TopBarTableLayout";
+            TopBarTableLayout.RowCount = 2;
+            TopBarTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 40.6896553F));
+            TopBarTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 59.3103447F));
+            TopBarTableLayout.Size = new Size(1384, 130);
+            TopBarTableLayout.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.DarkOrchid;
+            panel3.Controls.Add(GlobalEmail);
+            panel3.Controls.Add(GlobalUsername);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 52);
+            panel3.Margin = new Padding(0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1384, 78);
+            panel3.TabIndex = 1;
+            // 
+            // GlobalEmail
+            // 
+            GlobalEmail.AutoSize = true;
+            GlobalEmail.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            GlobalEmail.ForeColor = SystemColors.Control;
+            GlobalEmail.Location = new Point(86, 39);
+            GlobalEmail.Name = "GlobalEmail";
+            GlobalEmail.Size = new Size(190, 30);
+            GlobalEmail.TabIndex = 6;
+            GlobalEmail.Text = "example@test.com";
+            // 
+            // GlobalUsername
+            // 
+            GlobalUsername.AutoSize = true;
+            GlobalUsername.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            GlobalUsername.ForeColor = SystemColors.Control;
+            GlobalUsername.Location = new Point(86, 9);
+            GlobalUsername.Name = "GlobalUsername";
+            GlobalUsername.Size = new Size(96, 30);
+            GlobalUsername.TabIndex = 5;
+            GlobalUsername.Text = "Test User";
             // 
             // pictureBox1
             // 
@@ -78,16 +136,79 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel3.Controls.Add(label4, 0, 0);
+            tableLayoutPanel3.Controls.Add(ContextMenuButtonsTable, 1, 0);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(3, 3);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(1378, 46);
+            tableLayoutPanel3.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(100, 48, 122);
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(0, 0);
+            label4.Margin = new Padding(0);
+            label4.Name = "label4";
+            label4.Size = new Size(1278, 46);
+            label4.TabIndex = 3;
+            label4.Text = "PASSMAN";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ContextMenuButtonsTable
+            // 
+            ContextMenuButtonsTable.ColumnCount = 2;
+            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            ContextMenuButtonsTable.Controls.Add(iconButton1, 1, 0);
+            ContextMenuButtonsTable.Location = new Point(1278, 0);
+            ContextMenuButtonsTable.Margin = new Padding(0);
+            ContextMenuButtonsTable.Name = "ContextMenuButtonsTable";
+            ContextMenuButtonsTable.RowCount = 1;
+            ContextMenuButtonsTable.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            ContextMenuButtonsTable.Size = new Size(100, 46);
+            ContextMenuButtonsTable.TabIndex = 4;
+            // 
+            // iconButton1
+            // 
+            iconButton1.BackColor = Color.FromArgb(231, 76, 60);
+            iconButton1.Cursor = Cursors.Hand;
+            iconButton1.Dock = DockStyle.Fill;
+            iconButton1.FlatAppearance.BorderSize = 0;
+            iconButton1.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            iconButton1.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            iconButton1.IconColor = Color.Black;
+            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton1.Location = new Point(50, 0);
+            iconButton1.Margin = new Padding(0);
+            iconButton1.Name = "iconButton1";
+            iconButton1.Size = new Size(50, 46);
+            iconButton1.TabIndex = 4;
+            iconButton1.UseVisualStyleBackColor = false;
+            iconButton1.Click += CloseButton_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.DarkOrchid;
             panel2.Controls.Add(flowLayoutPanel2);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 90);
+            panel2.Location = new Point(0, 130);
             panel2.Name = "panel2";
-            panel2.Size = new Size(297, 771);
+            panel2.Size = new Size(297, 731);
             panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
             // 
             // flowLayoutPanel2
             // 
@@ -99,7 +220,7 @@
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Margin = new Padding(0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(297, 771);
+            flowLayoutPanel2.Size = new Size(297, 731);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // sideBarMenuItem1
@@ -107,6 +228,7 @@
             sideBarMenuItem1.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem1.BackgroundColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem1.BackgroundImageLayout = ImageLayout.None;
+            sideBarMenuItem1.Cursor = Cursors.Hand;
             sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Mosque;
             sideBarMenuItem1.Label = "Password Vault";
             sideBarMenuItem1.Location = new Point(0, 0);
@@ -114,12 +236,12 @@
             sideBarMenuItem1.Name = "sideBarMenuItem1";
             sideBarMenuItem1.Size = new Size(297, 58);
             sideBarMenuItem1.TabIndex = 0;
-            sideBarMenuItem1.Load += sideBarMenuItem1_Load;
             // 
             // sideBarMenuItem2
             // 
             sideBarMenuItem2.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem2.BackgroundColor = Color.FromArgb(100, 48, 122);
+            sideBarMenuItem2.Cursor = Cursors.Hand;
             sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Fedora;
             sideBarMenuItem2.Label = "Secure Notes";
             sideBarMenuItem2.Location = new Point(0, 58);
@@ -127,12 +249,12 @@
             sideBarMenuItem2.Name = "sideBarMenuItem2";
             sideBarMenuItem2.Size = new Size(297, 58);
             sideBarMenuItem2.TabIndex = 1;
-            sideBarMenuItem2.Load += sideBarMenuItem2_Load;
             // 
             // sideBarMenuItem3
             // 
             sideBarMenuItem3.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem3.BackgroundColor = Color.FromArgb(100, 48, 122);
+            sideBarMenuItem3.Cursor = Cursors.Hand;
             sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
             sideBarMenuItem3.Label = "Generate Password";
             sideBarMenuItem3.Location = new Point(0, 116);
@@ -144,46 +266,150 @@
             // MainPanel
             // 
             MainPanel.AutoScroll = true;
-            MainPanel.AutoSize = true;
+            MainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             MainPanel.BackColor = Color.Transparent;
+            MainPanel.Controls.Add(ProgressPanel);
             MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(297, 90);
+            MainPanel.FlowDirection = FlowDirection.TopDown;
+            MainPanel.Location = new Point(0, 50);
             MainPanel.Margin = new Padding(0);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(1087, 771);
-            MainPanel.TabIndex = 2;
-            MainPanel.Paint += flowLayoutPanel1_Paint;
+            MainPanel.Size = new Size(1087, 681);
+            MainPanel.TabIndex = 3;
+            MainPanel.WrapContents = false;
             // 
-            // Email1
+            // ProgressPanel
+            // 
+            ProgressPanel.Location = new Point(3, 3);
+            ProgressPanel.Name = "ProgressPanel";
+            ProgressPanel.Size = new Size(571, 69);
+            ProgressPanel.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = SystemColors.Control;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(MainPanel, 0, 1);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(297, 130);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.Size = new Size(1087, 731);
+            tableLayoutPanel1.TabIndex = 3;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.BackColor = Color.FromArgb(100, 48, 122);
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.Controls.Add(RefreshPasswordsButton, 1, 0);
+            tableLayoutPanel2.Controls.Add(CreatePasswordButton, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.ForeColor = Color.Transparent;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Size = new Size(1087, 50);
+            tableLayoutPanel2.TabIndex = 4;
+            // 
+            // RefreshPasswordsButton
+            // 
+            RefreshPasswordsButton.BackColor = Color.FromArgb(52, 152, 219);
+            RefreshPasswordsButton.Cursor = Cursors.Hand;
+            RefreshPasswordsButton.Dock = DockStyle.Fill;
+            RefreshPasswordsButton.FlatAppearance.BorderSize = 0;
+            RefreshPasswordsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
+            RefreshPasswordsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
+            RefreshPasswordsButton.FlatStyle = FlatStyle.Flat;
+            RefreshPasswordsButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            RefreshPasswordsButton.ForeColor = Color.White;
+            RefreshPasswordsButton.Location = new Point(362, 0);
+            RefreshPasswordsButton.Margin = new Padding(0);
+            RefreshPasswordsButton.Name = "RefreshPasswordsButton";
+            RefreshPasswordsButton.Size = new Size(362, 50);
+            RefreshPasswordsButton.TabIndex = 2;
+            RefreshPasswordsButton.Text = "Refresh Passwords";
+            RefreshPasswordsButton.UseVisualStyleBackColor = false;
+            RefreshPasswordsButton.Click += RefreshPasswordsButton_Click;
+            // 
+            // CreatePasswordButton
+            // 
+            CreatePasswordButton.BackColor = Color.FromArgb(46, 204, 113);
+            CreatePasswordButton.Cursor = Cursors.Hand;
+            CreatePasswordButton.Dock = DockStyle.Fill;
+            CreatePasswordButton.FlatAppearance.BorderSize = 0;
+            CreatePasswordButton.FlatStyle = FlatStyle.Flat;
+            CreatePasswordButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            CreatePasswordButton.ForeColor = Color.White;
+            CreatePasswordButton.Location = new Point(0, 0);
+            CreatePasswordButton.Margin = new Padding(0);
+            CreatePasswordButton.Name = "CreatePasswordButton";
+            CreatePasswordButton.Size = new Size(362, 50);
+            CreatePasswordButton.TabIndex = 1;
+            CreatePasswordButton.Text = "Create Password";
+            CreatePasswordButton.UseVisualStyleBackColor = false;
+            CreatePasswordButton.Click += CreatePasswordButton_Click;
+            // 
+            // PasswordVault
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1384, 861);
-            Controls.Add(MainPanel);
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(panel2);
-            Controls.Add(panel1);
-            Name = "Email1";
+            Controls.Add(TopBarPanel);
+            MinimumSize = new Size(750, 400);
+            Name = "PasswordVault";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Text = "Password Vault";
+            Load += PasswordVault_Load;
+            Resize += PasswordVault_Resize;
+            TopBarPanel.ResumeLayout(false);
+            TopBarTableLayout.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            ContextMenuButtonsTable.ResumeLayout(false);
             panel2.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
+            MainPanel.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Panel panel1;
+        private Panel TopBarPanel;
         private Panel panel2;
-        private PictureBox pictureBox1;
-        private Label LoginDetail;
-        private FlowLayoutPanel MainPanel;
         private FlowLayoutPanel flowLayoutPanel2;
         private Components.SideBarMenuItem sideBarMenuItem1;
         private Components.SideBarMenuItem sideBarMenuItem2;
         private Components.SideBarMenuItem sideBarMenuItem3;
+        private FlowLayoutPanel MainPanel;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Button CreatePasswordButton;
+        private Button RefreshPasswordsButton;
+        private Components.ProgressPanel ProgressPanel;
+        private TableLayoutPanel TopBarTableLayout;
+        private Panel panel3;
+        private Label GlobalUsername;
+        private PictureBox pictureBox1;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label4;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private Label GlobalEmail;
+        private TableLayoutPanel ContextMenuButtonsTable;
     }
 }
