@@ -47,7 +47,7 @@
             MainPanel = new FlowLayoutPanel();
             ProgressPanel = new Components.ProgressPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
+            ActionRowLayoutPanel = new TableLayoutPanel();
             RefreshPasswordsButton = new Button();
             DeletePasswordsButton = new Button();
             CreatePasswordButton = new Button();
@@ -61,7 +61,7 @@
             flowLayoutPanel2.SuspendLayout();
             MainPanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            ActionRowLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // TopBarPanel
@@ -295,7 +295,7 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Controls.Add(MainPanel, 0, 1);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
+            tableLayoutPanel1.Controls.Add(ActionRowLayoutPanel, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(297, 130);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -306,25 +306,25 @@
             tableLayoutPanel1.Size = new Size(1087, 731);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // tableLayoutPanel2
+            // ActionRowLayoutPanel
             // 
-            tableLayoutPanel2.BackColor = Color.FromArgb(100, 48, 122);
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.Controls.Add(RefreshPasswordsButton, 0, 0);
-            tableLayoutPanel2.Controls.Add(DeletePasswordsButton, 1, 0);
-            tableLayoutPanel2.Controls.Add(CreatePasswordButton, 0, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.ForeColor = Color.Transparent;
-            tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Margin = new Padding(0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1087, 50);
-            tableLayoutPanel2.TabIndex = 4;
+            ActionRowLayoutPanel.BackColor = Color.FromArgb(100, 48, 122);
+            ActionRowLayoutPanel.ColumnCount = 3;
+            ActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            ActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            ActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            ActionRowLayoutPanel.Controls.Add(RefreshPasswordsButton, 0, 0);
+            ActionRowLayoutPanel.Controls.Add(DeletePasswordsButton, 1, 0);
+            ActionRowLayoutPanel.Controls.Add(CreatePasswordButton, 0, 0);
+            ActionRowLayoutPanel.Dock = DockStyle.Fill;
+            ActionRowLayoutPanel.ForeColor = Color.Transparent;
+            ActionRowLayoutPanel.Location = new Point(0, 0);
+            ActionRowLayoutPanel.Margin = new Padding(0);
+            ActionRowLayoutPanel.Name = "ActionRowLayoutPanel";
+            ActionRowLayoutPanel.RowCount = 1;
+            ActionRowLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            ActionRowLayoutPanel.Size = new Size(1087, 50);
+            ActionRowLayoutPanel.TabIndex = 4;
             // 
             // RefreshPasswordsButton
             // 
@@ -412,7 +412,7 @@
             flowLayoutPanel2.ResumeLayout(false);
             MainPanel.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
+            ActionRowLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -425,7 +425,7 @@
         private Components.SideBarMenuItem sideBarMenuItem3;
         private FlowLayoutPanel MainPanel;
         private TableLayoutPanel tableLayoutPanel1;
-        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel ActionRowLayoutPanel;
         private Button CreatePasswordButton;
         private Button DeletePasswordsButton;
         private Components.ProgressPanel ProgressPanel;

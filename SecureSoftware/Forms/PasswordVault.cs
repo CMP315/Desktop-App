@@ -37,7 +37,7 @@ namespace SecureSoftware
             }
         }
 
-        async public void CreatePanels()
+        async public Task CreatePanels()
         {
             UserAccount[]? accounts = await User.GetAccountsAsync();
             if (accounts is not null)
@@ -59,8 +59,10 @@ namespace SecureSoftware
 
         private void CreatePasswordButton_Click(object sender, EventArgs e)
         {
+            SetActionRowEnabled(false);
             CreatePassword CreatePasswordForm = new(User, this);
             CreatePasswordForm.ShowDialog();
+            SetActionRowEnabled(true);
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -68,19 +70,33 @@ namespace SecureSoftware
             this.Close();
         }
 
-        private void RefreshPasswordsButton_Click(object sender, EventArgs e)
+        async private void RefreshPasswordsButton_Click(object sender, EventArgs e)
         {
+            SetActionRowEnabled(false);
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(new ProgressPanel());
-            CreatePanels();
+            await CreatePanels();
+            SetActionRowEnabled(true);
         }
         private async void DeletePasswordsButton_Click(object sender, EventArgs e)
         {
+            SetActionRowEnabled(false);
             bool isDeleted = await User.DeleteAccountsAsync();
             if (isDeleted)
             {
                 MainPanel.Controls.Clear();
             }
+            SetActionRowEnabled(true);
+        }
+
+        private bool SetActionRowEnabled(bool enabled)
+        {
+            foreach (var control in ActionRowLayoutPanel.Controls)
+            {
+                Button button = (Button)control;
+                button.Enabled = enabled;
+            }
+            return enabled;
         }
     }
 }
