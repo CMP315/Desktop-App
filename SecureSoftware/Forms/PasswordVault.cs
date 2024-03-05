@@ -74,5 +74,13 @@ namespace SecureSoftware
             MainPanel.Controls.Add(new ProgressPanel());
             CreatePanels();
         }
+        private async void DeletePasswordsButton_Click(object sender, EventArgs e)
+        {
+            bool isDeleted = await User.DeleteAccountsAsync();
+            if (isDeleted)
+            {
+                MainPanel.Controls.Clear();
+            }
+        }
     }
 }

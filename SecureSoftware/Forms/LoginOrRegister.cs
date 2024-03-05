@@ -21,19 +21,27 @@ namespace SecureSoftware.Forms
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             this.Selected = "Login";
-            CloseButton_Click(sender, e);
+            this.Close();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             this.Selected = "Register";
-            CloseButton_Click(sender, e);
+            this.Close();
+        }
+
+        private void LoginOrRegister_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(e.CloseReason == CloseReason.ApplicationExitCall)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }

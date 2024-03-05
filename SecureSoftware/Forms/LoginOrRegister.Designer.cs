@@ -168,6 +168,7 @@
             Name = "LoginOrRegister";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginOrRegister";
+            FormClosing += LoginOrRegister_FormClosing;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);

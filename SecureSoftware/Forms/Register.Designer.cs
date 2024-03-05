@@ -1,6 +1,6 @@
 ﻿namespace SecureSoftware.Forms
 {
-    partial class Login
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             label2 = new Label();
             PasswordBox = new TextBox();
-            PasswordInputBox = new TextBox();
+            textBox1 = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -94,7 +94,7 @@
             LoginButton.Name = "LoginButton";
             LoginButton.Size = new Size(183, 60);
             LoginButton.TabIndex = 3;
-            LoginButton.Text = "LOGIN";
+            LoginButton.Text = "REGISTER";
             LoginButton.UseVisualStyleBackColor = false;
             LoginButton.Click += LoginButton_ClickAsync;
             // 
@@ -243,19 +243,17 @@
             PasswordBox.Name = "PasswordBox";
             PasswordBox.PasswordChar = '●';
             PasswordBox.Size = new Size(176, 23);
-            PasswordBox.TabIndex = 2;
+            PasswordBox.TabIndex = 2; 
             // 
-            // PasswordInputBox
+            // textBox1
             // 
-            PasswordInputBox.Location = new Point(48, 173);
-            PasswordInputBox.Name = "PasswordInputBox";
-            PasswordInputBox.Size = new Size(311, 23);
-            PasswordInputBox.TabIndex = 2;
-            PasswordInputBox.Text = "testpass";
-            PasswordInputBox.UseSystemPasswordChar = true;
-            PasswordInputBox.TextChanged += textBox1_TextChanged;
+            textBox1.Location = new Point(48, 173);
+            textBox1.Name = "textBox1";
+            textBox1.PasswordChar = '●';
+            textBox1.Size = new Size(311, 23);
+            textBox1.TabIndex = 2;
             // 
-            // Login
+            // Register
             // 
             AcceptButton = LoginButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -267,12 +265,12 @@
             Controls.Add(iconPictureBox1);
             Controls.Add(UsernameBox);
             Controls.Add(label1);
-            Controls.Add(PasswordInputBox);
+            Controls.Add(textBox1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Login";
+            Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             tableLayoutPanel1.ResumeLayout(false);
@@ -302,6 +300,6 @@
         private TextBox PasswordBox;
         private Label label4;
         private Label label5;
-        private TextBox PasswordInputBox;
+        private TextBox textBox1;
     }
 }

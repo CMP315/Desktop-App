@@ -96,5 +96,31 @@ namespace SecureSoftware.Classes
 
             return null;
         }
+
+        public async Task<bool> DeleteAccountsAsync()
+        {
+            string apiUrl = $"{Globals.API_BASE_URL}/passwords/{_id}";
+
+            using var httpClient = new HttpClient();
+            try
+            {
+                var response = await httpClient.DeleteAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return false;
+        }
     }
 }

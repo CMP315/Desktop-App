@@ -1,42 +1,51 @@
 using SecureSoftware.Classes;
 using SecureSoftware.Forms;
+using System.Dynamic;
 using System.Runtime.CompilerServices;
 
 namespace SecureSoftware
 {
-    internal static class Program
+    internal class Program
     {
         private static LoginOrRegister? loginOrRegister;
         private static Login? loginReturn;
+        private static MasterAccount? User;
 
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            loginOrRegister = new LoginOrRegister();
-            loginOrRegister.ShowDialog();
-            if (loginOrRegister == null) return;
-            if(loginOrRegister.Selected == "Login")
+        // To customize application configuration such as set high DPI settings or default font,
+        // see https://aka.ms/applicationconfiguration.
+        ApplicationConfiguration.Initialize();
+        while(User is null)
             {
-                loginReturn = new Login();
-                loginReturn.ShowDialog();
-                if (loginReturn.user is not null)
+                loginOrRegister = new LoginOrRegister();
+                loginOrRegister.ShowDialog();
+                loginOrRegister.Dispose();
+                if (loginOrRegister.Selected == "Login")
                 {
-                    PasswordVault vault = new(loginReturn.user);
-                    vault.ShowDialog();
-                    vault.Close();
+                    loginReturn = new Login();
+                    loginReturn.ShowDialog();
+                    User = loginReturn.user;
+                    loginReturn.Dispose();
                 }
-                loginReturn.Close();
-            }
-            else if (loginOrRegister.Selected == "Register")
-            {
+                else if (loginOrRegister.Selected == "Register")
+                {
 
+                }
+
+                if (User is not null)
+                {
+                    PasswordVault vault = new(User);
+                    vault.ShowDialog();
+                    vault.Dispose();
+                    User = null;
+                }
             }
         }
+
     }
 }

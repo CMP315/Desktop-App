@@ -14,10 +14,10 @@ using static System.Windows.Forms.DataFormats;
 
 namespace SecureSoftware.Forms
 {
-    public partial class Login : Form
+    public partial class Register : Form
     {
         public MasterAccount? user;
-        public Login()
+        public Register()
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
@@ -33,7 +33,7 @@ namespace SecureSoftware.Forms
             var requestBody = new
             {
                 email = UsernameBox.Text,
-                password = PasswordInputBox.Text
+                password = PasswordBox.Text
             };
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
@@ -81,11 +81,6 @@ namespace SecureSoftware.Forms
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

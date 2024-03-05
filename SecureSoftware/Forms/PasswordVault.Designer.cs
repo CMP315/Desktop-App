@@ -49,6 +49,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             RefreshPasswordsButton = new Button();
+            DeletePasswordsButton = new Button();
             CreatePasswordButton = new Button();
             TopBarPanel.SuspendLayout();
             TopBarTableLayout.SuspendLayout();
@@ -312,7 +313,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.Controls.Add(RefreshPasswordsButton, 1, 0);
+            tableLayoutPanel2.Controls.Add(RefreshPasswordsButton, 0, 0);
+            tableLayoutPanel2.Controls.Add(DeletePasswordsButton, 1, 0);
             tableLayoutPanel2.Controls.Add(CreatePasswordButton, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.ForeColor = Color.Transparent;
@@ -339,10 +341,30 @@
             RefreshPasswordsButton.Margin = new Padding(0);
             RefreshPasswordsButton.Name = "RefreshPasswordsButton";
             RefreshPasswordsButton.Size = new Size(362, 50);
-            RefreshPasswordsButton.TabIndex = 2;
+            RefreshPasswordsButton.TabIndex = 3;
             RefreshPasswordsButton.Text = "Refresh Passwords";
             RefreshPasswordsButton.UseVisualStyleBackColor = false;
             RefreshPasswordsButton.Click += RefreshPasswordsButton_Click;
+            // 
+            // DeletePasswordsButton
+            // 
+            DeletePasswordsButton.BackColor = Color.FromArgb(192, 57, 43);
+            DeletePasswordsButton.Cursor = Cursors.Hand;
+            DeletePasswordsButton.Dock = DockStyle.Fill;
+            DeletePasswordsButton.FlatAppearance.BorderSize = 0;
+            DeletePasswordsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            DeletePasswordsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            DeletePasswordsButton.FlatStyle = FlatStyle.Flat;
+            DeletePasswordsButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            DeletePasswordsButton.ForeColor = Color.White;
+            DeletePasswordsButton.Location = new Point(724, 0);
+            DeletePasswordsButton.Margin = new Padding(0);
+            DeletePasswordsButton.Name = "DeletePasswordsButton";
+            DeletePasswordsButton.Size = new Size(363, 50);
+            DeletePasswordsButton.TabIndex = 2;
+            DeletePasswordsButton.Text = "Delete Passwords";
+            DeletePasswordsButton.UseVisualStyleBackColor = false;
+            DeletePasswordsButton.Click += DeletePasswordsButton_Click;
             // 
             // CreatePasswordButton
             // 
@@ -405,7 +427,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button CreatePasswordButton;
-        private Button RefreshPasswordsButton;
+        private Button DeletePasswordsButton;
         private Components.ProgressPanel ProgressPanel;
         private TableLayoutPanel TopBarTableLayout;
         private Panel panel3;
@@ -416,5 +438,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label GlobalEmail;
         private TableLayoutPanel ContextMenuButtonsTable;
+        private Button RefreshPasswordsButton;
     }
 }
