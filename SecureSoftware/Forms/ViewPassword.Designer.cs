@@ -341,6 +341,7 @@
             CopyCreatedAtButton.TabIndex = 14;
             CopyCreatedAtButton.Text = "Copy";
             CopyCreatedAtButton.UseVisualStyleBackColor = false;
+            CopyCreatedAtButton.Click += this.CopyCreatedAtButton_Click;
             // 
             // label6
             // 
@@ -392,6 +393,7 @@
             CopyLastEditedAtButton.TabIndex = 18;
             CopyLastEditedAtButton.Text = "Copy";
             CopyLastEditedAtButton.UseVisualStyleBackColor = false;
+            CopyLastEditedAtButton.Click += CopyLastEditedAtButton_Click;
             // 
             // label7
             // 

@@ -51,18 +51,27 @@ namespace SecureSoftware.Forms
         {
             Clipboard.SetText(NotesInput.Text);
         }
+        private void CopyCreatedAtButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(CreatedAtInput.Text);
+        }
+
+        private void CopyLastEditedAtButton_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(LastEditedAtInput.Text);
+        }
 
         async private void ViewPassword_Load(object sender, EventArgs e)
         {
             UserAccount? Account = await User.Get()!;
-            if(Account is not null)
+            if (Account is not null)
             {
                 NameInput.Text = Account.username;
                 PasswordInput.Text = Account.password;
                 SiteNameInput.Text = Account.site_name;
                 NotesInput.Text = Account.notes;
                 CreatedAtInput.Text = Account.created_at.ToString();
-                if(Account.last_edited_at is not null)
+                if (Account.last_edited_at is not null)
                 {
                     LastEditedAtInput.Text = Account.last_edited_at.ToString();
                 }
