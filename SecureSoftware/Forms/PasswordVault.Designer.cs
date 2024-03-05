@@ -231,7 +231,7 @@
             sideBarMenuItem1.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem1.BackgroundImageLayout = ImageLayout.None;
             sideBarMenuItem1.Cursor = Cursors.Hand;
-            sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Mosque;
+            sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Vault;
             sideBarMenuItem1.Label = "Password Vault";
             sideBarMenuItem1.Location = new Point(0, 0);
             sideBarMenuItem1.Margin = new Padding(0);
@@ -245,7 +245,7 @@
             sideBarMenuItem2.BackgroundColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem2.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem2.Cursor = Cursors.Hand;
-            sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Fedora;
+            sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Newspaper;
             sideBarMenuItem2.Label = "Secure Notes";
             sideBarMenuItem2.Location = new Point(0, 58);
             sideBarMenuItem2.Margin = new Padding(0);
@@ -259,7 +259,7 @@
             sideBarMenuItem3.BackgroundColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem3.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem3.Cursor = Cursors.Hand;
-            sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
+            sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.Gear;
             sideBarMenuItem3.Label = "Generate Password";
             sideBarMenuItem3.Location = new Point(0, 116);
             sideBarMenuItem3.Margin = new Padding(0);
@@ -351,6 +351,7 @@
             DeletePasswordsButton.BackColor = Color.FromArgb(192, 57, 43);
             DeletePasswordsButton.Cursor = Cursors.Hand;
             DeletePasswordsButton.Dock = DockStyle.Fill;
+            DeletePasswordsButton.Enabled = false;
             DeletePasswordsButton.FlatAppearance.BorderSize = 0;
             DeletePasswordsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
             DeletePasswordsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
@@ -371,6 +372,7 @@
             CreatePasswordButton.BackColor = Color.FromArgb(39, 174, 96);
             CreatePasswordButton.Cursor = Cursors.Hand;
             CreatePasswordButton.Dock = DockStyle.Fill;
+            CreatePasswordButton.Enabled = false;
             CreatePasswordButton.FlatAppearance.BorderSize = 0;
             CreatePasswordButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 174, 96);
             CreatePasswordButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 204, 113);
