@@ -60,7 +60,7 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.BackColor = Color.FromArgb(231, 76, 60);
+            DeleteButton.BackColor = Color.FromArgb(192, 57, 43);
             DeleteButton.Cursor = Cursors.Hand;
             DeleteButton.Dock = DockStyle.Fill;
             DeleteButton.FlatAppearance.BorderColor = Color.Black;

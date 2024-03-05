@@ -66,6 +66,13 @@ namespace SecureSoftware.Forms
             UserAccount? Account = await User.Get()!;
             if (Account is not null)
             {
+                CopyUsernameButton.Enabled = true;
+                CopyPasswordButton.Enabled = true;  
+                CopySiteNameButton.Enabled = true;
+                CopyNotesButton.Enabled = true;
+                CopyCreatedAtButton.Enabled = true;
+                CopyLastEditedAtButton.Enabled = true;
+
                 NameInput.Text = Account.username;
                 PasswordInput.Text = Account.password;
                 SiteNameInput.Text = Account.site_name;

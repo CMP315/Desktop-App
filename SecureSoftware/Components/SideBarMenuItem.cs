@@ -21,6 +21,7 @@ namespace SecureSoftware.Components
         private string _label;
         private FontAwesome.Sharp.IconChar _icon;
         private Color _backgroundColor;
+        private Color _backgroundColorHover;
 
         [Category("Custom Props")]
         public string Label
@@ -43,6 +44,33 @@ namespace SecureSoftware.Components
             get { return _backgroundColor; }
             set { _backgroundColor = value; this.BackColor = value; }
         }
+
+        [Category("Custom Props")]
+        public Color BackgroundColorHover
+        {
+            get { return _backgroundColorHover; }
+            set { _backgroundColorHover = value; }
+        }
         #endregion
+
+        private void SideBarMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            this.BackColor = this.BackgroundColorHover;
+        }
+
+        private void SideBarMenuItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = this.BackgroundColor;
+        }
+
+        private void SideBarMenuItem_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.BackColor = this.BackgroundColor;
+        }
+
+        private void SideBarMenuItem_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.BackColor = this.BackgroundColorHover;
+        }
     }
 }

@@ -230,7 +230,7 @@
             // 
             // CancelButton
             // 
-            CancelButton.BackColor = Color.FromArgb(231, 76, 60);
+            CancelButton.BackColor = Color.FromArgb(192, 57, 43);
             CancelButton.Cursor = Cursors.Hand;
             CancelButton.Dock = DockStyle.Bottom;
             CancelButton.FlatAppearance.BorderColor = Color.Black;
@@ -250,8 +250,9 @@
             // 
             // CopyUsernameButton
             // 
-            CopyUsernameButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopyUsernameButton.BackColor = Color.FromArgb(41, 128, 185);
             CopyUsernameButton.Cursor = Cursors.Hand;
+            CopyUsernameButton.Enabled = false;
             CopyUsernameButton.FlatAppearance.BorderColor = Color.Black;
             CopyUsernameButton.FlatAppearance.BorderSize = 0;
             CopyUsernameButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
@@ -269,8 +270,9 @@
             // 
             // CopyPasswordButton
             // 
-            CopyPasswordButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopyPasswordButton.BackColor = Color.FromArgb(41, 128, 185);
             CopyPasswordButton.Cursor = Cursors.Hand;
+            CopyPasswordButton.Enabled = false;
             CopyPasswordButton.FlatAppearance.BorderColor = Color.Black;
             CopyPasswordButton.FlatAppearance.BorderSize = 0;
             CopyPasswordButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
@@ -288,8 +290,9 @@
             // 
             // CopySiteNameButton
             // 
-            CopySiteNameButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopySiteNameButton.BackColor = Color.FromArgb(41, 128, 185);
             CopySiteNameButton.Cursor = Cursors.Hand;
+            CopySiteNameButton.Enabled = false;
             CopySiteNameButton.FlatAppearance.BorderColor = Color.Black;
             CopySiteNameButton.FlatAppearance.BorderSize = 0;
             CopySiteNameButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
@@ -307,8 +310,9 @@
             // 
             // CopyNotesButton
             // 
-            CopyNotesButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopyNotesButton.BackColor = Color.FromArgb(41, 128, 185);
             CopyNotesButton.Cursor = Cursors.Hand;
+            CopyNotesButton.Enabled = false;
             CopyNotesButton.FlatAppearance.BorderColor = Color.Black;
             CopyNotesButton.FlatAppearance.BorderSize = 0;
             CopyNotesButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
@@ -326,8 +330,9 @@
             // 
             // CopyCreatedAtButton
             // 
-            CopyCreatedAtButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopyCreatedAtButton.BackColor = Color.FromArgb(41, 128, 185);
             CopyCreatedAtButton.Cursor = Cursors.Hand;
+            CopyCreatedAtButton.Enabled = false;
             CopyCreatedAtButton.FlatAppearance.BorderColor = Color.Black;
             CopyCreatedAtButton.FlatAppearance.BorderSize = 0;
             CopyCreatedAtButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
@@ -341,7 +346,7 @@
             CopyCreatedAtButton.TabIndex = 14;
             CopyCreatedAtButton.Text = "Copy";
             CopyCreatedAtButton.UseVisualStyleBackColor = false;
-            CopyCreatedAtButton.Click += this.CopyCreatedAtButton_Click;
+            CopyCreatedAtButton.Click += CopyCreatedAtButton_Click;
             // 
             // label6
             // 
@@ -378,8 +383,9 @@
             // 
             // CopyLastEditedAtButton
             // 
-            CopyLastEditedAtButton.BackColor = Color.FromArgb(52, 152, 219);
+            CopyLastEditedAtButton.BackColor = Color.FromArgb(41, 128, 185);
             CopyLastEditedAtButton.Cursor = Cursors.Hand;
+            CopyLastEditedAtButton.Enabled = false;
             CopyLastEditedAtButton.FlatAppearance.BorderColor = Color.Black;
             CopyLastEditedAtButton.FlatAppearance.BorderSize = 0;
             CopyLastEditedAtButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);

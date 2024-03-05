@@ -141,12 +141,12 @@
             // 
             // CloseButton
             // 
-            CloseButton.BackColor = Color.FromArgb(231, 76, 60);
+            CloseButton.BackColor = Color.FromArgb(192, 57, 43);
             CloseButton.Cursor = Cursors.Hand;
             CloseButton.Dock = DockStyle.Bottom;
             CloseButton.FlatAppearance.BorderSize = 0;
-            CloseButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(231, 76, 60);
-            CloseButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 57, 43);
+            CloseButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            CloseButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
             CloseButton.FlatStyle = FlatStyle.Flat;
             CloseButton.ForeColor = Color.White;
             CloseButton.Location = new Point(0, 137);

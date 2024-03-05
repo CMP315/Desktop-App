@@ -229,7 +229,7 @@
             // 
             // CreateButton
             // 
-            CreateButton.BackColor = Color.FromArgb(46, 204, 113);
+            CreateButton.BackColor = Color.FromArgb(39, 174, 96);
             CreateButton.Cursor = Cursors.Hand;
             CreateButton.Dock = DockStyle.Fill;
             CreateButton.FlatAppearance.BorderColor = Color.Black;
@@ -249,7 +249,7 @@
             // 
             // CancelButton
             // 
-            CancelButton.BackColor = Color.FromArgb(231, 76, 60);
+            CancelButton.BackColor = Color.FromArgb(192, 57, 43);
             CancelButton.Cursor = Cursors.Hand;
             CancelButton.Dock = DockStyle.Fill;
             CancelButton.FlatAppearance.BorderColor = Color.Black;

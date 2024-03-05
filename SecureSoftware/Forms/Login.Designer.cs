@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            RegisterButton = new Button();
+            CancelButton = new Button();
             UsernameBox = new TextBox();
             LoginButton = new Button();
             label1 = new Label();
@@ -50,23 +50,25 @@
             tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
-            // RegisterButton
+            // CancelButton
             // 
-            RegisterButton.BackColor = Color.FromArgb(231, 76, 60);
-            RegisterButton.Cursor = Cursors.Hand;
-            RegisterButton.Dock = DockStyle.Fill;
-            RegisterButton.FlatAppearance.BorderSize = 0;
-            RegisterButton.FlatStyle = FlatStyle.Flat;
-            RegisterButton.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            RegisterButton.ForeColor = Color.White;
-            RegisterButton.Location = new Point(183, 0);
-            RegisterButton.Margin = new Padding(0);
-            RegisterButton.Name = "RegisterButton";
-            RegisterButton.Size = new Size(184, 60);
-            RegisterButton.TabIndex = 4;
-            RegisterButton.Text = "CANCEL";
-            RegisterButton.UseVisualStyleBackColor = false;
-            RegisterButton.Click += RegisterButton_Click;
+            CancelButton.BackColor = Color.FromArgb(192, 57, 43);
+            CancelButton.Cursor = Cursors.Hand;
+            CancelButton.Dock = DockStyle.Fill;
+            CancelButton.FlatAppearance.BorderSize = 0;
+            CancelButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            CancelButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            CancelButton.FlatStyle = FlatStyle.Flat;
+            CancelButton.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            CancelButton.ForeColor = Color.White;
+            CancelButton.Location = new Point(183, 0);
+            CancelButton.Margin = new Padding(0);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new Size(184, 60);
+            CancelButton.TabIndex = 4;
+            CancelButton.Text = "CANCEL";
+            CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click;
             // 
             // UsernameBox
             // 
@@ -78,10 +80,12 @@
             // 
             // LoginButton
             // 
-            LoginButton.BackColor = Color.FromArgb(46, 204, 113);
+            LoginButton.BackColor = Color.FromArgb(39, 174, 96);
             LoginButton.Cursor = Cursors.Hand;
             LoginButton.Dock = DockStyle.Fill;
             LoginButton.FlatAppearance.BorderSize = 0;
+            LoginButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 174, 96);
+            LoginButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 204, 113);
             LoginButton.FlatStyle = FlatStyle.Flat;
             LoginButton.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             LoginButton.ForeColor = Color.White;
@@ -112,7 +116,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(LoginButton, 0, 0);
-            tableLayoutPanel1.Controls.Add(RegisterButton, 1, 0);
+            tableLayoutPanel1.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Location = new Point(0, 206);
             tableLayoutPanel1.Margin = new Padding(0);
@@ -284,7 +288,7 @@
 
         #endregion
 
-        private Button RegisterButton;
+        private Button CancelButton;
         private TextBox UsernameBox;
         private Button LoginButton;
         private Label label1;

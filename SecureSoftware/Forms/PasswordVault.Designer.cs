@@ -182,7 +182,7 @@
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.FromArgb(231, 76, 60);
+            iconButton1.BackColor = Color.FromArgb(192, 57, 43);
             iconButton1.Cursor = Cursors.Hand;
             iconButton1.Dock = DockStyle.Fill;
             iconButton1.FlatAppearance.BorderSize = 0;
@@ -227,6 +227,7 @@
             // 
             sideBarMenuItem1.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem1.BackgroundColor = Color.FromArgb(100, 48, 122);
+            sideBarMenuItem1.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem1.BackgroundImageLayout = ImageLayout.None;
             sideBarMenuItem1.Cursor = Cursors.Hand;
             sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Mosque;
@@ -241,6 +242,7 @@
             // 
             sideBarMenuItem2.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem2.BackgroundColor = Color.FromArgb(100, 48, 122);
+            sideBarMenuItem2.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem2.Cursor = Cursors.Hand;
             sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Fedora;
             sideBarMenuItem2.Label = "Secure Notes";
@@ -254,6 +256,7 @@
             // 
             sideBarMenuItem3.BackColor = Color.FromArgb(100, 48, 122);
             sideBarMenuItem3.BackgroundColor = Color.FromArgb(100, 48, 122);
+            sideBarMenuItem3.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem3.Cursor = Cursors.Hand;
             sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.MoneyBill1Wave;
             sideBarMenuItem3.Label = "Generate Password";
@@ -323,7 +326,7 @@
             // 
             // RefreshPasswordsButton
             // 
-            RefreshPasswordsButton.BackColor = Color.FromArgb(52, 152, 219);
+            RefreshPasswordsButton.BackColor = Color.FromArgb(41, 128, 185);
             RefreshPasswordsButton.Cursor = Cursors.Hand;
             RefreshPasswordsButton.Dock = DockStyle.Fill;
             RefreshPasswordsButton.FlatAppearance.BorderSize = 0;
@@ -343,10 +346,12 @@
             // 
             // CreatePasswordButton
             // 
-            CreatePasswordButton.BackColor = Color.FromArgb(46, 204, 113);
+            CreatePasswordButton.BackColor = Color.FromArgb(39, 174, 96);
             CreatePasswordButton.Cursor = Cursors.Hand;
             CreatePasswordButton.Dock = DockStyle.Fill;
             CreatePasswordButton.FlatAppearance.BorderSize = 0;
+            CreatePasswordButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 174, 96);
+            CreatePasswordButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 204, 113);
             CreatePasswordButton.FlatStyle = FlatStyle.Flat;
             CreatePasswordButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
             CreatePasswordButton.ForeColor = Color.White;

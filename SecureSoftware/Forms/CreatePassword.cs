@@ -32,6 +32,8 @@ namespace SecureSoftware.Forms
 
         async private void CreateButton_Click(object sender, EventArgs e)
         {
+            CreateButton.Enabled = false;
+            CancelButton.Enabled = false;
             string apiUrl = $"{Globals.API_BASE_URL}/passwords/{this.User._id}";
             var requestBody = new
             {

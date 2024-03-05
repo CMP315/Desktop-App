@@ -1,4 +1,5 @@
-﻿namespace SecureSoftware.Components
+﻿
+namespace SecureSoftware.Components
 {
     partial class SideBarMenuItem
     {
@@ -47,6 +48,10 @@
             SideBarIcon.SizeMode = PictureBoxSizeMode.CenterImage;
             SideBarIcon.TabIndex = 0;
             SideBarIcon.TabStop = false;
+            SideBarIcon.MouseDown += SideBarMenuItem_MouseClick;
+            SideBarIcon.MouseEnter += SideBarMenuItem_MouseHover;
+            SideBarIcon.MouseLeave += SideBarMenuItem_MouseLeave;
+            SideBarIcon.MouseUp += SideBarMenuItem_MouseUp;
             // 
             // SideBarLabel
             // 
@@ -61,6 +66,11 @@
             SideBarLabel.TabIndex = 1;
             SideBarLabel.Text = "Password Vault";
             SideBarLabel.TextAlign = ContentAlignment.MiddleCenter;
+            SideBarLabel.MouseClick += SideBarMenuItem_MouseClick;
+            SideBarLabel.MouseDown += SideBarMenuItem_MouseClick;
+            SideBarLabel.MouseEnter += SideBarMenuItem_MouseHover;
+            SideBarLabel.MouseLeave += SideBarMenuItem_MouseLeave;
+            SideBarLabel.MouseUp += SideBarMenuItem_MouseUp;
             // 
             // SideBarMenuItem
             // 
@@ -72,6 +82,10 @@
             Margin = new Padding(0);
             Name = "SideBarMenuItem";
             Size = new Size(297, 58);
+            MouseDown += SideBarMenuItem_MouseClick;
+            MouseEnter += SideBarMenuItem_MouseHover;
+            MouseLeave += SideBarMenuItem_MouseLeave;
+            MouseUp += SideBarMenuItem_MouseUp;
             ((System.ComponentModel.ISupportInitialize)SideBarIcon).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -27,7 +27,8 @@ namespace SecureSoftware.Forms
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
         {
-
+            LoginButton.Enabled = false;
+            CancelButton.Enabled = false;
             string apiUrl = $"{Globals.API_BASE_URL}/login";
             var requestBody = new
             {
@@ -70,9 +71,14 @@ namespace SecureSoftware.Forms
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
+            finally
+            {
+                LoginButton.Enabled = true;
+                CancelButton.Enabled = true;
+            }
         }
 
-        private void RegisterButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
