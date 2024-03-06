@@ -85,5 +85,10 @@ namespace SecureSoftware.Forms
         {
             this.Close();
         }
+
+        private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            PasswordInputBox.UseSystemPasswordChar = !ShowPasswordCheckBox.Checked;
+        }
     }
 }

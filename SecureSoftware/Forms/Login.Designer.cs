@@ -43,6 +43,7 @@
             label2 = new Label();
             PasswordBox = new TextBox();
             PasswordInputBox = new TextBox();
+            ShowPasswordCheckBox = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -118,7 +119,7 @@
             tableLayoutPanel1.Controls.Add(LoginButton, 0, 0);
             tableLayoutPanel1.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 206);
+            tableLayoutPanel1.Location = new Point(0, 226);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -253,7 +254,17 @@
             PasswordInputBox.TabIndex = 2;
             PasswordInputBox.Text = "testpass";
             PasswordInputBox.UseSystemPasswordChar = true;
-            PasswordInputBox.TextChanged += textBox1_TextChanged;
+            // 
+            // ShowPasswordCheckBox
+            // 
+            ShowPasswordCheckBox.AutoSize = true;
+            ShowPasswordCheckBox.Location = new Point(48, 202);
+            ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
+            ShowPasswordCheckBox.Size = new Size(108, 19);
+            ShowPasswordCheckBox.TabIndex = 8;
+            ShowPasswordCheckBox.Text = "Show Password";
+            ShowPasswordCheckBox.UseVisualStyleBackColor = true;
+            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
             // 
             // Login
             // 
@@ -261,7 +272,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(367, 266);
+            ClientSize = new Size(367, 286);
+            Controls.Add(ShowPasswordCheckBox);
             Controls.Add(label3);
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
@@ -303,5 +315,6 @@
         private Label label4;
         private Label label5;
         private TextBox PasswordInputBox;
+        private CheckBox ShowPasswordCheckBox;
     }
 }

@@ -46,6 +46,7 @@
             label6 = new Label();
             iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             PasswordInputBox = new TextBox();
+            ShowPasswordCheckBox = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -291,6 +292,17 @@
             PasswordInputBox.TabIndex = 2;
             PasswordInputBox.UseSystemPasswordChar = true;
             // 
+            // ShowPasswordCheckBox
+            // 
+            ShowPasswordCheckBox.AutoSize = true;
+            ShowPasswordCheckBox.Location = new Point(48, 261);
+            ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
+            ShowPasswordCheckBox.Size = new Size(108, 19);
+            ShowPasswordCheckBox.TabIndex = 11;
+            ShowPasswordCheckBox.Text = "Show Password";
+            ShowPasswordCheckBox.UseVisualStyleBackColor = true;
+            ShowPasswordCheckBox.CheckedChanged += ShowPasswordCheckBox_CheckedChanged;
+            // 
             // Register
             // 
             AcceptButton = RegisterButton;
@@ -298,6 +310,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(367, 349);
+            Controls.Add(ShowPasswordCheckBox);
             Controls.Add(label6);
             Controls.Add(iconPictureBox3);
             Controls.Add(PasswordInputBox);
@@ -346,5 +359,6 @@
         private Label label6;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private TextBox PasswordInputBox;
+        private CheckBox ShowPasswordCheckBox;
     }
 }
