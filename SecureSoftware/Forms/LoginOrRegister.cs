@@ -15,6 +15,7 @@ namespace SecureSoftware.Forms
         public string? Selected;
         public LoginOrRegister()
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
         }

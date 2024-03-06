@@ -8,7 +8,8 @@ namespace SecureSoftware
     internal class Program
     {
         private static LoginOrRegister? loginOrRegister;
-        private static Login? loginReturn;
+        private static Login? login;
+        private static Register? register;
         private static MasterAccount? User;
 
         /// <summary>
@@ -27,14 +28,17 @@ namespace SecureSoftware
                 loginOrRegister.Dispose();
                 if (loginOrRegister.Selected == "Login")
                 {
-                    loginReturn = new Login();
-                    loginReturn.ShowDialog();
-                    User = loginReturn.user;
-                    loginReturn.Dispose();
+                    login = new Login();
+                    login.ShowDialog();
+                    User = login.user;
+                    login.Dispose();
                 }
                 else if (loginOrRegister.Selected == "Register")
                 {
-
+                    register = new Register();
+                    register.ShowDialog();
+                    User = register.user;
+                    register.Dispose();
                 }
 
                 if (User is not null)

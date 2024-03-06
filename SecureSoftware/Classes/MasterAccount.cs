@@ -44,11 +44,6 @@ namespace SecureSoftware.Classes
                 throw new ArgumentException($"'{nameof(password)}' cannot be null or empty.", nameof(password));
             }
 
-            if (string.IsNullOrEmpty(salt))
-            {
-                throw new ArgumentException($"'{nameof(salt)}' cannot be null or empty.", nameof(salt));
-            }
-
             this._id = _id;
             this.name = name;
             this.password = password;

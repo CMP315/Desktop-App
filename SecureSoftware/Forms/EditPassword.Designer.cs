@@ -45,6 +45,7 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             CreateButton = new Button();
             CancelButton = new Button();
+            GenerateSecurePassword = new CheckBox();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -152,7 +153,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(54, 261);
+            label4.Location = new Point(54, 269);
             label4.Name = "label4";
             label4.Size = new Size(109, 30);
             label4.TabIndex = 9;
@@ -164,7 +165,7 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Globe;
             iconPictureBox3.IconColor = Color.White;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.Location = new Point(16, 261);
+            iconPictureBox3.Location = new Point(16, 269);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(32, 32);
             iconPictureBox3.TabIndex = 8;
@@ -174,7 +175,7 @@
             // 
             SiteNameInput.BackColor = Color.FromArgb(236, 240, 241);
             SiteNameInput.Enabled = false;
-            SiteNameInput.Location = new Point(16, 294);
+            SiteNameInput.Location = new Point(16, 302);
             SiteNameInput.Name = "SiteNameInput";
             SiteNameInput.Size = new Size(413, 23);
             SiteNameInput.TabIndex = 7;
@@ -184,7 +185,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(54, 337);
+            label5.Location = new Point(54, 340);
             label5.Name = "label5";
             label5.Size = new Size(68, 30);
             label5.TabIndex = 12;
@@ -196,7 +197,7 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
             iconPictureBox4.IconColor = Color.White;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.Location = new Point(16, 337);
+            iconPictureBox4.Location = new Point(16, 340);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(231, 32);
             iconPictureBox4.TabIndex = 11;
@@ -204,9 +205,10 @@
             // 
             // NotesInput
             // 
+            NotesInput.AcceptsTab = true;
             NotesInput.BackColor = Color.FromArgb(236, 240, 241);
             NotesInput.Enabled = false;
-            NotesInput.Location = new Point(16, 370);
+            NotesInput.Location = new Point(16, 373);
             NotesInput.Name = "NotesInput";
             NotesInput.ScrollBars = RichTextBoxScrollBars.Vertical;
             NotesInput.Size = new Size(413, 112);
@@ -269,6 +271,19 @@
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
             // 
+            // GenerateSecurePassword
+            // 
+            GenerateSecurePassword.AutoSize = true;
+            GenerateSecurePassword.Enabled = false;
+            GenerateSecurePassword.ForeColor = Color.White;
+            GenerateSecurePassword.Location = new Point(16, 242);
+            GenerateSecurePassword.Name = "GenerateSecurePassword";
+            GenerateSecurePassword.Size = new Size(250, 19);
+            GenerateSecurePassword.TabIndex = 16;
+            GenerateSecurePassword.Text = "Automatically Generate a Secure Password";
+            GenerateSecurePassword.UseVisualStyleBackColor = true;
+            GenerateSecurePassword.CheckedChanged += GenerateSecurePassword_CheckedChanged;
+            // 
             // EditPassword
             // 
             AcceptButton = CreateButton;
@@ -276,6 +291,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
             ClientSize = new Size(444, 567);
+            Controls.Add(GenerateSecurePassword);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(NotesInput);
             Controls.Add(label5);
@@ -324,5 +340,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Button CreateButton;
         private Button CancelButton;
+        private CheckBox GenerateSecurePassword;
     }
 }

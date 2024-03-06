@@ -20,6 +20,7 @@ namespace SecureSoftware.Forms
         private readonly UserAccount User;
         public ViewPassword(UserAccount User)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             this.User = User;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;

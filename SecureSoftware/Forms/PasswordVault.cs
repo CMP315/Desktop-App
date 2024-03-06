@@ -14,6 +14,7 @@ namespace SecureSoftware
         private readonly MasterAccount User;
         public PasswordVault(MasterAccount user)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.Panel = MainPanel;
             this.User = user;
@@ -54,6 +55,7 @@ namespace SecureSoftware
                     };
                     MainPanel.Controls.Add(panel);
                 }
+                SetActionRowEnabled(true);
             }
         }
 
@@ -89,7 +91,7 @@ namespace SecureSoftware
             SetActionRowEnabled(true);
         }
 
-        private bool SetActionRowEnabled(bool enabled)
+        public bool SetActionRowEnabled(bool enabled)
         {
             foreach (var control in ActionRowLayoutPanel.Controls)
             {

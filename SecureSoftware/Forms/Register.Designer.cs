@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             CancelButton = new Button();
-            UsernameBox = new TextBox();
-            LoginButton = new Button();
+            NameInputBox = new TextBox();
+            RegisterButton = new Button();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -42,12 +42,16 @@
             tableLayoutPanel3 = new TableLayoutPanel();
             label2 = new Label();
             PasswordBox = new TextBox();
-            textBox1 = new TextBox();
+            EMailInputBox = new TextBox();
+            label6 = new Label();
+            iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            PasswordInputBox = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).BeginInit();
             SuspendLayout();
             // 
             // CancelButton
@@ -70,33 +74,33 @@
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
             // 
-            // UsernameBox
+            // NameInputBox
             // 
-            UsernameBox.Location = new Point(48, 114);
-            UsernameBox.Name = "UsernameBox";
-            UsernameBox.Size = new Size(311, 23);
-            UsernameBox.TabIndex = 1;
-            UsernameBox.Text = "abc@test.com";
+            NameInputBox.Location = new Point(48, 114);
+            NameInputBox.Name = "NameInputBox";
+            NameInputBox.Size = new Size(311, 23);
+            NameInputBox.TabIndex = 0;
+            NameInputBox.Text = "abc@test.com";
             // 
-            // LoginButton
+            // RegisterButton
             // 
-            LoginButton.BackColor = Color.FromArgb(39, 174, 96);
-            LoginButton.Cursor = Cursors.Hand;
-            LoginButton.Dock = DockStyle.Fill;
-            LoginButton.FlatAppearance.BorderSize = 0;
-            LoginButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 174, 96);
-            LoginButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 204, 113);
-            LoginButton.FlatStyle = FlatStyle.Flat;
-            LoginButton.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            LoginButton.ForeColor = Color.White;
-            LoginButton.Location = new Point(0, 0);
-            LoginButton.Margin = new Padding(0);
-            LoginButton.Name = "LoginButton";
-            LoginButton.Size = new Size(183, 60);
-            LoginButton.TabIndex = 3;
-            LoginButton.Text = "REGISTER";
-            LoginButton.UseVisualStyleBackColor = false;
-            LoginButton.Click += LoginButton_ClickAsync;
+            RegisterButton.BackColor = Color.FromArgb(39, 174, 96);
+            RegisterButton.Cursor = Cursors.Hand;
+            RegisterButton.Dock = DockStyle.Fill;
+            RegisterButton.FlatAppearance.BorderSize = 0;
+            RegisterButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(39, 174, 96);
+            RegisterButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 204, 113);
+            RegisterButton.FlatStyle = FlatStyle.Flat;
+            RegisterButton.Font = new Font("Tahoma", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            RegisterButton.ForeColor = Color.White;
+            RegisterButton.Location = new Point(0, 0);
+            RegisterButton.Margin = new Padding(0);
+            RegisterButton.Name = "RegisterButton";
+            RegisterButton.Size = new Size(183, 60);
+            RegisterButton.TabIndex = 3;
+            RegisterButton.Text = "REGISTER";
+            RegisterButton.UseVisualStyleBackColor = false;
+            RegisterButton.Click += RegisterButton_ClickAsync;
             // 
             // label1
             // 
@@ -106,19 +110,19 @@
             label1.Location = new Point(48, 90);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(54, 21);
+            label1.Size = new Size(52, 21);
             label1.TabIndex = 4;
-            label1.Text = "E-Mail";
+            label1.Text = "Name";
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(LoginButton, 0, 0);
+            tableLayoutPanel1.Controls.Add(RegisterButton, 0, 0);
             tableLayoutPanel1.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Bottom;
-            tableLayoutPanel1.Location = new Point(0, 206);
+            tableLayoutPanel1.Location = new Point(0, 289);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -174,7 +178,7 @@
             // 
             iconPictureBox2.BackColor = Color.Transparent;
             iconPictureBox2.ForeColor = Color.Black;
-            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Envelope;
+            iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.User;
             iconPictureBox2.IconColor = Color.Black;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox2.IconSize = 31;
@@ -193,15 +197,15 @@
             label3.Location = new Point(48, 149);
             label3.Margin = new Padding(0);
             label3.Name = "label3";
-            label3.Size = new Size(76, 21);
+            label3.Size = new Size(54, 21);
             label3.TabIndex = 5;
-            label3.Text = "Password";
+            label3.Text = "E-Mail";
             // 
             // iconPictureBox1
             // 
             iconPictureBox1.BackColor = Color.Transparent;
             iconPictureBox1.ForeColor = Color.Black;
-            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Envelope;
             iconPictureBox1.IconColor = Color.Black;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconPictureBox1.IconSize = 31;
@@ -243,29 +247,66 @@
             PasswordBox.Name = "PasswordBox";
             PasswordBox.PasswordChar = '●';
             PasswordBox.Size = new Size(176, 23);
-            PasswordBox.TabIndex = 2; 
+            PasswordBox.TabIndex = 2;
             // 
-            // textBox1
+            // EMailInputBox
             // 
-            textBox1.Location = new Point(48, 173);
-            textBox1.Name = "textBox1";
-            textBox1.PasswordChar = '●';
-            textBox1.Size = new Size(311, 23);
-            textBox1.TabIndex = 2;
+            EMailInputBox.Location = new Point(48, 173);
+            EMailInputBox.Name = "EMailInputBox";
+            EMailInputBox.Size = new Size(311, 23);
+            EMailInputBox.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(48, 212);
+            label6.Margin = new Padding(0);
+            label6.Name = "label6";
+            label6.Size = new Size(76, 21);
+            label6.TabIndex = 9;
+            label6.Text = "Password";
+            // 
+            // iconPictureBox3
+            // 
+            iconPictureBox3.BackColor = Color.Transparent;
+            iconPictureBox3.ForeColor = Color.Black;
+            iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            iconPictureBox3.IconColor = Color.Black;
+            iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox3.IconSize = 31;
+            iconPictureBox3.Location = new Point(9, 208);
+            iconPictureBox3.Margin = new Padding(0);
+            iconPictureBox3.Name = "iconPictureBox3";
+            iconPictureBox3.Size = new Size(39, 31);
+            iconPictureBox3.TabIndex = 10;
+            iconPictureBox3.TabStop = false;
+            // 
+            // PasswordInputBox
+            // 
+            PasswordInputBox.Location = new Point(48, 236);
+            PasswordInputBox.Name = "PasswordInputBox";
+            PasswordInputBox.Size = new Size(311, 23);
+            PasswordInputBox.TabIndex = 2;
+            PasswordInputBox.UseSystemPasswordChar = true;
             // 
             // Register
             // 
-            AcceptButton = LoginButton;
+            AcceptButton = RegisterButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(367, 266);
+            ClientSize = new Size(367, 349);
+            Controls.Add(label6);
+            Controls.Add(iconPictureBox3);
+            Controls.Add(PasswordInputBox);
             Controls.Add(label3);
             Controls.Add(iconPictureBox2);
             Controls.Add(iconPictureBox1);
-            Controls.Add(UsernameBox);
+            Controls.Add(NameInputBox);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(EMailInputBox);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             MaximizeBox = false;
@@ -280,6 +321,7 @@
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -287,8 +329,8 @@
         #endregion
 
         private Button CancelButton;
-        private TextBox UsernameBox;
-        private Button LoginButton;
+        private TextBox NameInputBox;
+        private Button RegisterButton;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -300,6 +342,9 @@
         private TextBox PasswordBox;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox EMailInputBox;
+        private Label label6;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private TextBox PasswordInputBox;
     }
 }

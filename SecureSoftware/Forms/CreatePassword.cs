@@ -19,8 +19,10 @@ namespace SecureSoftware.Forms
     {
         private readonly MasterAccount User;
         private readonly PasswordVault Vault;
+        private string? UserPassword;
         public CreatePassword(MasterAccount user, PasswordVault vault)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
             this.Vault = vault;
@@ -28,7 +30,6 @@ namespace SecureSoftware.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
         }
-
 
         async private void CreateButton_Click(object sender, EventArgs e)
         {
@@ -67,7 +68,7 @@ namespace SecureSoftware.Forms
                             UsernameProp = account.username,
                             IconProp = FontAwesome.Sharp.IconChar.Github
                         };
-                        
+
                         Vault.Panel.Controls.Add(panel);
                     }
                     catch (Exception ex)
@@ -94,6 +95,28 @@ namespace SecureSoftware.Forms
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GenerateSecurePassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.GenerateSecurePassword.Checked)
+            {
+                string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+                Random random = new();
+                int size = random.Next(50, 59);
+
+                char[] chars = new char[size];
+                for (int i = 0; i < size; i++)
+                {
+                    chars[i] = validChars[random.Next(0, validChars.Length)];
+                }
+
+                UserPassword = PasswordInput.Text;
+                PasswordInput.Text = new string(chars);
+            } else
+            {
+                PasswordInput.Text = UserPassword;
+            }
         }
     }
 }

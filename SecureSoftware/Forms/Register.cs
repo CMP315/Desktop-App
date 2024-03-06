@@ -19,21 +19,23 @@ namespace SecureSoftware.Forms
         public MasterAccount? user;
         public Register()
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             //this.MaximizeBox = false;
             //this.MinimizeBox = false;
         }
 
-        private async void LoginButton_ClickAsync(object sender, EventArgs e)
+        private async void RegisterButton_ClickAsync(object sender, EventArgs e)
         {
-            LoginButton.Enabled = false;
+            RegisterButton.Enabled = false;
             CancelButton.Enabled = false;
-            string apiUrl = $"{Globals.API_BASE_URL}/login";
+            string apiUrl = $"{Globals.API_BASE_URL}/users";
             var requestBody = new
             {
-                email = UsernameBox.Text,
-                password = PasswordBox.Text
+                name = NameInputBox.Text,
+                email = EMailInputBox.Text,
+                password = PasswordInputBox.Text
             };
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
@@ -47,6 +49,7 @@ namespace SecureSoftware.Forms
                     string jsonString = await response.Content.ReadAsStringAsync();
                     try
                     {
+                        MessageBox.Show(jsonString);
                         MasterAccount? user = BsonSerializer.Deserialize<MasterAccount>(jsonString);
                         if (user is null)
                         {
@@ -73,7 +76,7 @@ namespace SecureSoftware.Forms
             }
             finally
             {
-                LoginButton.Enabled = true;
+                RegisterButton.Enabled = true;
                 CancelButton.Enabled = true;
             }
         }

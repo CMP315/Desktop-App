@@ -19,6 +19,7 @@ namespace SecureSoftware.Forms
         public MasterAccount? user;
         public Login()
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             //this.MaximizeBox = false;

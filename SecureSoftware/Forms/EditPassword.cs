@@ -20,9 +20,10 @@ namespace SecureSoftware.Forms
         private readonly PasswordVault Vault;
         private readonly FlowLayoutPanel MainPanel;
         private readonly UserAccount User;
-
+        private string? UserPassword;
         public EditPassword(UserAccount User, PasswordVault Vault, FlowLayoutPanel MainPanel)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = User;
             this.Vault = Vault;
@@ -62,10 +63,12 @@ namespace SecureSoftware.Forms
                         {
                             return;
                         }
-
+                        this.Close();
+                        this.Vault.SetActionRowEnabled(false);
                         this.MainPanel.Controls.Clear();
                         this.MainPanel.Controls.Add(new ProgressPanel());
-                        this.Vault.CreatePanels();
+                        await this.Vault.CreatePanels();
+                        this.Vault.SetActionRowEnabled(true);
                     }
                     catch (Exception ex)
                     {
@@ -84,7 +87,7 @@ namespace SecureSoftware.Forms
             }
             finally
             {
-                this.Close();
+                this.Vault.SetActionRowEnabled(true);
             }
         }
 
@@ -112,6 +115,31 @@ namespace SecureSoftware.Forms
 
                 NotesInput.Text = Account.notes;
                 NotesInput.Enabled = true;
+
+                GenerateSecurePassword.Enabled = true;
+            }
+        }
+
+        private void GenerateSecurePassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.GenerateSecurePassword.Checked)
+            {
+                string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+                Random random = new();
+                int size = random.Next(50, 59);
+
+                char[] chars = new char[size];
+                for (int i = 0; i < size; i++)
+                {
+                    chars[i] = validChars[random.Next(0, validChars.Length)];
+                }
+
+                UserPassword = PasswordInput.Text;
+                PasswordInput.Text = new string(chars);
+            }
+            else
+            {
+                PasswordInput.Text = UserPassword;
             }
         }
     }
