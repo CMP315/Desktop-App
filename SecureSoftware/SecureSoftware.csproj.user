@@ -25,6 +25,9 @@
     <Compile Update="Forms\PasswordVault.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="PasswordGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Components\SideBarMenuItem.resx">

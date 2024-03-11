@@ -46,6 +46,7 @@
             sideBarMenuItem3 = new Components.SideBarMenuItem();
             MainPanel = new FlowLayoutPanel();
             ProgressPanel = new Components.ProgressPanel();
+            sideBarMenuItem4 = new Components.SideBarMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             ActionRowLayoutPanel = new TableLayoutPanel();
             RefreshPasswordsButton = new Button();
@@ -157,7 +158,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(100, 48, 122);
             label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
             label4.Location = new Point(0, 0);
             label4.Margin = new Padding(0);
@@ -266,6 +267,7 @@
             sideBarMenuItem3.Name = "sideBarMenuItem3";
             sideBarMenuItem3.Size = new Size(297, 58);
             sideBarMenuItem3.TabIndex = 2;
+            sideBarMenuItem3.Load += sideBarMenuItem3_Load;
             // 
             // MainPanel
             // 
@@ -273,6 +275,7 @@
             MainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             MainPanel.BackColor = Color.Transparent;
             MainPanel.Controls.Add(ProgressPanel);
+            MainPanel.Controls.Add(sideBarMenuItem4);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.FlowDirection = FlowDirection.TopDown;
             MainPanel.Location = new Point(0, 50);
@@ -288,6 +291,18 @@
             ProgressPanel.Name = "ProgressPanel";
             ProgressPanel.Size = new Size(571, 69);
             ProgressPanel.TabIndex = 0;
+            // 
+            // sideBarMenuItem4
+            // 
+            sideBarMenuItem4.BackgroundColor = Color.Empty;
+            sideBarMenuItem4.BackgroundColorHover = Color.Empty;
+            sideBarMenuItem4.Icon = FontAwesome.Sharp.IconChar.None;
+            sideBarMenuItem4.Label = null;
+            sideBarMenuItem4.Location = new Point(0, 75);
+            sideBarMenuItem4.Margin = new Padding(0);
+            sideBarMenuItem4.Name = "sideBarMenuItem4";
+            sideBarMenuItem4.Size = new Size(297, 58);
+            sideBarMenuItem4.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -441,5 +456,6 @@
         private Label GlobalEmail;
         private TableLayoutPanel ContextMenuButtonsTable;
         private Button RefreshPasswordsButton;
+        private Components.SideBarMenuItem sideBarMenuItem4;
     }
 }

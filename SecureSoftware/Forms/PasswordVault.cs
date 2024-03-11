@@ -100,5 +100,13 @@ namespace SecureSoftware
             }
             return enabled;
         }
+
+        private void sideBarMenuItem3_Load(object sender, EventArgs e)
+        {
+           
+        }
+        private void sideBarMenuItem3_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
     }
 }
