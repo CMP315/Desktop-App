@@ -334,7 +334,7 @@
         private RichTextBox NotesInput;
         private TableLayoutPanel tableLayoutPanel2;
         private Button CreateButton;
-        private Button CancelButton;
+        private new Button CancelButton;
         private CheckBox GenerateSecurePassword;
     }
 }

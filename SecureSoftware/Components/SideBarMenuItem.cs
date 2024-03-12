@@ -15,6 +15,7 @@ namespace SecureSoftware.Components
         public SideBarMenuItem()
         {
             InitializeComponent();
+            this.MouseClick += SideBarMenuItem_MouseClick;
         }
 
         #region Properties 
@@ -66,6 +67,8 @@ namespace SecureSoftware.Components
         private void SideBarMenuItem_MouseClick(object sender, MouseEventArgs e)
         {
             this.BackColor = this.BackgroundColor;
+            PasswordGenerator passwordGenerator = new();
+            passwordGenerator.ShowDialog();
         }
 
         private void SideBarMenuItem_MouseUp(object sender, MouseEventArgs e)

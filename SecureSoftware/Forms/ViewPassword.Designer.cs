@@ -498,7 +498,7 @@
         private Label label5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private RichTextBox NotesInput;
-        private Button CancelButton;
+        private new Button CancelButton;
         private Button CopyUsernameButton;
         private Button CopyPasswordButton;
         private Button CopySiteNameButton;

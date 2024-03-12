@@ -341,7 +341,7 @@
 
         #endregion
 
-        private Button CancelButton;
+        private new Button CancelButton;
         private TextBox NameInputBox;
         private Button RegisterButton;
         private Label label1;

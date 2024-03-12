@@ -12,15 +12,16 @@ namespace SecureSoftware
     {
         public FlowLayoutPanel Panel;
         private readonly MasterAccount User;
+        private Point PreviousLocation;
+
         public PasswordVault(MasterAccount user)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.Panel = MainPanel;
             this.User = user;
-            CreatePanels();
-
             this.FormBorderStyle = FormBorderStyle.None;
+            _ = CreatePanels();
         }
 
         private void PasswordVault_Load(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace SecureSoftware
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         async private void RefreshPasswordsButton_Click(object sender, EventArgs e)
@@ -99,6 +100,27 @@ namespace SecureSoftware
                 button.Enabled = enabled;
             }
             return enabled;
+        }
+
+        private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.PreviousLocation = e.Location;
+        }
+        private void HeaderLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            int X = (this.Location.X - this.PreviousLocation.X) + e.X;
+            int Y = (this.Location.Y - this.PreviousLocation.Y) + e.Y;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(X, Y);
+                this.Update();
+            }
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

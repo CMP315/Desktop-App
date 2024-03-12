@@ -12,8 +12,12 @@ namespace Core
 
         #region Fields
 
+#pragma warning disable CS0414 // The field 'DropShadow._isAeroEnabled' is assigned but its value is never used
         private bool _isAeroEnabled = false;
+#pragma warning restore CS0414 // The field 'DropShadow._isAeroEnabled' is assigned but its value is never used
+#pragma warning disable CS0414 // The field 'DropShadow._isDraggingEnabled' is assigned but its value is never used
         private bool _isDraggingEnabled = false;
+#pragma warning restore CS0414 // The field 'DropShadow._isDraggingEnabled' is assigned but its value is never used
         private const int WM_NCHITTEST = 0x84;
         private const int WS_MINIMIZEBOX = 0x20000;
         private const int HTCLIENT = 0x1;
