@@ -269,7 +269,6 @@
             sideBarMenuItem3.Name = "sideBarMenuItem3";
             sideBarMenuItem3.Size = new Size(297, 58);
             sideBarMenuItem3.TabIndex = 2;
-            sideBarMenuItem3.Load += sideBarMenuItem3_Load;
             // 
             // MainPanel
             // 

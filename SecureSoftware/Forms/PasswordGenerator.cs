@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SecureSoftware
 {
-    public class PasswordGenerator : Form
+    public partial class PasswordGenerator : Form
     {
         private readonly RandomNumberGenerator RandomGenerator;
         private readonly HashSet<string> CharacterList;
@@ -61,18 +61,6 @@ namespace SecureSoftware
             CharacterList.Add(this.SYMBOLS);
             this.UpdatePasswordBox(sender, e);
         }
-
-        //private static string GetEmojiSet(int lowerEmojiRange, int upperEmojiRange)
-        //{
-        //    int range = upperEmojiRange - lowerEmojiRange;
-        //    string[] Characters = new string[(upperEmojiRange + 1) + (range - 1)];
-        //    for (int i = lowerEmojiRange; i <= upperEmojiRange; i++)
-        //    {
-        //        string emoji = char.ConvertFromUtf32(i);
-        //        Characters[i] = emoji;
-        //    }
-        //    return string.Join(",", Characters);
-        //}
 
         private string CreatePassword(int length)
         {
