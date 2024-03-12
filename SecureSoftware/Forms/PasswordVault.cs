@@ -70,7 +70,7 @@ namespace SecureSoftware
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         async private void RefreshPasswordsButton_Click(object sender, EventArgs e)
@@ -111,11 +111,16 @@ namespace SecureSoftware
             int X = (this.Location.X - this.PreviousLocation.X) + e.X;
             int Y = (this.Location.Y - this.PreviousLocation.Y) + e.Y;
 
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 this.Location = new Point(X, Y);
                 this.Update();
             }
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

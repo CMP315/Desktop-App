@@ -67,8 +67,8 @@ namespace SecureSoftware.Components
         private void SideBarMenuItem_MouseClick(object sender, MouseEventArgs e)
         {
             this.BackColor = this.BackgroundColor;
-            PasswordGenerator passwordGenerator = new PasswordGenerator();
-            passwordGenerator.Show();
+            PasswordGenerator passwordGenerator = new();
+            passwordGenerator.ShowDialog();
         }
 
         private void SideBarMenuItem_MouseUp(object sender, MouseEventArgs e)

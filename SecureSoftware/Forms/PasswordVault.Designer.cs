@@ -32,6 +32,7 @@
             TopBarPanel = new Panel();
             TopBarTableLayout = new TableLayoutPanel();
             panel3 = new Panel();
+            LogoutButton = new Button();
             GlobalEmail = new Label();
             GlobalUsername = new Label();
             pictureBox1 = new PictureBox();
@@ -96,6 +97,7 @@
             // panel3
             // 
             panel3.BackColor = Color.DarkOrchid;
+            panel3.Controls.Add(LogoutButton);
             panel3.Controls.Add(GlobalEmail);
             panel3.Controls.Add(GlobalUsername);
             panel3.Controls.Add(pictureBox1);
@@ -105,6 +107,23 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1384, 78);
             panel3.TabIndex = 1;
+            // 
+            // LogoutButton
+            // 
+            LogoutButton.BackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.BorderSize = 0;
+            LogoutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            LogoutButton.FlatStyle = FlatStyle.Flat;
+            LogoutButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LogoutButton.ForeColor = Color.White;
+            LogoutButton.Location = new Point(1281, 23);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(99, 35);
+            LogoutButton.TabIndex = 7;
+            LogoutButton.Text = "LOGOUT";
+            LogoutButton.UseVisualStyleBackColor = false;
+            LogoutButton.Click += LogoutButton_Click;
             // 
             // GlobalEmail
             // 
@@ -458,5 +477,6 @@
         private TableLayoutPanel ContextMenuButtonsTable;
         private Button RefreshPasswordsButton;
         private Components.SideBarMenuItem sideBarMenuItem4;
+        private Button LogoutButton;
     }
 }

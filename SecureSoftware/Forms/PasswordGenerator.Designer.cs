@@ -46,6 +46,7 @@
             AvoidSimilarCheckbox = new CheckBox();
             AvoidAmbigiousCheckbox = new CheckBox();
             GeneratedPasswordTextBox = new TextBox();
+            CancelButton = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)PasswordLengthTrackBar).BeginInit();
             flowLayoutPanel1.SuspendLayout();
@@ -61,7 +62,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(493, 47);
+            tableLayoutPanel1.Size = new Size(499, 47);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -74,7 +75,7 @@
             label1.Location = new Point(0, 0);
             label1.Margin = new Padding(0);
             label1.Name = "label1";
-            label1.Size = new Size(493, 46);
+            label1.Size = new Size(499, 46);
             label1.TabIndex = 1;
             label1.Text = "PASSMAN";
             label1.TextAlign = ContentAlignment.TopCenter;
@@ -82,9 +83,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 63);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(10, 57);
             label2.Name = "label2";
-            label2.Size = new Size(141, 15);
+            label2.Size = new Size(204, 21);
             label2.TabIndex = 2;
             label2.Text = "Your Generated Password";
             // 
@@ -128,17 +131,19 @@
             // 
             // PasswordVisibilityButton
             // 
+            PasswordVisibilityButton.Cursor = Cursors.Hand;
             PasswordVisibilityButton.FlatAppearance.BorderSize = 0;
             PasswordVisibilityButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
             PasswordVisibilityButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
             PasswordVisibilityButton.FlatStyle = FlatStyle.Flat;
+            PasswordVisibilityButton.ForeColor = Color.White;
             PasswordVisibilityButton.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
-            PasswordVisibilityButton.IconColor = Color.Black;
+            PasswordVisibilityButton.IconColor = Color.White;
             PasswordVisibilityButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             PasswordVisibilityButton.IconSize = 25;
-            PasswordVisibilityButton.Location = new Point(434, 83);
+            PasswordVisibilityButton.Location = new Point(454, 80);
             PasswordVisibilityButton.Name = "PasswordVisibilityButton";
-            PasswordVisibilityButton.Size = new Size(49, 19);
+            PasswordVisibilityButton.Size = new Size(32, 19);
             PasswordVisibilityButton.TabIndex = 5;
             PasswordVisibilityButton.UseVisualStyleBackColor = true;
             PasswordVisibilityButton.Click += PasswordVisibilityButton_Click;
@@ -152,26 +157,28 @@
             PasswordLengthTrackBar.Name = "PasswordLengthTrackBar";
             PasswordLengthTrackBar.Size = new Size(245, 45);
             PasswordLengthTrackBar.TabIndex = 6;
-            PasswordLengthTrackBar.Value = 1;
+            PasswordLengthTrackBar.Value = 25;
             PasswordLengthTrackBar.Scroll += PasswordLengthTrackBar_Scroll;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.White;
             label3.Location = new Point(322, 187);
             label3.Name = "label3";
-            label3.Size = new Size(65, 15);
+            label3.Size = new Size(76, 15);
             label3.TabIndex = 7;
-            label3.Text = "1 character";
+            label3.Text = "25 characters";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(281, 139);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(304, 139);
             label4.Name = "label4";
-            label4.Size = new Size(155, 15);
+            label4.Size = new Size(97, 15);
             label4.TabIndex = 8;
-            label4.Text = "Maximum Password Length";
+            label4.Text = "Password Length";
             // 
             // flowLayoutPanel1
             // 
@@ -193,6 +200,7 @@
             UppercaseCheckbox.AutoSize = true;
             UppercaseCheckbox.Checked = true;
             UppercaseCheckbox.CheckState = CheckState.Checked;
+            UppercaseCheckbox.ForeColor = Color.White;
             UppercaseCheckbox.Location = new Point(3, 3);
             UppercaseCheckbox.Name = "UppercaseCheckbox";
             UppercaseCheckbox.Size = new Size(103, 19);
@@ -206,6 +214,7 @@
             LowercaseCheckbox.AutoSize = true;
             LowercaseCheckbox.Checked = true;
             LowercaseCheckbox.CheckState = CheckState.Checked;
+            LowercaseCheckbox.ForeColor = Color.White;
             LowercaseCheckbox.Location = new Point(3, 28);
             LowercaseCheckbox.Name = "LowercaseCheckbox";
             LowercaseCheckbox.Size = new Size(103, 19);
@@ -219,6 +228,7 @@
             DigitsCheckbox.AutoSize = true;
             DigitsCheckbox.Checked = true;
             DigitsCheckbox.CheckState = CheckState.Checked;
+            DigitsCheckbox.ForeColor = Color.White;
             DigitsCheckbox.Location = new Point(3, 53);
             DigitsCheckbox.Name = "DigitsCheckbox";
             DigitsCheckbox.Size = new Size(78, 19);
@@ -232,6 +242,7 @@
             SymbolsCheckbox.AutoSize = true;
             SymbolsCheckbox.Checked = true;
             SymbolsCheckbox.CheckState = CheckState.Checked;
+            SymbolsCheckbox.ForeColor = Color.White;
             SymbolsCheckbox.Location = new Point(3, 78);
             SymbolsCheckbox.Name = "SymbolsCheckbox";
             SymbolsCheckbox.Size = new Size(93, 19);
@@ -243,50 +254,79 @@
             // EmojisCheckbox
             // 
             EmojisCheckbox.AutoSize = true;
-            EmojisCheckbox.Enabled = false;
+            EmojisCheckbox.ForeColor = Color.White;
             EmojisCheckbox.Location = new Point(3, 103);
             EmojisCheckbox.Name = "EmojisCheckbox";
             EmojisCheckbox.Size = new Size(83, 19);
             EmojisCheckbox.TabIndex = 6;
             EmojisCheckbox.Text = "Use Emojis";
             EmojisCheckbox.UseVisualStyleBackColor = true;
+            EmojisCheckbox.CheckedChanged += EmojisCheckbox_CheckedChanged;
             // 
             // AvoidSimilarCheckbox
             // 
             AvoidSimilarCheckbox.AutoSize = true;
-            AvoidSimilarCheckbox.Enabled = false;
+            AvoidSimilarCheckbox.ForeColor = Color.White;
             AvoidSimilarCheckbox.Location = new Point(3, 128);
             AvoidSimilarCheckbox.Name = "AvoidSimilarCheckbox";
             AvoidSimilarCheckbox.Size = new Size(155, 19);
             AvoidSimilarCheckbox.TabIndex = 4;
             AvoidSimilarCheckbox.Text = "Avoid Similar Characters";
             AvoidSimilarCheckbox.UseVisualStyleBackColor = true;
+            AvoidSimilarCheckbox.CheckedChanged += AvoidSimilarCheckbox_CheckedChanged;
             // 
             // AvoidAmbigiousCheckbox
             // 
             AvoidAmbigiousCheckbox.AutoSize = true;
-            AvoidAmbigiousCheckbox.Enabled = false;
+            AvoidAmbigiousCheckbox.ForeColor = Color.White;
             AvoidAmbigiousCheckbox.Location = new Point(3, 153);
             AvoidAmbigiousCheckbox.Name = "AvoidAmbigiousCheckbox";
-            AvoidAmbigiousCheckbox.Size = new Size(177, 19);
+            AvoidAmbigiousCheckbox.Size = new Size(166, 19);
             AvoidAmbigiousCheckbox.TabIndex = 5;
             AvoidAmbigiousCheckbox.Tag = "";
-            AvoidAmbigiousCheckbox.Text = "Avoid Ambigious Characters";
+            AvoidAmbigiousCheckbox.Text = "Avoid Ambigious Symbols";
             AvoidAmbigiousCheckbox.UseVisualStyleBackColor = true;
+            AvoidAmbigiousCheckbox.CheckedChanged += AvoidAmbigiousCheckbox_CheckedChanged;
             // 
             // GeneratedPasswordTextBox
             // 
-            GeneratedPasswordTextBox.BackColor = SystemColors.Control;
+            GeneratedPasswordTextBox.BackColor = Color.FromArgb(155, 89, 182);
+            GeneratedPasswordTextBox.BorderStyle = BorderStyle.None;
+            GeneratedPasswordTextBox.ForeColor = Color.White;
             GeneratedPasswordTextBox.Location = new Point(16, 81);
             GeneratedPasswordTextBox.Name = "GeneratedPasswordTextBox";
-            GeneratedPasswordTextBox.Size = new Size(468, 23);
+            GeneratedPasswordTextBox.ReadOnly = true;
+            GeneratedPasswordTextBox.Size = new Size(468, 16);
             GeneratedPasswordTextBox.TabIndex = 11;
+            GeneratedPasswordTextBox.Text = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";
+            // 
+            // CancelButton
+            // 
+            CancelButton.BackColor = Color.FromArgb(192, 57, 43);
+            CancelButton.Cursor = Cursors.Hand;
+            CancelButton.Dock = DockStyle.Bottom;
+            CancelButton.FlatAppearance.BorderColor = Color.Black;
+            CancelButton.FlatAppearance.BorderSize = 0;
+            CancelButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            CancelButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            CancelButton.FlatStyle = FlatStyle.Flat;
+            CancelButton.ForeColor = Color.White;
+            CancelButton.Location = new Point(0, 329);
+            CancelButton.Margin = new Padding(0);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new Size(499, 62);
+            CancelButton.TabIndex = 12;
+            CancelButton.Text = "Close";
+            CancelButton.UseVisualStyleBackColor = false;
+            CancelButton.Click += CancelButton_Click;
             // 
             // PasswordGenerator
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(493, 328);
+            BackColor = Color.FromArgb(155, 89, 182);
+            ClientSize = new Size(499, 391);
+            Controls.Add(CancelButton);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -298,6 +338,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(GeneratedPasswordTextBox);
             Name = "PasswordGenerator";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PasswordGenerator";
             Load += PasswordGenerator_Load;
             tableLayoutPanel1.ResumeLayout(false);
@@ -329,5 +370,6 @@
         private CheckBox AvoidAmbigiousCheckbox;
         private CheckBox EmojisCheckbox;
         private TextBox GeneratedPasswordTextBox;
+        private Button CancelButton;
     }
 }
