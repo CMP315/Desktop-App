@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SecureSoftware
 {
-    public partial class PasswordGenerator : Form
+    public partial class PasswordGenerator : Form /* eslint-disable-line */
     {
         private readonly RandomNumberGenerator RandomGenerator;
         private readonly HashSet<string> CharacterList;
