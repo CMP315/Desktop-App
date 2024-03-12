@@ -300,7 +300,7 @@
 
         #endregion
 
-        private Button CancelButton;
+        private new Button CancelButton;
         private TextBox UsernameBox;
         private Button LoginButton;
         private Label label1;
