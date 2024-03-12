@@ -14,7 +14,7 @@ namespace SecureSoftware
     public partial class PasswordGenerator : Form
     {
         private readonly RandomNumberGenerator RandomGenerator;
-        private HashSet<string> CharacterList;
+        private readonly HashSet<string> CharacterList;
 
         private readonly string UPPERCASE = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
         private readonly string LOWERCASE = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
