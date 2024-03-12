@@ -20,9 +20,8 @@ namespace SecureSoftware
             InitializeComponent();
             this.Panel = MainPanel;
             this.User = user;
-            CreatePanels();
-
             this.FormBorderStyle = FormBorderStyle.None;
+            _ = CreatePanels();
         }
 
         private void PasswordVault_Load(object sender, EventArgs e)

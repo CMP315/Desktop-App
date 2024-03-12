@@ -20,8 +20,6 @@ namespace SecureSoftware
         private readonly string LOWERCASE = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
         private readonly string DIGITS = "0,1,2,3,4,5,6,7,8,9,0";
         private readonly string SYMBOLS = "!,\\,\",£,$,%,^,&,*,(,),_,+,=,-,[,],',#,<,>,/,?,¬,`,{,}";
-        private readonly string RANDOM_UNICODE_CHARACTERS = "";
-
 
         public PasswordGenerator()
         {
