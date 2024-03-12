@@ -80,7 +80,7 @@ namespace SecureSoftware
             StringBuilder password = new();
             for (int i = 0; i < length; i++)
             {
-                string charSet = CharacterList.ElementAt(random.Next(CharacterList.Count));
+                string charSet = CharacterList.ElementAt(RandomNumberGenerator.GetInt32(CharacterList.Count));
                 string[] characters = charSet.Split(',');
                 password.Append(characters[random.Next(characters.Length - 1)]);
             }
