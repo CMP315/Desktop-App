@@ -12,6 +12,8 @@ namespace SecureSoftware
     {
         public FlowLayoutPanel Panel;
         private readonly MasterAccount User;
+        private Point PreviousLocation;
+
         public PasswordVault(MasterAccount user)
         {
             (new Core.DropShadow()).ApplyShadows(this);
@@ -103,10 +105,26 @@ namespace SecureSoftware
 
         private void sideBarMenuItem3_Load(object sender, EventArgs e)
         {
-           
+
         }
         private void sideBarMenuItem3_MouseClick(object sender, MouseEventArgs e)
         {
+        }
+
+        private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.PreviousLocation = e.Location;
+        }
+        private void HeaderLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            int X = (this.Location.X - this.PreviousLocation.X) + e.X;
+            int Y = (this.Location.Y - this.PreviousLocation.Y) + e.Y;
+
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(X, Y);
+                this.Update();
+            }
         }
     }
 }

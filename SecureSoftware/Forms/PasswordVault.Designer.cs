@@ -36,7 +36,7 @@
             GlobalUsername = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            label4 = new Label();
+            HeaderLabel = new Label();
             ContextMenuButtonsTable = new TableLayoutPanel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             panel2 = new Panel();
@@ -143,7 +143,7 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
-            tableLayoutPanel3.Controls.Add(label4, 0, 0);
+            tableLayoutPanel3.Controls.Add(HeaderLabel, 0, 0);
             tableLayoutPanel3.Controls.Add(ContextMenuButtonsTable, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(3, 3);
@@ -153,20 +153,22 @@
             tableLayoutPanel3.Size = new Size(1378, 46);
             tableLayoutPanel3.TabIndex = 2;
             // 
-            // label4
+            // HeaderLabel
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(100, 48, 122);
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Microsoft Sans Serif", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(0, 0);
-            label4.Margin = new Padding(0);
-            label4.Name = "label4";
-            label4.Size = new Size(1278, 46);
-            label4.TabIndex = 3;
-            label4.Text = "PASSMAN";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            HeaderLabel.AutoSize = true;
+            HeaderLabel.BackColor = Color.FromArgb(100, 48, 122);
+            HeaderLabel.Dock = DockStyle.Fill;
+            HeaderLabel.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            HeaderLabel.ForeColor = Color.White;
+            HeaderLabel.Location = new Point(0, 0);
+            HeaderLabel.Margin = new Padding(0);
+            HeaderLabel.Name = "HeaderLabel";
+            HeaderLabel.Size = new Size(1278, 46);
+            HeaderLabel.TabIndex = 3;
+            HeaderLabel.Text = "PASSMAN";
+            HeaderLabel.TextAlign = ContentAlignment.MiddleCenter;
+            HeaderLabel.MouseDown += HeaderLabel_MouseDown;
+            HeaderLabel.MouseMove += HeaderLabel_MouseMove;
             // 
             // ContextMenuButtonsTable
             // 
@@ -451,7 +453,7 @@
         private Label GlobalUsername;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel3;
-        private Label label4;
+        private Label HeaderLabel;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label GlobalEmail;
         private TableLayoutPanel ContextMenuButtonsTable;
