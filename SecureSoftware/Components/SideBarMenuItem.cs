@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SecureSoftware.Forms.Password_Generator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,13 @@ using System.Windows.Forms;
 
 namespace SecureSoftware.Components
 {
+    public enum VaultItemType
+    {
+        PasswordVault,
+        SecureNotes,
+        GeneratePassword
+    }
+
     public partial class SideBarMenuItem : UserControl
     {
         public SideBarMenuItem()
@@ -18,10 +26,19 @@ namespace SecureSoftware.Components
         }
 
         #region Properties 
+        private VaultItemType _ID;
         private string _label;
         private FontAwesome.Sharp.IconChar _icon;
         private Color _backgroundColor;
         private Color _backgroundColorHover;
+
+
+        [Category("Custom Props")]
+        public VaultItemType ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
 
         [Category("Custom Props")]
         public string Label
@@ -66,6 +83,21 @@ namespace SecureSoftware.Components
         private void SideBarMenuItem_MouseClick(object sender, MouseEventArgs e)
         {
             this.BackColor = this.BackgroundColor;
+            switch(_ID)
+            {
+                case VaultItemType.PasswordVault:
+                    Console.WriteLine("");
+                    break;
+                case VaultItemType.GeneratePassword:
+                    SelectType selectType = new();
+                    selectType.ShowDialog();
+                    selectType.Dispose();
+                    break;
+                case VaultItemType.SecureNotes:
+                    Console.WriteLine("");
+                    break;
+            }
+
         }
 
         private void SideBarMenuItem_MouseUp(object sender, MouseEventArgs e)

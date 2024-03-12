@@ -39,7 +39,9 @@
             label4 = new Label();
             ContextMenuButtonsTable = new TableLayoutPanel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            LogoutButton = new Button();
             panel2 = new Panel();
+            tableLayoutPanel2 = new TableLayoutPanel();
             flowLayoutPanel2 = new FlowLayoutPanel();
             sideBarMenuItem1 = new Components.SideBarMenuItem();
             sideBarMenuItem2 = new Components.SideBarMenuItem();
@@ -58,6 +60,7 @@
             tableLayoutPanel3.SuspendLayout();
             ContextMenuButtonsTable.SuspendLayout();
             panel2.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             MainPanel.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -201,15 +204,49 @@
             iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += CloseButton_Click;
             // 
+            // LogoutButton
+            // 
+            LogoutButton.BackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.BorderSize = 0;
+            LogoutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            LogoutButton.FlatStyle = FlatStyle.Flat;
+            LogoutButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LogoutButton.ForeColor = Color.White;
+            LogoutButton.Location = new Point(0, 666);
+            LogoutButton.Margin = new Padding(0);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(297, 65);
+            LogoutButton.TabIndex = 7;
+            LogoutButton.Text = "LOGOUT";
+            LogoutButton.UseVisualStyleBackColor = false;
+            LogoutButton.Click += LogoutButton_Click;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.DarkOrchid;
-            panel2.Controls.Add(flowLayoutPanel2);
+            panel2.Controls.Add(tableLayoutPanel2);
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 130);
             panel2.Name = "panel2";
             panel2.Size = new Size(297, 731);
             panel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(LogoutButton, 0, 1);
+            tableLayoutPanel2.Controls.Add(flowLayoutPanel2, 0, 0);
+            tableLayoutPanel2.Dock = DockStyle.Left;
+            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
+            tableLayoutPanel2.Size = new Size(297, 731);
+            tableLayoutPanel2.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
@@ -217,11 +254,11 @@
             flowLayoutPanel2.Controls.Add(sideBarMenuItem1);
             flowLayoutPanel2.Controls.Add(sideBarMenuItem2);
             flowLayoutPanel2.Controls.Add(sideBarMenuItem3);
-            flowLayoutPanel2.Dock = DockStyle.Left;
+            flowLayoutPanel2.Dock = DockStyle.Fill;
             flowLayoutPanel2.Location = new Point(0, 0);
             flowLayoutPanel2.Margin = new Padding(0);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(297, 731);
+            flowLayoutPanel2.Size = new Size(297, 666);
             flowLayoutPanel2.TabIndex = 0;
             // 
             // sideBarMenuItem1
@@ -232,6 +269,7 @@
             sideBarMenuItem1.BackgroundImageLayout = ImageLayout.None;
             sideBarMenuItem1.Cursor = Cursors.Hand;
             sideBarMenuItem1.Icon = FontAwesome.Sharp.IconChar.Vault;
+            sideBarMenuItem1.ID = Components.VaultItemType.PasswordVault;
             sideBarMenuItem1.Label = "Password Vault";
             sideBarMenuItem1.Location = new Point(0, 0);
             sideBarMenuItem1.Margin = new Padding(0);
@@ -246,6 +284,7 @@
             sideBarMenuItem2.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem2.Cursor = Cursors.Hand;
             sideBarMenuItem2.Icon = FontAwesome.Sharp.IconChar.Newspaper;
+            sideBarMenuItem2.ID = Components.VaultItemType.SecureNotes;
             sideBarMenuItem2.Label = "Secure Notes";
             sideBarMenuItem2.Location = new Point(0, 58);
             sideBarMenuItem2.Margin = new Padding(0);
@@ -260,6 +299,7 @@
             sideBarMenuItem3.BackgroundColorHover = Color.FromArgb(155, 89, 182);
             sideBarMenuItem3.Cursor = Cursors.Hand;
             sideBarMenuItem3.Icon = FontAwesome.Sharp.IconChar.Gear;
+            sideBarMenuItem3.ID = Components.VaultItemType.GeneratePassword;
             sideBarMenuItem3.Label = "Generate Password";
             sideBarMenuItem3.Location = new Point(0, 116);
             sideBarMenuItem3.Margin = new Padding(0);
@@ -288,6 +328,19 @@
             ProgressPanel.Name = "ProgressPanel";
             ProgressPanel.Size = new Size(571, 69);
             ProgressPanel.TabIndex = 0;
+            // 
+            // sideBarMenuItem4
+            // 
+            sideBarMenuItem4.BackgroundColor = Color.Empty;
+            sideBarMenuItem4.BackgroundColorHover = Color.Empty;
+            sideBarMenuItem4.Icon = FontAwesome.Sharp.IconChar.None;
+            sideBarMenuItem4.ID = Components.VaultItemType.PasswordVault;
+            sideBarMenuItem4.Label = null;
+            sideBarMenuItem4.Location = new Point(0, 75);
+            sideBarMenuItem4.Margin = new Padding(0);
+            sideBarMenuItem4.Name = "sideBarMenuItem4";
+            sideBarMenuItem4.Size = new Size(297, 58);
+            sideBarMenuItem4.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -411,6 +464,7 @@
             tableLayoutPanel3.PerformLayout();
             ContextMenuButtonsTable.ResumeLayout(false);
             panel2.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             MainPanel.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
@@ -441,5 +495,8 @@
         private Label GlobalEmail;
         private TableLayoutPanel ContextMenuButtonsTable;
         private Button RefreshPasswordsButton;
+        private Components.SideBarMenuItem sideBarMenuItem4;
+        private Button LogoutButton;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }
