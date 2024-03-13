@@ -117,5 +117,71 @@ namespace SecureSoftware.Classes
 
             return false;
         }
+
+        public async Task<Note[]?> GetNotesAsync()
+        {
+            string apiUrl = $"{Globals.API_BASE_URL}/notes/{_id}";
+
+            using var httpClient = new HttpClient();
+            try
+            {
+                var response = await httpClient.GetAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonString = await response.Content.ReadAsStringAsync();
+                    try
+                    {
+                        Note[]? jsonObject = BsonSerializer.Deserialize<Note[]>(jsonString);
+                        if (jsonObject is not null)
+                        {
+                            return jsonObject;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+
+                    Console.WriteLine(await response.Content.ReadAsStringAsync());
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return null;
+        }
+
+        public async Task<bool> DeleteNotesAsync()
+        {
+            string apiUrl = $"{Globals.API_BASE_URL}/notes/{_id}";
+
+            using var httpClient = new HttpClient();
+            try
+            {
+                var response = await httpClient.DeleteAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show($"Error: {response.StatusCode}");
+                    Console.WriteLine($"Error: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception: {ex.Message}");
+            }
+
+            return false;
+        }
     }
 }

@@ -114,7 +114,9 @@ namespace SecureSoftware.Components
                     {
                         Parent.Controls.Clear();
                     }
-                    Console.WriteLine("");
+                    SecureNotePage secureNotesPage = new(User, Vault);
+                    Parent.Controls.Add(secureNotesPage);
+                    secureNotesPage.Dock = DockStyle.Fill;
                     break;
                 case VaultItemType.Settings:
                     if (!Parent.IsDisposed && Parent.Controls.Count > 0)

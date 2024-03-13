@@ -10,6 +10,12 @@
     <Compile Update="Components\ProgressPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Components\SecureNoteListItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Components\SecureNotePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Components\SideBarMenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -62,23 +62,23 @@ namespace SecureSoftware
 
             SideBarMenuItem item3 = new(PagePanel, User, AccountInfo)
             {
-                Label = "Generate Password",
-                BackColor = backColour,
-                BackgroundColor = backColour,
-                BackgroundColorHover = backColourHover,
-                ID = VaultItemType.GeneratePassword,
-                Icon = FontAwesome.Sharp.IconChar.Cog
-            };
-            NavbarPanel.Controls.Add(item3);
-
-            SideBarMenuItem item4 = new(PagePanel, User, AccountInfo)
-            {
                 Label = "User Settings",
                 BackColor = backColour,
                 BackgroundColor = backColour,
                 BackgroundColorHover = backColourHover,
                 ID = VaultItemType.Settings,
                 Icon = FontAwesome.Sharp.IconChar.Link
+            };
+            NavbarPanel.Controls.Add(item3);
+
+            SideBarMenuItem item4 = new(PagePanel, User, AccountInfo)
+            {
+                Label = "Generate Password",
+                BackColor = backColour,
+                BackgroundColor = backColour,
+                BackgroundColorHover = backColourHover,
+                ID = VaultItemType.GeneratePassword,
+                Icon = FontAwesome.Sharp.IconChar.Cog
             };
             NavbarPanel.Controls.Add(item4);
 
