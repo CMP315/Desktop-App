@@ -21,6 +21,7 @@ namespace SecureSoftware.Forms
         private Panel Panel;
         public CreateNote(MasterAccount user, PasswordVault vault, Panel panel, SecureNotePage secureNote)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
             this.SecureNote = secureNote;

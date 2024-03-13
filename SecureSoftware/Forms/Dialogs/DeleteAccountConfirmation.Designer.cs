@@ -189,9 +189,11 @@
             // 
             // DeleteAccountConfirmation
             // 
+            AcceptButton = ConfirmDelete;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
+            CancelButton = Cancel;
             ClientSize = new Size(800, 379);
             Controls.Add(richTextBox1);
             Controls.Add(label3);

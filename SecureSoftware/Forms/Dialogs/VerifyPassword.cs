@@ -20,6 +20,7 @@ namespace SecureSoftware.Forms
         private Form Parent;
         public VerifyPassword(MasterAccount user, Form parent)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
             this.Parent = parent;
@@ -45,6 +46,8 @@ namespace SecureSoftware.Forms
             using var httpClient = new HttpClient();
             try
             {
+                ConfirmButton.Enabled = false;
+                CancelButton.Enabled = false;
                 var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
                 var response = await httpClient.PostAsync(apiUrl, content);
                 if (response.IsSuccessStatusCode)
@@ -99,6 +102,11 @@ namespace SecureSoftware.Forms
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception: {ex.Message}");
+            }
+            finally
+            {
+                ConfirmButton.Enabled = true;
+                CancelButton.Enabled = true;
             }
     }
 

@@ -190,8 +190,8 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 53);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(20, 20, 0, 0);
-            flowLayoutPanel1.Size = new Size(510, 245);
+            flowLayoutPanel1.Padding = new Padding(20, 10, 0, 0);
+            flowLayoutPanel1.Size = new Size(510, 216);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -201,7 +201,7 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90.08043F));
             tableLayoutPanel4.Controls.Add(label2, 1, 0);
             tableLayoutPanel4.Controls.Add(iconPictureBox1, 0, 0);
-            tableLayoutPanel4.Location = new Point(23, 23);
+            tableLayoutPanel4.Location = new Point(23, 13);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 1;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -238,8 +238,8 @@
             // 
             // CurrentPasswordInput
             // 
-            CurrentPasswordInput.Location = new Point(23, 64);
-            CurrentPasswordInput.Margin = new Padding(3, 3, 3, 20);
+            CurrentPasswordInput.Location = new Point(23, 54);
+            CurrentPasswordInput.Margin = new Padding(3, 3, 3, 10);
             CurrentPasswordInput.Name = "CurrentPasswordInput";
             CurrentPasswordInput.Size = new Size(464, 23);
             CurrentPasswordInput.TabIndex = 3;
@@ -251,7 +251,7 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 90.08043F));
             tableLayoutPanel5.Controls.Add(label5, 1, 0);
             tableLayoutPanel5.Controls.Add(iconPictureBox2, 0, 0);
-            tableLayoutPanel5.Location = new Point(23, 110);
+            tableLayoutPanel5.Location = new Point(23, 90);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -288,7 +288,7 @@
             // 
             // NewPasswordInput
             // 
-            NewPasswordInput.Location = new Point(23, 151);
+            NewPasswordInput.Location = new Point(23, 131);
             NewPasswordInput.Name = "NewPasswordInput";
             NewPasswordInput.Size = new Size(464, 23);
             NewPasswordInput.TabIndex = 4;
@@ -301,7 +301,7 @@
             tableLayoutPanel2.Controls.Add(ConfirmButton, 0, 0);
             tableLayoutPanel2.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Bottom;
-            tableLayoutPanel2.Location = new Point(0, 247);
+            tableLayoutPanel2.Location = new Point(0, 218);
             tableLayoutPanel2.Margin = new Padding(1);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
@@ -347,9 +347,11 @@
             // 
             // VerifyPassword
             // 
+            AcceptButton = ConfirmButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(510, 298);
+            CancelButton = CancelButton;
+            ClientSize = new Size(510, 269);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);

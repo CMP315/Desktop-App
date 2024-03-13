@@ -322,9 +322,11 @@
             // 
             // PasswordGenerator
             // 
+            AcceptButton = RefreshButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
+            CancelButton = CancelButton;
             ClientSize = new Size(499, 391);
             Controls.Add(CancelButton);
             Controls.Add(flowLayoutPanel1);

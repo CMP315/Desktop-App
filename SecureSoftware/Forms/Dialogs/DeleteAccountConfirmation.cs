@@ -16,6 +16,7 @@ namespace SecureSoftware.Forms
         private MasterAccount User;
         public DeleteAccountConfirmation(MasterAccount user)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
             this.FormBorderStyle = FormBorderStyle.None;

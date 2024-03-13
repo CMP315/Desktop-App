@@ -309,6 +309,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            CancelButton = CancelButton;
             ClientSize = new Size(367, 349);
             Controls.Add(ShowPasswordCheckBox);
             Controls.Add(label6);

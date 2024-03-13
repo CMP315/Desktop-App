@@ -200,9 +200,11 @@
             // 
             // EditNote
             // 
+            AcceptButton = CreateButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
+            CancelButton = CancelButton;
             ClientSize = new Size(444, 454);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(ContentInput);
@@ -213,6 +215,7 @@
             Controls.Add(NameInput);
             Controls.Add(tableLayoutPanel1);
             Name = "EditNote";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditNote";
             Load += EditNote_Load;
             tableLayoutPanel1.ResumeLayout(false);

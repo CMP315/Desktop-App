@@ -27,6 +27,7 @@ namespace SecureSoftware
 
         public PasswordGenerator()
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             RandomGenerator = RandomNumberGenerator.Create();
             CharacterList = new HashSet<string>();

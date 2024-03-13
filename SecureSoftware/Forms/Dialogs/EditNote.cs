@@ -22,11 +22,13 @@ namespace SecureSoftware.Forms.Dialogs
         private readonly SecureNotePage Page;
         public EditNote(Note note, MasterAccount user, Panel MainPanel, SecureNotePage page)
         {
+            (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.Note = note;
             this.User = user;
             this.MainPanel = MainPanel;
             this.Page = page;
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         async private void CreateButton_Click(object sender, EventArgs e)
