@@ -28,7 +28,7 @@ namespace SecureSoftware
         {
             GlobalUsername.Text = User.name;
             GlobalEmail.Text = User.email;
-            ContextMenuButtonsTable.Controls.Add(new CustomMaximiseButton(this), 0, 0);
+            ContextMenuButtonsTable.Controls.Add(new CustomMaximiseButton(this), 1, 0);
         }
 
         private void PasswordVault_Resize(object sender, EventArgs e)
@@ -102,25 +102,14 @@ namespace SecureSoftware
             return enabled;
         }
 
-        private void HeaderLabel_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.PreviousLocation = e.Location;
-        }
-        private void HeaderLabel_MouseMove(object sender, MouseEventArgs e)
-        {
-            int X = (this.Location.X - this.PreviousLocation.X) + e.X;
-            int Y = (this.Location.Y - this.PreviousLocation.Y) + e.Y;
-
-            if (e.Button == MouseButtons.Left)
-            {
-                this.Location = new Point(X, Y);
-                this.Update();
-            }
-        }
-
         private void LogoutButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -1,7 +1,10 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Easy_Password_Validator.Models;
+using Easy_Password_Validator;
+using Microsoft.VisualBasic.ApplicationServices;
 using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
 using SecureSoftware.Components;
+using SecureSoftware.Forms.Password_Generator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +22,6 @@ namespace SecureSoftware.Forms
     {
         private readonly MasterAccount User;
         private readonly PasswordVault Vault;
-        private string? UserPassword;
         public CreatePassword(MasterAccount user, PasswordVault vault)
         {
             (new Core.DropShadow()).ApplyShadows(this);
@@ -97,26 +99,31 @@ namespace SecureSoftware.Forms
             this.Close();
         }
 
-        private void GenerateSecurePassword_CheckedChanged(object sender, EventArgs e)
+        private void GeneratePassword_Click(object sender, EventArgs e)
         {
-            if(this.GenerateSecurePassword.Checked)
-            {
-                string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
-                Random random = new();
-                int size = random.Next(50, 59);
+            SelectType selectType = new();
+            selectType.ShowDialog();
+            selectType.Dispose();
+        }
 
-                char[] chars = new char[size];
-                for (int i = 0; i < size; i++)
-                {
-                    chars[i] = validChars[random.Next(0, validChars.Length)];
-                }
+        private void QuickGenPassword_Click(object sender, EventArgs e)
+        {
+            string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+            Random random = new();
+            int size = random.Next(50, 59);
 
-                UserPassword = PasswordInput.Text;
-                PasswordInput.Text = new string(chars);
-            } else
+            char[] chars = new char[size];
+            for (int i = 0; i < size; i++)
             {
-                PasswordInput.Text = UserPassword;
+                chars[i] = validChars[random.Next(0, validChars.Length)];
             }
+
+            PasswordInput.Text = new string(chars);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
