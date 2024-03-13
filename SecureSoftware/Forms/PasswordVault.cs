@@ -12,15 +12,16 @@ namespace SecureSoftware
     {
         public FlowLayoutPanel Panel;
         private readonly MasterAccount User;
+        private Point PreviousLocation;
+
         public PasswordVault(MasterAccount user)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.Panel = MainPanel;
             this.User = user;
-            CreatePanels();
-
             this.FormBorderStyle = FormBorderStyle.None;
+            _ = CreatePanels();
         }
 
         private void PasswordVault_Load(object sender, EventArgs e)

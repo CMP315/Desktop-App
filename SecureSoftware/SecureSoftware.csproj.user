@@ -16,6 +16,9 @@
     <Compile Update="Forms\CreatePassword.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -32,6 +35,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\PasswordVault.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ViewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

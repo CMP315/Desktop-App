@@ -23,6 +23,7 @@ namespace SecureSoftware.Components
         public SideBarMenuItem()
         {
             InitializeComponent();
+            this.MouseClick += SideBarMenuItem_MouseClick;
         }
 
         #region Properties 

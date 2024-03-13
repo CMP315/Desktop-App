@@ -32,11 +32,12 @@
             TopBarPanel = new Panel();
             TopBarTableLayout = new TableLayoutPanel();
             panel3 = new Panel();
+            LogoutButton = new Button();
             GlobalEmail = new Label();
             GlobalUsername = new Label();
             pictureBox1 = new PictureBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            label4 = new Label();
+            HeaderLabel = new Label();
             ContextMenuButtonsTable = new TableLayoutPanel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
             MinimizeButton = new FontAwesome.Sharp.IconButton();
@@ -49,6 +50,7 @@
             sideBarMenuItem3 = new Components.SideBarMenuItem();
             MainPanel = new FlowLayoutPanel();
             ProgressPanel = new Components.ProgressPanel();
+            sideBarMenuItem4 = new Components.SideBarMenuItem();
             tableLayoutPanel1 = new TableLayoutPanel();
             ActionRowLayoutPanel = new TableLayoutPanel();
             RefreshPasswordsButton = new Button();
@@ -99,6 +101,7 @@
             // panel3
             // 
             panel3.BackColor = Color.DarkOrchid;
+            panel3.Controls.Add(LogoutButton);
             panel3.Controls.Add(GlobalEmail);
             panel3.Controls.Add(GlobalUsername);
             panel3.Controls.Add(pictureBox1);
@@ -108,6 +111,23 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1384, 78);
             panel3.TabIndex = 1;
+            // 
+            // LogoutButton
+            // 
+            LogoutButton.BackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.BorderSize = 0;
+            LogoutButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            LogoutButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            LogoutButton.FlatStyle = FlatStyle.Flat;
+            LogoutButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            LogoutButton.ForeColor = Color.White;
+            LogoutButton.Location = new Point(1281, 23);
+            LogoutButton.Name = "LogoutButton";
+            LogoutButton.Size = new Size(99, 35);
+            LogoutButton.TabIndex = 7;
+            LogoutButton.Text = "LOGOUT";
+            LogoutButton.UseVisualStyleBackColor = false;
+            LogoutButton.Click += LogoutButton_Click;
             // 
             // GlobalEmail
             // 
@@ -156,7 +176,7 @@
             tableLayoutPanel3.Size = new Size(1378, 46);
             tableLayoutPanel3.TabIndex = 2;
             // 
-            // label4
+            // HeaderLabel
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(100, 48, 122);
@@ -334,6 +354,7 @@
             MainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             MainPanel.BackColor = Color.Transparent;
             MainPanel.Controls.Add(ProgressPanel);
+            MainPanel.Controls.Add(sideBarMenuItem4);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.FlowDirection = FlowDirection.TopDown;
             MainPanel.Location = new Point(0, 50);
@@ -349,6 +370,18 @@
             ProgressPanel.Name = "ProgressPanel";
             ProgressPanel.Size = new Size(571, 69);
             ProgressPanel.TabIndex = 0;
+            // 
+            // sideBarMenuItem4
+            // 
+            sideBarMenuItem4.BackgroundColor = Color.Empty;
+            sideBarMenuItem4.BackgroundColorHover = Color.Empty;
+            sideBarMenuItem4.Icon = FontAwesome.Sharp.IconChar.None;
+            sideBarMenuItem4.Label = null;
+            sideBarMenuItem4.Location = new Point(0, 75);
+            sideBarMenuItem4.Margin = new Padding(0);
+            sideBarMenuItem4.Name = "sideBarMenuItem4";
+            sideBarMenuItem4.Size = new Size(297, 58);
+            sideBarMenuItem4.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -498,7 +531,7 @@
         private Label GlobalUsername;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel3;
-        private Label label4;
+        private Label HeaderLabel;
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label GlobalEmail;
         private TableLayoutPanel ContextMenuButtonsTable;
