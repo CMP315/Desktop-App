@@ -166,7 +166,6 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
-            tableLayoutPanel3.Controls.Add(label4, 0, 0);
             tableLayoutPanel3.Controls.Add(ContextMenuButtonsTable, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(3, 3);
@@ -175,21 +174,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.Size = new Size(1378, 46);
             tableLayoutPanel3.TabIndex = 2;
-            // 
-            // HeaderLabel
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(100, 48, 122);
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(0, 0);
-            label4.Margin = new Padding(0);
-            label4.Name = "label4";
-            label4.Size = new Size(1228, 46);
-            label4.TabIndex = 3;
-            label4.Text = "PASSMAN";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ContextMenuButtonsTable
             // 
