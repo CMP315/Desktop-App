@@ -25,11 +25,13 @@ namespace SecureSoftware.Components
         private readonly new Panel Parent;
         private readonly MasterAccount User;
         private readonly PasswordVault Vault;
+        private readonly MasterAccountUserComponent AccountInfo;
 
-        public SideBarMenuItem(Panel panel, MasterAccount user)
+        public SideBarMenuItem(Panel panel, MasterAccount user, MasterAccountUserComponent accountInfo)
         {
             this.Parent = panel;
             this.User = user;
+            this.AccountInfo = accountInfo;
             InitializeComponent();
             this.MouseClick += SideBarMenuItem_MouseClick;
         }
@@ -88,7 +90,6 @@ namespace SecureSoftware.Components
         {
             this.BackColor = this.BackgroundColor;
         }
-
         private void SideBarMenuItem_MouseClick(object sender, MouseEventArgs e)
         {
             this.BackColor = this.BackgroundColor;
@@ -120,6 +121,9 @@ namespace SecureSoftware.Components
                     {
                         Parent.Controls.Clear();
                     }
+                    UserSettings settingsPage = new(User, Parent);
+                    Parent.Controls.Add(settingsPage);
+                    settingsPage.Dock = DockStyle.Fill;
                     break;
                 default:
                     throw new NotImplementedException();

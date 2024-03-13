@@ -13,6 +13,7 @@ namespace SecureSoftware
         public Panel Panel;
         private readonly MasterAccount User;
         private Point PreviousLocation;
+        private MasterAccountUserComponent AccountInfo;
 
         public PasswordVault(MasterAccount user)
         {
@@ -20,25 +21,24 @@ namespace SecureSoftware
             InitializeComponent();
             this.Panel = PagePanel;
             this.User = user;
-            this.FormBorderStyle = FormBorderStyle.None;
-        }
-
-        private void PasswordVault_Load(object sender, EventArgs e)
-        {
-            MasterAccountUserComponent _ = new()
+            this.AccountInfo = new()
             {
                 ID = User._id,
                 Username = User.name,
                 Email = User.email,
                 Parent = EmptyBar
             };
+            this.FormBorderStyle = FormBorderStyle.None;
+        }
 
+        private void PasswordVault_Load(object sender, EventArgs e)
+        {
             ContextMenuButtonsTable.Controls.Add(new CustomMaximiseButton(this), 1, 0);
 
             Color backColour = Color.FromArgb(100, 48, 122);
             Color backColourHover = Color.FromArgb(155, 89, 182);
 
-            SideBarMenuItem item1 = new(PagePanel, User)
+            SideBarMenuItem item1 = new(PagePanel, User, AccountInfo)
             {
                 Label = "Password Vault",
                 BackColor = backColour,
@@ -49,7 +49,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item1);
 
-            SideBarMenuItem item2 = new(PagePanel, User)
+            SideBarMenuItem item2 = new(PagePanel, User, AccountInfo)
             {
                 Label = "Secure Notes",
                 BackColor = backColour,
@@ -60,7 +60,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item2);
 
-            SideBarMenuItem item3 = new(PagePanel, User)
+            SideBarMenuItem item3 = new(PagePanel, User, AccountInfo)
             {
                 Label = "Generate Password",
                 BackColor = backColour,
@@ -71,7 +71,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item3);
 
-            SideBarMenuItem item4 = new(PagePanel, User)
+            SideBarMenuItem item4 = new(PagePanel, User, AccountInfo)
             {
                 Label = "User Settings",
                 BackColor = backColour,
@@ -82,6 +82,9 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item4);
 
+            PasswordVaultPage passwordVaultPage = new(User, this);
+            PagePanel.Controls.Add(passwordVaultPage);
+            passwordVaultPage.Dock = DockStyle.Fill;
         }
         private void PasswordVault_Resize(object sender, EventArgs e)
         {

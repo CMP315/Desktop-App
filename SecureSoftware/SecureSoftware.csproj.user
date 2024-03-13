@@ -19,7 +19,13 @@
     <Compile Update="Components\UserAccountListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Components\UserSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\CreatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DeleteAccountConfirmation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\EditPassword.cs">
@@ -47,6 +53,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\VerifyPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\ViewPassword.cs">

@@ -32,13 +32,13 @@
             DeleteButton = new Button();
             ViewButton = new Button();
             EditButton = new Button();
-            Icon = new FontAwesome.Sharp.IconPictureBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             Username = new Label();
             SiteName = new Label();
+            Icon = new FontAwesome.Sharp.IconPictureBox();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)Icon).BeginInit();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Icon).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,22 +122,6 @@
             EditButton.UseVisualStyleBackColor = false;
             EditButton.Click += EditButton_Click;
             // 
-            // Icon
-            // 
-            Icon.BackColor = SystemColors.Control;
-            Icon.Dock = DockStyle.Left;
-            Icon.ForeColor = SystemColors.ControlText;
-            Icon.IconChar = FontAwesome.Sharp.IconChar.ShopLock;
-            Icon.IconColor = SystemColors.ControlText;
-            Icon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            Icon.IconSize = 127;
-            Icon.Location = new Point(0, 0);
-            Icon.Name = "Icon";
-            Icon.Size = new Size(127, 150);
-            Icon.SizeMode = PictureBoxSizeMode.CenterImage;
-            Icon.TabIndex = 1;
-            Icon.TabStop = false;
-            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
@@ -179,6 +163,22 @@
             SiteName.Text = "Site Name";
             SiteName.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // Icon
+            // 
+            Icon.BackColor = SystemColors.Control;
+            Icon.Dock = DockStyle.Left;
+            Icon.ForeColor = SystemColors.ControlText;
+            Icon.IconChar = FontAwesome.Sharp.IconChar.ShopLock;
+            Icon.IconColor = SystemColors.ControlText;
+            Icon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            Icon.IconSize = 127;
+            Icon.Location = new Point(0, 0);
+            Icon.Name = "Icon";
+            Icon.Size = new Size(127, 150);
+            Icon.SizeMode = PictureBoxSizeMode.CenterImage;
+            Icon.TabIndex = 1;
+            Icon.TabStop = false;
+            // 
             // UserAccountListItem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -189,9 +189,9 @@
             Name = "UserAccountListItem";
             Size = new Size(720, 150);
             tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)Icon).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Icon).EndInit();
             ResumeLayout(false);
         }
 
@@ -200,10 +200,10 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Button ViewButton;
         private Button EditButton;
-        private FontAwesome.Sharp.IconPictureBox Icon;
         private TableLayoutPanel tableLayoutPanel2;
         private Label Username;
         private Label SiteName;
         private Button DeleteButton;
+        private FontAwesome.Sharp.IconPictureBox Icon;
     }
 }

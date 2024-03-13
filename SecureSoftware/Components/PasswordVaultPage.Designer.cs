@@ -105,6 +105,7 @@
             RefreshPasswordsButton.BackColor = Color.FromArgb(41, 128, 185);
             RefreshPasswordsButton.Cursor = Cursors.Hand;
             RefreshPasswordsButton.Dock = DockStyle.Fill;
+            RefreshPasswordsButton.Enabled = false;
             RefreshPasswordsButton.FlatAppearance.BorderSize = 0;
             RefreshPasswordsButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
             RefreshPasswordsButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
@@ -166,6 +167,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(tableLayoutPanel1);
             Name = "PasswordVaultPage";
             Size = new Size(1088, 732);

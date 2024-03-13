@@ -54,12 +54,13 @@ namespace SecureSoftware.Components
             }
         }
 
-        private void CreatePasswordButton_Click(object sender, EventArgs e)
+        async private void CreatePasswordButton_Click(object sender, EventArgs e)
         {
             SetActionRowEnabled(false);
-            CreatePassword CreatePasswordForm = new(User, Vault);
+            CreatePassword CreatePasswordForm = new(User, Vault, MainPanel);
             CreatePasswordForm.ShowDialog();
             SetActionRowEnabled(true);
+
         }
 
         async private void RefreshPasswordsButton_Click(object sender, EventArgs e)

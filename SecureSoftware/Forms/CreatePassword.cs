@@ -22,12 +22,14 @@ namespace SecureSoftware.Forms
     {
         private readonly MasterAccount User;
         private readonly PasswordVault Vault;
-        public CreatePassword(MasterAccount user, PasswordVault vault)
+        private readonly Panel MainPanel;
+        public CreatePassword(MasterAccount user, PasswordVault vault, Panel panel)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
             this.Vault = vault;
+            this.MainPanel = panel;
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -71,7 +73,7 @@ namespace SecureSoftware.Forms
                             IconProp = FontAwesome.Sharp.IconChar.Github
                         };
 
-                        Vault.Panel.Controls.Add(panel);
+                        MainPanel.Controls.Add(panel);
                     }
                     catch (Exception ex)
                     {
