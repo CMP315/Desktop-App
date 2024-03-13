@@ -9,7 +9,7 @@ namespace SecureSoftware.Components
     {
         private readonly UserAccount User;
         private readonly PasswordVault PasswordVault;
-        private readonly FlowLayoutPanel MainPanel;
+        private readonly Panel MainPanel;
 
         #region Properties 
         private string? _id;
@@ -52,7 +52,7 @@ namespace SecureSoftware.Components
         #endregion
 
 
-        public UserAccountListItem(FlowLayoutPanel MainPanel, UserAccount User, PasswordVault PasswordVault)
+        public UserAccountListItem(Panel MainPanel, UserAccount User, PasswordVault PasswordVault)
         {
             this.MainPanel = MainPanel;
             this.PasswordVault = PasswordVault;

@@ -4,10 +4,16 @@
     <Compile Update="Components\CustomMaximiseButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Components\PasswordVaultPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Components\ProgressPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Components\SideBarMenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Components\MasterAccountUserComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Components\UserAccountListItem.cs">

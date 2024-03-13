@@ -19,10 +19,10 @@ namespace SecureSoftware.Forms
     public partial class EditPassword : Form
     {
         private readonly PasswordVault Vault;
-        private readonly FlowLayoutPanel MainPanel;
+        private readonly Panel MainPanel;
         private readonly UserAccount User;
         private string? UserPassword;
-        public EditPassword(UserAccount User, PasswordVault Vault, FlowLayoutPanel MainPanel)
+        public EditPassword(UserAccount User, PasswordVault Vault, Panel MainPanel)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
@@ -65,11 +65,9 @@ namespace SecureSoftware.Forms
                             return;
                         }
                         this.Close();
-                        this.Vault.SetActionRowEnabled(false);
                         this.MainPanel.Controls.Clear();
                         this.MainPanel.Controls.Add(new ProgressPanel());
-                        await this.Vault.CreatePanels();
-                        this.Vault.SetActionRowEnabled(true);
+                        //await this.Vault.CreatePanels();
                     }
                     catch (Exception ex)
                     {
@@ -88,7 +86,7 @@ namespace SecureSoftware.Forms
             }
             finally
             {
-                this.Vault.SetActionRowEnabled(true);
+                //this.Vault.SetActionRowEnabled(true);
             }
         }
 

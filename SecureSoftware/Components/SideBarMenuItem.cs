@@ -1,4 +1,5 @@
-﻿using SecureSoftware.Forms.Password_Generator;
+﻿using SecureSoftware.Classes;
+using SecureSoftware.Forms.Password_Generator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,20 @@ namespace SecureSoftware.Components
     {
         PasswordVault,
         SecureNotes,
-        GeneratePassword
+        GeneratePassword,
+        Settings
     }
 
     public partial class SideBarMenuItem : UserControl
     {
-        public SideBarMenuItem()
+        private readonly new Panel Parent;
+        private readonly MasterAccount User;
+        private readonly PasswordVault Vault;
+
+        public SideBarMenuItem(Panel panel, MasterAccount user)
         {
+            this.Parent = panel;
+            this.User = user;
             InitializeComponent();
             this.MouseClick += SideBarMenuItem_MouseClick;
         }
@@ -87,7 +95,13 @@ namespace SecureSoftware.Components
             switch(_ID)
             {
                 case VaultItemType.PasswordVault:
-                    Console.WriteLine("");
+                    if (!Parent.IsDisposed && Parent.Controls.Count > 0)
+                    {
+                        Parent.Controls.Clear();
+                    }
+                    PasswordVaultPage passwordVaultPage = new(User, Vault);
+                    Parent.Controls.Add(passwordVaultPage);
+                    passwordVaultPage.Dock = DockStyle.Fill;
                     break;
                 case VaultItemType.GeneratePassword:
                     SelectType selectType = new();
@@ -95,10 +109,21 @@ namespace SecureSoftware.Components
                     selectType.Dispose();
                     break;
                 case VaultItemType.SecureNotes:
+                    if (!Parent.IsDisposed && Parent.Controls.Count > 0)
+                    {
+                        Parent.Controls.Clear();
+                    }
                     Console.WriteLine("");
                     break;
+                case VaultItemType.Settings:
+                    if (!Parent.IsDisposed && Parent.Controls.Count > 0)
+                    {
+                        Parent.Controls.Clear();
+                    }
+                    break;
+                default:
+                    throw new NotImplementedException();
             }
-
         }
 
         private void SideBarMenuItem_MouseUp(object sender, MouseEventArgs e)
