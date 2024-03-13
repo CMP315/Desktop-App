@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using SecureSoftware.Classes;
+using SecureSoftware.Forms;
+using SecureSoftware.Forms.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,11 +18,17 @@ namespace SecureSoftware.Components
     public partial class SecureNoteListItem : UserControl
     {
         private readonly Panel MainPanel;
-        public SecureNoteListItem(Panel MainPanel)
+        private readonly MasterAccount MasterAccount;
+        private readonly Note Note;
+        private readonly SecureNotePage Page;
+        public SecureNoteListItem(Panel MainPanel, Note note, MasterAccount masterAccount, SecureNotePage page)
         {
             InitializeComponent();
             this.MainPanel = MainPanel;
             this.Width = MainPanel.Width - 40;
+            this.Note = note;
+            this.MasterAccount = masterAccount;
+            this.Page = page;
         }
 
         #region Properties 
@@ -68,7 +78,7 @@ namespace SecureSoftware.Components
         }
 
         [Category("Custom Props")]
-        public string? LastEditedAtPropr
+        public string? LastEditedAtProp
         {
             get { return _lastEditedAt; }
             set { _lastEditedAt = value; LastEditedLabel.Text = value; LastEditedLabel.Visible = true; LastEditedTitleLabel.Visible = true; }
@@ -77,17 +87,25 @@ namespace SecureSoftware.Components
 
         private void ViewNoteButton_Click(object sender, EventArgs e)
         {
-
+            ViewNote viewNote = new(Note);
+            viewNote.ShowDialog();
+            return;
         }
 
         private void EditNoteButton_Click(object sender, EventArgs e)
         {
-
+            EditNote editNote = new(Note, MasterAccount, MainPanel, Page);
+            editNote.ShowDialog();
+            return;
         }
 
-        private void DeleteNoteButton_Click(object sender, EventArgs e)
+        async private void DeleteNoteButton_Click(object sender, EventArgs e)
         {
-
+            bool isDeleted = await Note.Delete();
+            if (isDeleted)
+            {
+                this.Dispose();
+            }
         }
     }
 }

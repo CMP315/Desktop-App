@@ -50,9 +50,9 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.8170185F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.0690155F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.1139641F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.Controls.Add(NumberLabel, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 2, 0);
@@ -71,7 +71,7 @@
             NumberLabel.Font = new Font("Segoe UI Black", 48F, FontStyle.Bold, GraphicsUnit.Point);
             NumberLabel.Location = new Point(3, 0);
             NumberLabel.Name = "NumberLabel";
-            NumberLabel.Size = new Size(122, 150);
+            NumberLabel.Size = new Size(138, 150);
             NumberLabel.TabIndex = 0;
             NumberLabel.Text = "1";
             NumberLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -83,12 +83,12 @@
             tableLayoutPanel2.Controls.Add(NameLabel, 0, 0);
             tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 0, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(131, 3);
+            tableLayoutPanel2.Location = new Point(147, 3);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 61.8055573F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 38.1944427F));
-            tableLayoutPanel2.Size = new Size(419, 144);
+            tableLayoutPanel2.Size = new Size(426, 144);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // NameLabel
@@ -185,13 +185,13 @@
             tableLayoutPanel3.Controls.Add(EditNoteButton, 0, 1);
             tableLayoutPanel3.Controls.Add(DeleteNoteButton, 0, 2);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(556, 3);
+            tableLayoutPanel3.Location = new Point(579, 3);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel3.Size = new Size(161, 144);
+            tableLayoutPanel3.Size = new Size(138, 144);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // ViewNoteButton
@@ -207,7 +207,7 @@
             ViewNoteButton.Location = new Point(0, 0);
             ViewNoteButton.Margin = new Padding(0);
             ViewNoteButton.Name = "ViewNoteButton";
-            ViewNoteButton.Size = new Size(161, 48);
+            ViewNoteButton.Size = new Size(138, 48);
             ViewNoteButton.TabIndex = 0;
             ViewNoteButton.Text = "View Note";
             ViewNoteButton.UseVisualStyleBackColor = false;
@@ -226,7 +226,7 @@
             EditNoteButton.Location = new Point(0, 48);
             EditNoteButton.Margin = new Padding(0);
             EditNoteButton.Name = "EditNoteButton";
-            EditNoteButton.Size = new Size(161, 48);
+            EditNoteButton.Size = new Size(138, 48);
             EditNoteButton.TabIndex = 1;
             EditNoteButton.Text = "Edit Note";
             EditNoteButton.UseVisualStyleBackColor = false;
@@ -245,7 +245,7 @@
             DeleteNoteButton.Location = new Point(0, 96);
             DeleteNoteButton.Margin = new Padding(0);
             DeleteNoteButton.Name = "DeleteNoteButton";
-            DeleteNoteButton.Size = new Size(161, 48);
+            DeleteNoteButton.Size = new Size(138, 48);
             DeleteNoteButton.TabIndex = 2;
             DeleteNoteButton.Text = "Delete Note";
             DeleteNoteButton.UseVisualStyleBackColor = false;

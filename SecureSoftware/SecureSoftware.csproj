@@ -26,9 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Forms\EditPassword.cs" />
-    <Compile Update="Forms\Register.cs" />
-    <Compile Update="Forms\ViewPassword.cs" />
+    <Compile Update="Forms\Dialogs\EditPassword.cs" />
+    <Compile Update="Forms\Dialogs\Register.cs" />
+    <Compile Update="Forms\Dialogs\ViewPassword.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -13,7 +13,7 @@ namespace SecureSoftware.Components
 
         #region Properties 
         private string? _id;
-        private FontAwesome.Sharp.IconChar? _icon;
+        private string? _IDLabel;
         private string? _site_name;
         private string? _username;
 
@@ -25,13 +25,13 @@ namespace SecureSoftware.Components
         }
 
         [Category("Custom Props")]
-        public FontAwesome.Sharp.IconChar? IconProp
+        public string? IDLabelProp
         {
-            get { return _icon; }
-            set { _icon = value; if (value is not null) {
-                    Icon.IconChar = (FontAwesome.Sharp.IconChar)value;
+            get { return _IDLabel; }
+            set { _IDLabel = value; if (value is not null) {
+                    NumberLabel.Text = _IDLabel;
                 } else {
-                    Icon.IconChar = FontAwesome.Sharp.IconChar.None;
+                    NumberLabel.Text = "";
                 }
             }
         }

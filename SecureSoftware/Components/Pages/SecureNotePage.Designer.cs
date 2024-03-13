@@ -32,15 +32,15 @@
             RefreshPasswordsButton = new Button();
             DeletePasswordsButton = new Button();
             panel1 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
+            SecureActionRowLayoutPanel = new TableLayoutPanel();
+            RefreshNotesButton = new Button();
+            DeleteNotesButton = new Button();
             CreatePasswordButton = new Button();
             MainPanel = new FlowLayoutPanel();
             ProgressPanel = new ProgressPanel();
             ActionRowLayoutPanel.SuspendLayout();
             panel1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
+            SecureActionRowLayoutPanel.SuspendLayout();
             MainPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,73 +101,74 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(tableLayoutPanel1);
+            panel1.Controls.Add(SecureActionRowLayoutPanel);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 54);
+            panel1.Size = new Size(1088, 50);
             panel1.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // SecureActionRowLayoutPanel
             // 
-            tableLayoutPanel1.BackColor = Color.FromArgb(100, 48, 122);
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 0);
-            tableLayoutPanel1.Controls.Add(button2, 1, 0);
-            tableLayoutPanel1.Controls.Add(CreatePasswordButton, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.ForeColor = Color.Transparent;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1088, 54);
-            tableLayoutPanel1.TabIndex = 5;
+            SecureActionRowLayoutPanel.BackColor = Color.FromArgb(100, 48, 122);
+            SecureActionRowLayoutPanel.ColumnCount = 3;
+            SecureActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            SecureActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            SecureActionRowLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            SecureActionRowLayoutPanel.Controls.Add(RefreshNotesButton, 0, 0);
+            SecureActionRowLayoutPanel.Controls.Add(DeleteNotesButton, 1, 0);
+            SecureActionRowLayoutPanel.Controls.Add(CreatePasswordButton, 0, 0);
+            SecureActionRowLayoutPanel.Dock = DockStyle.Fill;
+            SecureActionRowLayoutPanel.ForeColor = Color.Transparent;
+            SecureActionRowLayoutPanel.Location = new Point(0, 0);
+            SecureActionRowLayoutPanel.Margin = new Padding(0);
+            SecureActionRowLayoutPanel.Name = "SecureActionRowLayoutPanel";
+            SecureActionRowLayoutPanel.RowCount = 1;
+            SecureActionRowLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            SecureActionRowLayoutPanel.Size = new Size(1088, 50);
+            SecureActionRowLayoutPanel.TabIndex = 5;
             // 
-            // button1
+            // RefreshNotesButton
             // 
-            button1.BackColor = Color.FromArgb(41, 128, 185);
-            button1.Cursor = Cursors.Hand;
-            button1.Dock = DockStyle.Fill;
-            button1.Enabled = false;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(362, 0);
-            button1.Margin = new Padding(0);
-            button1.Name = "button1";
-            button1.Size = new Size(362, 54);
-            button1.TabIndex = 3;
-            button1.Text = "Refresh Notes";
-            button1.UseVisualStyleBackColor = false;
+            RefreshNotesButton.BackColor = Color.FromArgb(41, 128, 185);
+            RefreshNotesButton.Cursor = Cursors.Hand;
+            RefreshNotesButton.Dock = DockStyle.Fill;
+            RefreshNotesButton.Enabled = false;
+            RefreshNotesButton.FlatAppearance.BorderSize = 0;
+            RefreshNotesButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
+            RefreshNotesButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
+            RefreshNotesButton.FlatStyle = FlatStyle.Flat;
+            RefreshNotesButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            RefreshNotesButton.ForeColor = Color.White;
+            RefreshNotesButton.Location = new Point(362, 0);
+            RefreshNotesButton.Margin = new Padding(0);
+            RefreshNotesButton.Name = "RefreshNotesButton";
+            RefreshNotesButton.Size = new Size(362, 50);
+            RefreshNotesButton.TabIndex = 3;
+            RefreshNotesButton.Text = "Refresh Notes";
+            RefreshNotesButton.UseVisualStyleBackColor = false;
+            RefreshNotesButton.Click += RefreshNotesButton_Click;
             // 
-            // button2
+            // DeleteNotesButton
             // 
-            button2.BackColor = Color.FromArgb(192, 57, 43);
-            button2.Cursor = Cursors.Hand;
-            button2.Dock = DockStyle.Fill;
-            button2.Enabled = false;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(724, 0);
-            button2.Margin = new Padding(0);
-            button2.Name = "button2";
-            button2.Size = new Size(364, 54);
-            button2.TabIndex = 2;
-            button2.Text = "Delete Note";
-            button2.UseVisualStyleBackColor = false;
+            DeleteNotesButton.BackColor = Color.FromArgb(192, 57, 43);
+            DeleteNotesButton.Cursor = Cursors.Hand;
+            DeleteNotesButton.Dock = DockStyle.Fill;
+            DeleteNotesButton.Enabled = false;
+            DeleteNotesButton.FlatAppearance.BorderSize = 0;
+            DeleteNotesButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 57, 43);
+            DeleteNotesButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(231, 76, 60);
+            DeleteNotesButton.FlatStyle = FlatStyle.Flat;
+            DeleteNotesButton.Font = new Font("Consolas", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
+            DeleteNotesButton.ForeColor = Color.White;
+            DeleteNotesButton.Location = new Point(724, 0);
+            DeleteNotesButton.Margin = new Padding(0);
+            DeleteNotesButton.Name = "DeleteNotesButton";
+            DeleteNotesButton.Size = new Size(364, 50);
+            DeleteNotesButton.TabIndex = 2;
+            DeleteNotesButton.Text = "Delete Notes";
+            DeleteNotesButton.UseVisualStyleBackColor = false;
+            DeleteNotesButton.Click += DeleteNotesButton_Click;
             // 
             // CreatePasswordButton
             // 
@@ -184,23 +185,24 @@
             CreatePasswordButton.Location = new Point(0, 0);
             CreatePasswordButton.Margin = new Padding(0);
             CreatePasswordButton.Name = "CreatePasswordButton";
-            CreatePasswordButton.Size = new Size(362, 54);
+            CreatePasswordButton.Size = new Size(362, 50);
             CreatePasswordButton.TabIndex = 1;
             CreatePasswordButton.Text = "Create Note";
             CreatePasswordButton.UseVisualStyleBackColor = false;
+            CreatePasswordButton.Click += CreateNoteButton_Click;
             // 
             // MainPanel
             // 
             MainPanel.AutoScroll = true;
             MainPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            MainPanel.BackColor = Color.Transparent;
+            MainPanel.BackColor = Color.White;
             MainPanel.Controls.Add(ProgressPanel);
             MainPanel.Dock = DockStyle.Fill;
             MainPanel.FlowDirection = FlowDirection.TopDown;
-            MainPanel.Location = new Point(0, 54);
+            MainPanel.Location = new Point(0, 50);
             MainPanel.Margin = new Padding(0);
             MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(1088, 678);
+            MainPanel.Size = new Size(1088, 682);
             MainPanel.TabIndex = 4;
             MainPanel.WrapContents = false;
             // 
@@ -220,9 +222,10 @@
             Controls.Add(panel1);
             Name = "SecureNotePage";
             Size = new Size(1088, 732);
+            Resize += SecureNotePage_Resize;
             ActionRowLayoutPanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
+            SecureActionRowLayoutPanel.ResumeLayout(false);
             MainPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -233,9 +236,9 @@
         private Button RefreshPasswordsButton;
         private Button DeletePasswordsButton;
         private Panel panel1;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
-        private Button button2;
+        private TableLayoutPanel SecureActionRowLayoutPanel;
+        private Button RefreshNotesButton;
+        private Button DeleteNotesButton;
         private Button CreatePasswordButton;
         private FlowLayoutPanel MainPanel;
         private ProgressPanel ProgressPanel;

@@ -65,12 +65,12 @@ namespace SecureSoftware.Forms
                             return;
                         }
 
-                        UserAccountListItem panel = new(Vault.Panel, account, Vault)
+                        UserAccountListItem panel = new(MainPanel, account, Vault)
                         {
                             ID = account._id,
                             SiteNameProp = account.site_name,
                             UsernameProp = account.username,
-                            IconProp = FontAwesome.Sharp.IconChar.Github
+                            IDLabelProp = (MainPanel.Controls.Count + 1).ToString()
                         };
 
                         MainPanel.Controls.Add(panel);

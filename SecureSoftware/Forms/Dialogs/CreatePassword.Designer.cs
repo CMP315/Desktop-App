@@ -154,7 +154,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(54, 302);
+            label4.Location = new Point(54, 285);
             label4.Name = "label4";
             label4.Size = new Size(109, 30);
             label4.TabIndex = 9;
@@ -166,7 +166,7 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Globe;
             iconPictureBox3.IconColor = Color.White;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.Location = new Point(16, 302);
+            iconPictureBox3.Location = new Point(16, 285);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(32, 32);
             iconPictureBox3.TabIndex = 8;
@@ -175,7 +175,7 @@
             // SiteNameInput
             // 
             SiteNameInput.BackColor = Color.FromArgb(236, 240, 241);
-            SiteNameInput.Location = new Point(16, 335);
+            SiteNameInput.Location = new Point(16, 318);
             SiteNameInput.Name = "SiteNameInput";
             SiteNameInput.PlaceholderText = "Enter the Site Name";
             SiteNameInput.Size = new Size(413, 23);
@@ -186,7 +186,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(54, 372);
+            label5.Location = new Point(54, 355);
             label5.Name = "label5";
             label5.Size = new Size(68, 30);
             label5.TabIndex = 12;
@@ -198,7 +198,7 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
             iconPictureBox4.IconColor = Color.White;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.Location = new Point(16, 372);
+            iconPictureBox4.Location = new Point(16, 355);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(231, 32);
             iconPictureBox4.TabIndex = 11;
@@ -207,7 +207,7 @@
             // NotesInput
             // 
             NotesInput.BackColor = Color.FromArgb(236, 240, 241);
-            NotesInput.Location = new Point(16, 405);
+            NotesInput.Location = new Point(16, 388);
             NotesInput.Name = "NotesInput";
             NotesInput.ScrollBars = RichTextBoxScrollBars.Vertical;
             NotesInput.Size = new Size(413, 112);
@@ -222,7 +222,7 @@
             tableLayoutPanel2.Controls.Add(CreateButton, 0, 0);
             tableLayoutPanel2.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Bottom;
-            tableLayoutPanel2.Location = new Point(0, 536);
+            tableLayoutPanel2.Location = new Point(0, 515);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -307,7 +307,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
-            ClientSize = new Size(444, 598);
+            ClientSize = new Size(444, 577);
             Controls.Add(QuickGenPassword);
             Controls.Add(GeneratePassword);
             Controls.Add(tableLayoutPanel2);

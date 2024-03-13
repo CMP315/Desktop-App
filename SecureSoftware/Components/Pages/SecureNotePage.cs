@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using SecureSoftware.Classes;
+using SecureSoftware.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace SecureSoftware.Components
                 int i = 1;
                 foreach (var note in notes)
                 {
-                    SecureNoteListItem panel = new(MainPanel)
+                    SecureNoteListItem panel = new(MainPanel, note, User, this)
                     {
                         ID = note._id,
                         NameProp = note.name,
@@ -47,14 +48,52 @@ namespace SecureSoftware.Components
             }
         }
 
+        private void SecureNotePage_Resize(object sender, EventArgs e)
+        {
+            foreach (Control control in MainPanel.Controls)
+            {
+                control.Width = (MainPanel.Width - 40);
+            }
+        }
+
         public bool SetActionRowEnabled(bool enabled)
         {
-            foreach (var control in ActionRowLayoutPanel.Controls)
+            foreach (var control in SecureActionRowLayoutPanel.Controls)
             {
                 Button button = (Button)control;
                 button.Enabled = enabled;
             }
             return enabled;
+        }
+
+        async private void CreateNoteButton_Click(object sender, EventArgs e)
+        {
+            SetActionRowEnabled(false);
+            CreateNote CreateNoteForm = new(User, Vault, MainPanel, this);
+            CreateNoteForm.ShowDialog();
+            SetActionRowEnabled(true);
+        }
+
+        async private void RefreshNotesButton_Click(object sender, EventArgs e)
+        {
+            SetActionRowEnabled(false);
+            MainPanel.Controls.Clear();
+            ProgressPanel progress = new();
+            progress.LabelProp = "Loading Secure Notes...";
+            MainPanel.Controls.Add(progress);
+            await CreatePanels();
+            SetActionRowEnabled(true);
+        }
+
+        async private void DeleteNotesButton_Click(object sender, EventArgs e)
+        {
+            SetActionRowEnabled(false);
+            bool isDeleted = await User.DeleteNotesAsync();
+            if (isDeleted)
+            {
+                MainPanel.Controls.Clear();
+            }
+            SetActionRowEnabled(true);
         }
     }
 }

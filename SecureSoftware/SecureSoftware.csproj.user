@@ -4,43 +4,52 @@
     <Compile Update="Components\CustomMaximiseButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\PasswordVaultPage.cs">
+    <Compile Update="Components\Pages\PasswordVaultPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Components\ProgressPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\SecureNoteListItem.cs">
+    <Compile Update="Components\List Items\SecureNoteListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\SecureNotePage.cs">
+    <Compile Update="Components\Pages\SecureNotePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\SideBarMenuItem.cs">
+    <Compile Update="Components\List Items\SideBarMenuItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Components\MasterAccountUserComponent.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\UserAccountListItem.cs">
+    <Compile Update="Components\List Items\UserAccountListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Components\UserSettings.cs">
+    <Compile Update="Components\Pages\UserSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\CreatePassword.cs">
+    <Compile Update="Forms\Dialogs\CreateNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\DeleteAccountConfirmation.cs">
+    <Compile Update="Forms\Dialogs\CreatePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\EditPassword.cs">
+    <Compile Update="Forms\Dialogs\DeleteAccountConfirmation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Login.cs">
+    <Compile Update="Forms\Dialogs\EditNote.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\LoginOrRegister.cs">
+    <Compile Update="Forms\Dialogs\EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Dialogs\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Dialogs\LoginOrRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Dialogs\ViewNote.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Password Generator\PassphraseGenerator.cs">
@@ -52,24 +61,24 @@
     <Compile Update="Forms\Password Generator\StandardGenerator.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Forms\PasswordGenerator.cs">
+    <Compile Update="Forms\Dialogs\PasswordGenerator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\PasswordVault.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Register.cs">
+    <Compile Update="Forms\Dialogs\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\VerifyPassword.cs">
+    <Compile Update="Forms\Dialogs\VerifyPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\ViewPassword.cs">
+    <Compile Update="Forms\Dialogs\ViewPassword.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Components\SideBarMenuItem.resx">
+    <EmbeddedResource Update="Components\List Items\SideBarMenuItem.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

@@ -32,14 +32,16 @@ namespace SecureSoftware.Components
             if (accounts is not null)
             {
                 MainPanel.Controls.Clear();
+                int i = 0;
                 foreach (var account in accounts)
                 {
+                    i++;
                     UserAccountListItem panel = new(MainPanel, account, Vault)
                     {
                         ID = account._id,
                         SiteNameProp = account.site_name,
                         UsernameProp = account.username,
-                        IconProp = FontAwesome.Sharp.IconChar.Github
+                        IDLabelProp = i.ToString()
                     };
                     MainPanel.Controls.Add(panel);
                 }
