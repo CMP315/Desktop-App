@@ -22,8 +22,14 @@
     <Compile Update="Forms\LoginOrRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\PasswordGenerator.cs">
+    <Compile Update="Forms\Password Generator\PassphraseGenerator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Password Generator\SelectType.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Password Generator\StandardGenerator.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Forms\PasswordVault.cs">
       <SubType>Form</SubType>

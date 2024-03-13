@@ -45,7 +45,8 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             CreateButton = new Button();
             CancelButton = new Button();
-            GenerateSecurePassword = new CheckBox();
+            QuickGenPassword = new Button();
+            GeneratePassword = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
@@ -153,7 +154,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(54, 269);
+            label4.Location = new Point(54, 283);
             label4.Name = "label4";
             label4.Size = new Size(109, 30);
             label4.TabIndex = 9;
@@ -165,7 +166,7 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Globe;
             iconPictureBox3.IconColor = Color.White;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.Location = new Point(16, 269);
+            iconPictureBox3.Location = new Point(16, 283);
             iconPictureBox3.Name = "iconPictureBox3";
             iconPictureBox3.Size = new Size(32, 32);
             iconPictureBox3.TabIndex = 8;
@@ -175,7 +176,7 @@
             // 
             SiteNameInput.BackColor = Color.FromArgb(236, 240, 241);
             SiteNameInput.Enabled = false;
-            SiteNameInput.Location = new Point(16, 302);
+            SiteNameInput.Location = new Point(16, 316);
             SiteNameInput.Name = "SiteNameInput";
             SiteNameInput.Size = new Size(413, 23);
             SiteNameInput.TabIndex = 7;
@@ -185,7 +186,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(54, 340);
+            label5.Location = new Point(54, 354);
             label5.Name = "label5";
             label5.Size = new Size(68, 30);
             label5.TabIndex = 12;
@@ -197,7 +198,7 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
             iconPictureBox4.IconColor = Color.White;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.Location = new Point(16, 340);
+            iconPictureBox4.Location = new Point(16, 354);
             iconPictureBox4.Name = "iconPictureBox4";
             iconPictureBox4.Size = new Size(231, 32);
             iconPictureBox4.TabIndex = 11;
@@ -208,7 +209,7 @@
             NotesInput.AcceptsTab = true;
             NotesInput.BackColor = Color.FromArgb(236, 240, 241);
             NotesInput.Enabled = false;
-            NotesInput.Location = new Point(16, 373);
+            NotesInput.Location = new Point(16, 387);
             NotesInput.Name = "NotesInput";
             NotesInput.ScrollBars = RichTextBoxScrollBars.Vertical;
             NotesInput.Size = new Size(413, 112);
@@ -224,10 +225,11 @@
             tableLayoutPanel2.Controls.Add(CreateButton, 0, 0);
             tableLayoutPanel2.Controls.Add(CancelButton, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Bottom;
-            tableLayoutPanel2.Location = new Point(0, 505);
+            tableLayoutPanel2.Location = new Point(0, 512);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(444, 62);
             tableLayoutPanel2.TabIndex = 14;
             // 
@@ -271,18 +273,37 @@
             CancelButton.UseVisualStyleBackColor = false;
             CancelButton.Click += CancelButton_Click;
             // 
-            // GenerateSecurePassword
+            // QuickGenPassword
             // 
-            GenerateSecurePassword.AutoSize = true;
-            GenerateSecurePassword.Enabled = false;
-            GenerateSecurePassword.ForeColor = Color.White;
-            GenerateSecurePassword.Location = new Point(16, 242);
-            GenerateSecurePassword.Name = "GenerateSecurePassword";
-            GenerateSecurePassword.Size = new Size(250, 19);
-            GenerateSecurePassword.TabIndex = 16;
-            GenerateSecurePassword.Text = "Automatically Generate a Secure Password";
-            GenerateSecurePassword.UseVisualStyleBackColor = true;
-            GenerateSecurePassword.CheckedChanged += GenerateSecurePassword_CheckedChanged;
+            QuickGenPassword.BackColor = Color.FromArgb(22, 160, 133);
+            QuickGenPassword.FlatAppearance.BorderSize = 0;
+            QuickGenPassword.FlatAppearance.MouseDownBackColor = Color.FromArgb(22, 160, 133);
+            QuickGenPassword.FlatAppearance.MouseOverBackColor = Color.FromArgb(26, 188, 156);
+            QuickGenPassword.FlatStyle = FlatStyle.Flat;
+            QuickGenPassword.ForeColor = Color.White;
+            QuickGenPassword.Location = new Point(16, 247);
+            QuickGenPassword.Name = "QuickGenPassword";
+            QuickGenPassword.Size = new Size(174, 23);
+            QuickGenPassword.TabIndex = 19;
+            QuickGenPassword.Text = "Quick Generate Password";
+            QuickGenPassword.UseVisualStyleBackColor = false;
+            QuickGenPassword.Click += QuickGenPassword_Click;
+            // 
+            // GeneratePassword
+            // 
+            GeneratePassword.BackColor = Color.FromArgb(41, 128, 185);
+            GeneratePassword.FlatAppearance.BorderSize = 0;
+            GeneratePassword.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
+            GeneratePassword.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
+            GeneratePassword.FlatStyle = FlatStyle.Flat;
+            GeneratePassword.ForeColor = Color.White;
+            GeneratePassword.Location = new Point(196, 247);
+            GeneratePassword.Name = "GeneratePassword";
+            GeneratePassword.Size = new Size(174, 23);
+            GeneratePassword.TabIndex = 18;
+            GeneratePassword.Text = "Securely Generate Password";
+            GeneratePassword.UseVisualStyleBackColor = false;
+            GeneratePassword.Click += GeneratePassword_Click;
             // 
             // EditPassword
             // 
@@ -290,9 +311,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(155, 89, 182);
-            ClientSize = new Size(444, 567);
-            Controls.Add(GenerateSecurePassword);
+            ClientSize = new Size(444, 574);
+            Controls.Add(QuickGenPassword);
             Controls.Add(tableLayoutPanel2);
+            Controls.Add(GeneratePassword);
             Controls.Add(NotesInput);
             Controls.Add(label5);
             Controls.Add(iconPictureBox4);
@@ -340,6 +362,7 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Button CreateButton;
         private Button CancelButton;
-        private CheckBox GenerateSecurePassword;
+        private Button QuickGenPassword;
+        private Button GeneratePassword;
     }
 }

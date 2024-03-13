@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Easy_Password_Validator.Models;
+using Easy_Password_Validator;
+using Microsoft.VisualBasic.ApplicationServices;
 using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
 using SecureSoftware.Components;
@@ -117,6 +119,11 @@ namespace SecureSoftware.Forms
             }
 
             PasswordInput.Text = new string(chars);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -2,6 +2,7 @@
 using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
 using SecureSoftware.Components;
+using SecureSoftware.Forms.Password_Generator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,32 +116,29 @@ namespace SecureSoftware.Forms
 
                 NotesInput.Text = Account.notes;
                 NotesInput.Enabled = true;
-
-                GenerateSecurePassword.Enabled = true;
             }
+        }   
+
+        private void GeneratePassword_Click(object sender, EventArgs e)
+        {
+            SelectType selectType = new();
+            selectType.ShowDialog();
+            selectType.Dispose();
         }
 
-        private void GenerateSecurePassword_CheckedChanged(object sender, EventArgs e)
+        private void QuickGenPassword_Click(object sender, EventArgs e)
         {
-            if (this.GenerateSecurePassword.Checked)
-            {
-                string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
-                Random random = new();
-                int size = random.Next(50, 59);
+            string validChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*?_-";
+            Random random = new();
+            int size = random.Next(50, 59);
 
-                char[] chars = new char[size];
-                for (int i = 0; i < size; i++)
-                {
-                    chars[i] = validChars[random.Next(0, validChars.Length)];
-                }
-
-                UserPassword = PasswordInput.Text;
-                PasswordInput.Text = new string(chars);
-            }
-            else
+            char[] chars = new char[size];
+            for (int i = 0; i < size; i++)
             {
-                PasswordInput.Text = UserPassword;
+                chars[i] = validChars[random.Next(0, validChars.Length)];
             }
+
+            PasswordInput.Text = new string(chars);
         }
     }
 }

@@ -39,6 +39,7 @@
             label4 = new Label();
             ContextMenuButtonsTable = new TableLayoutPanel();
             iconButton1 = new FontAwesome.Sharp.IconButton();
+            MinimizeButton = new FontAwesome.Sharp.IconButton();
             LogoutButton = new Button();
             panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -144,7 +145,7 @@
             // 
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 150F));
             tableLayoutPanel3.Controls.Add(label4, 0, 0);
             tableLayoutPanel3.Controls.Add(ContextMenuButtonsTable, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
@@ -165,23 +166,25 @@
             label4.Location = new Point(0, 0);
             label4.Margin = new Padding(0);
             label4.Name = "label4";
-            label4.Size = new Size(1278, 46);
+            label4.Size = new Size(1228, 46);
             label4.TabIndex = 3;
             label4.Text = "PASSMAN";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ContextMenuButtonsTable
             // 
-            ContextMenuButtonsTable.ColumnCount = 2;
-            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            ContextMenuButtonsTable.Controls.Add(iconButton1, 1, 0);
-            ContextMenuButtonsTable.Location = new Point(1278, 0);
+            ContextMenuButtonsTable.ColumnCount = 3;
+            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContextMenuButtonsTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
+            ContextMenuButtonsTable.Controls.Add(iconButton1, 2, 0);
+            ContextMenuButtonsTable.Controls.Add(MinimizeButton, 0, 0);
+            ContextMenuButtonsTable.Location = new Point(1228, 0);
             ContextMenuButtonsTable.Margin = new Padding(0);
             ContextMenuButtonsTable.Name = "ContextMenuButtonsTable";
             ContextMenuButtonsTable.RowCount = 1;
-            ContextMenuButtonsTable.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            ContextMenuButtonsTable.Size = new Size(100, 46);
+            ContextMenuButtonsTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            ContextMenuButtonsTable.Size = new Size(150, 46);
             ContextMenuButtonsTable.TabIndex = 4;
             // 
             // iconButton1
@@ -196,13 +199,31 @@
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
             iconButton1.IconColor = Color.Black;
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.Location = new Point(50, 0);
-            iconButton1.Margin = new Padding(0);
+            iconButton1.Location = new Point(103, 3);
             iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(50, 46);
+            iconButton1.Size = new Size(44, 40);
             iconButton1.TabIndex = 4;
             iconButton1.UseVisualStyleBackColor = false;
             iconButton1.Click += CloseButton_Click;
+            // 
+            // MinimizeButton
+            // 
+            MinimizeButton.BackColor = Color.FromArgb(243, 156, 18);
+            MinimizeButton.Dock = DockStyle.Fill;
+            MinimizeButton.FlatAppearance.BorderSize = 0;
+            MinimizeButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(243, 156, 18);
+            MinimizeButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 196, 15);
+            MinimizeButton.FlatStyle = FlatStyle.Flat;
+            MinimizeButton.ForeColor = SystemColors.ControlText;
+            MinimizeButton.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            MinimizeButton.IconColor = Color.Black;
+            MinimizeButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            MinimizeButton.Location = new Point(3, 3);
+            MinimizeButton.Name = "MinimizeButton";
+            MinimizeButton.Size = new Size(44, 40);
+            MinimizeButton.TabIndex = 5;
+            MinimizeButton.UseVisualStyleBackColor = false;
+            MinimizeButton.Click += MinimizeButton_Click;
             // 
             // LogoutButton
             // 
@@ -328,19 +349,6 @@
             ProgressPanel.Name = "ProgressPanel";
             ProgressPanel.Size = new Size(571, 69);
             ProgressPanel.TabIndex = 0;
-            // 
-            // sideBarMenuItem4
-            // 
-            sideBarMenuItem4.BackgroundColor = Color.Empty;
-            sideBarMenuItem4.BackgroundColorHover = Color.Empty;
-            sideBarMenuItem4.Icon = FontAwesome.Sharp.IconChar.None;
-            sideBarMenuItem4.ID = Components.VaultItemType.PasswordVault;
-            sideBarMenuItem4.Label = null;
-            sideBarMenuItem4.Location = new Point(0, 75);
-            sideBarMenuItem4.Margin = new Padding(0);
-            sideBarMenuItem4.Name = "sideBarMenuItem4";
-            sideBarMenuItem4.Size = new Size(297, 58);
-            sideBarMenuItem4.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
@@ -498,5 +506,6 @@
         private Components.SideBarMenuItem sideBarMenuItem4;
         private Button LogoutButton;
         private TableLayoutPanel tableLayoutPanel2;
+        private FontAwesome.Sharp.IconButton MinimizeButton;
     }
 }

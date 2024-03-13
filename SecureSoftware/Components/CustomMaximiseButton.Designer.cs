@@ -53,7 +53,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(IconButton);
-            Margin = new Padding(0);
             Name = "CustomMaximiseButton";
             Size = new Size(50, 50);
             ResumeLayout(false);

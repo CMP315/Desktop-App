@@ -27,7 +27,7 @@ namespace SecureSoftware
         {
             GlobalUsername.Text = User.name;
             GlobalEmail.Text = User.email;
-            ContextMenuButtonsTable.Controls.Add(new CustomMaximiseButton(this), 0, 0);
+            ContextMenuButtonsTable.Controls.Add(new CustomMaximiseButton(this), 1, 0);
         }
 
         private void PasswordVault_Resize(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace SecureSoftware
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         async private void RefreshPasswordsButton_Click(object sender, EventArgs e)
@@ -99,6 +99,16 @@ namespace SecureSoftware
                 button.Enabled = enabled;
             }
             return enabled;
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

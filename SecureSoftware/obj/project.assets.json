@@ -2,6 +2,39 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "Easy.Password.Validator/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Easy-Password-Validator.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Easy-Password-Validator.dll": {
+            "related": ".xml"
+          }
+        },
+        "resource": {
+          "lib/netstandard2.0/de/Easy-Password-Validator.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/en-CA/Easy-Password-Validator.resources.dll": {
+            "locale": "en-CA"
+          },
+          "lib/netstandard2.0/en-US/Easy-Password-Validator.resources.dll": {
+            "locale": "en-US"
+          },
+          "lib/netstandard2.0/fr/Easy-Password-Validator.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/it/Easy-Password-Validator.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.0/ro/Easy-Password-Validator.resources.dll": {
+            "locale": "ro"
+          }
+        }
+      },
       "FontAwesome.Sharp/6.3.0": {
         "type": "package",
         "compile": {
@@ -56,6 +89,29 @@
     }
   },
   "libraries": {
+    "Easy.Password.Validator/1.2.1": {
+      "sha512": "AqoAGc4nzCXWFHzzcAaiBS+422QSESSY2amp1Zqm0yf0jSRlcfj5XLjRjs5aeYs4QFu/riWXEiOBjd59+wQkFw==",
+      "type": "package",
+      "path": "easy.password.validator/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "easy.password.validator.1.2.1.nupkg.sha512",
+        "easy.password.validator.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Easy-Password-Validator.dll",
+        "lib/netstandard2.0/Easy-Password-Validator.xml",
+        "lib/netstandard2.0/de/Easy-Password-Validator.resources.dll",
+        "lib/netstandard2.0/en-CA/Easy-Password-Validator.resources.dll",
+        "lib/netstandard2.0/en-US/Easy-Password-Validator.resources.dll",
+        "lib/netstandard2.0/fr/Easy-Password-Validator.resources.dll",
+        "lib/netstandard2.0/it/Easy-Password-Validator.resources.dll",
+        "lib/netstandard2.0/ro/Easy-Password-Validator.resources.dll",
+        "readme.txt"
+      ]
+    },
     "FontAwesome.Sharp/6.3.0": {
       "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
       "type": "package",
@@ -148,6 +204,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "Easy.Password.Validator >= 1.2.1",
       "FontAwesome.Sharp >= 6.3.0",
       "MongoDB.Bson >= 2.24.0"
     ]
@@ -201,6 +258,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "Easy.Password.Validator": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          },
           "FontAwesome.Sharp": {
             "target": "Package",
             "version": "[6.3.0, )"

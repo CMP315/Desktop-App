@@ -69,7 +69,7 @@ namespace SecureSoftware.Forms.Password_Generator
 
         private void PasswordLengthTrackBar_Scroll(object sender, EventArgs e)
         {
-            if (PasswordLengthTrackBar.Value > 0)
+            if (PasswordLengthTrackBar.Value > 1)
             {
                 label3.Text = $"{PasswordLengthTrackBar.Value} characters";
             }

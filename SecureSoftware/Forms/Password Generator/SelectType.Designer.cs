@@ -31,7 +31,6 @@
             HeaderTable = new TableLayoutPanel();
             label1 = new Label();
             ButtonListTable = new TableLayoutPanel();
-            UnicodeGeneratorButton = new Button();
             PassphraseGeneratorButton = new Button();
             StandardGeneratorButton = new Button();
             CancelButton = new Button();
@@ -74,13 +73,12 @@
             // 
             // ButtonListTable
             // 
-            ButtonListTable.ColumnCount = 3;
-            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-            ButtonListTable.Controls.Add(UnicodeGeneratorButton, 2, 0);
-            ButtonListTable.Controls.Add(PassphraseGeneratorButton, 0, 0);
-            ButtonListTable.Controls.Add(StandardGeneratorButton, 1, 0);
+            ButtonListTable.ColumnCount = 2;
+            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            ButtonListTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            ButtonListTable.Controls.Add(PassphraseGeneratorButton, 1, 0);
+            ButtonListTable.Controls.Add(StandardGeneratorButton, 0, 0);
             ButtonListTable.Dock = DockStyle.Fill;
             ButtonListTable.Location = new Point(0, 46);
             ButtonListTable.Margin = new Padding(0);
@@ -89,24 +87,6 @@
             ButtonListTable.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             ButtonListTable.Size = new Size(514, 60);
             ButtonListTable.TabIndex = 3;
-            // 
-            // UnicodeGeneratorButton
-            // 
-            UnicodeGeneratorButton.BackColor = Color.FromArgb(41, 128, 185);
-            UnicodeGeneratorButton.Dock = DockStyle.Fill;
-            UnicodeGeneratorButton.FlatAppearance.BorderSize = 0;
-            UnicodeGeneratorButton.FlatAppearance.MouseDownBackColor = Color.FromArgb(41, 128, 185);
-            UnicodeGeneratorButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 152, 219);
-            UnicodeGeneratorButton.FlatStyle = FlatStyle.Flat;
-            UnicodeGeneratorButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            UnicodeGeneratorButton.ForeColor = Color.White;
-            UnicodeGeneratorButton.Location = new Point(342, 0);
-            UnicodeGeneratorButton.Margin = new Padding(0);
-            UnicodeGeneratorButton.Name = "UnicodeGeneratorButton";
-            UnicodeGeneratorButton.Size = new Size(172, 60);
-            UnicodeGeneratorButton.TabIndex = 2;
-            UnicodeGeneratorButton.Text = "Generate Unicode Password";
-            UnicodeGeneratorButton.UseVisualStyleBackColor = false;
             // 
             // PassphraseGeneratorButton
             // 
@@ -118,13 +98,14 @@
             PassphraseGeneratorButton.FlatStyle = FlatStyle.Flat;
             PassphraseGeneratorButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             PassphraseGeneratorButton.ForeColor = Color.White;
-            PassphraseGeneratorButton.Location = new Point(0, 0);
+            PassphraseGeneratorButton.Location = new Point(257, 0);
             PassphraseGeneratorButton.Margin = new Padding(0);
             PassphraseGeneratorButton.Name = "PassphraseGeneratorButton";
-            PassphraseGeneratorButton.Size = new Size(171, 60);
+            PassphraseGeneratorButton.Size = new Size(257, 60);
             PassphraseGeneratorButton.TabIndex = 1;
             PassphraseGeneratorButton.Text = "Generate Passphrase";
             PassphraseGeneratorButton.UseVisualStyleBackColor = false;
+            PassphraseGeneratorButton.Click += PassphraseGeneratorButton_Click;
             // 
             // StandardGeneratorButton
             // 
@@ -136,10 +117,10 @@
             StandardGeneratorButton.FlatStyle = FlatStyle.Flat;
             StandardGeneratorButton.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             StandardGeneratorButton.ForeColor = Color.White;
-            StandardGeneratorButton.Location = new Point(171, 0);
+            StandardGeneratorButton.Location = new Point(0, 0);
             StandardGeneratorButton.Margin = new Padding(0);
             StandardGeneratorButton.Name = "StandardGeneratorButton";
-            StandardGeneratorButton.Size = new Size(171, 60);
+            StandardGeneratorButton.Size = new Size(257, 60);
             StandardGeneratorButton.TabIndex = 0;
             StandardGeneratorButton.Text = "Generate Password (Default)";
             StandardGeneratorButton.UseVisualStyleBackColor = false;
@@ -208,7 +189,6 @@
         private Button CancelButton;
         private Button StandardGeneratorButton;
         private Button PassphraseGeneratorButton;
-        private Button UnicodeGeneratorButton;
         private Panel MainPanel;
         private TableLayoutPanel ButtonListTable;
         private StandardGenerator DefaultGenerator;
