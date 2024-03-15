@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+﻿using System.ComponentModel;
 
 namespace SecureSoftware.Components
 {
@@ -22,6 +13,11 @@ namespace SecureSoftware.Components
         private string _ID;
         private string _Username;
         private string _Email;
+
+        async private void pictureBox1_LoadCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            pictureBox1.LoadAsync(@"https://i.imgur.com/QFhLe2Q.png");
+        }
 
         [Category("Custom Props")]
         public string ID

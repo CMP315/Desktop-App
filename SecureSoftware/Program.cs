@@ -1,7 +1,5 @@
 using SecureSoftware.Classes;
 using SecureSoftware.Forms;
-using System.Dynamic;
-using System.Runtime.CompilerServices;
 
 namespace SecureSoftware
 {

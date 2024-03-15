@@ -1,13 +1,4 @@
 ﻿using MongoDB.Bson.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Security.Policy;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace SecureSoftware.Classes
 {
@@ -15,6 +6,7 @@ namespace SecureSoftware.Classes
     {
         public string _id { get; set; }
         public string name { get; set; }
+        public string image {  get; set; }
         public string password { get; set; }
         public string email { get; set; }
         public string salt { get; set; }
@@ -22,7 +14,7 @@ namespace SecureSoftware.Classes
 
 
 
-        public MasterAccount(string _id, string name, string email, string password, string salt, DateTime created_at)
+        public MasterAccount(string _id, string name, string image, string email, string password, string salt, DateTime created_at)
         {
             if (string.IsNullOrEmpty(_id))
             {
@@ -32,6 +24,10 @@ namespace SecureSoftware.Classes
             if (string.IsNullOrEmpty(name))
             {
                 throw new ArgumentException($"'{nameof(name)}' cannot be null or empty.", nameof(name));
+            }
+
+            if (string.IsNullOrEmpty(image)) {
+                throw new ArgumentException($"'{nameof(image)}' cannot be null or empty.", nameof(image));
             }
 
             if (string.IsNullOrEmpty(email))
@@ -46,6 +42,7 @@ namespace SecureSoftware.Classes
 
             this._id = _id;
             this.name = name;
+            this.image = image;
             this.password = password;
             this.email = email;
             this.salt = salt;

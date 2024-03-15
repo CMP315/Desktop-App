@@ -1,10 +1,5 @@
-using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
 using SecureSoftware.Components;
-using System.Text.Json;
-using System.Text;
-using SecureSoftware.Forms;
-using System.Net.Http.Headers;
 
 namespace SecureSoftware
 {
@@ -29,6 +24,7 @@ namespace SecureSoftware
                 Parent = EmptyBar
             };
             this.FormBorderStyle = FormBorderStyle.None;
+
         }
 
         private void PasswordVault_Load(object sender, EventArgs e)
