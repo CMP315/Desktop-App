@@ -24,7 +24,7 @@ namespace SecureSoftware.Forms
                 {
                     try
                     {
-                        this.ParentForm.Close();
+                        Environment.Exit(0);
                     }
                     catch (Exception ex)
                     {
