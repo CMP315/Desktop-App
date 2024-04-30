@@ -7,18 +7,63 @@ namespace SecureSoftware.Classes
     {
         public string _id { get; set; }
         public string user_id { get; set; }
-        public string name { get; set; }
-        public string note { get; set; }
-        public string created_at { get; set; }
+        public string? name { get; set; }
+        public string? note { get; set; }
+        public string? created_at { get; set; }
         public string? last_edited_at { get; set; }
 
+        #region Constructors
+        public Note(
+            string _id,
+            string user_id
+)
+        {
+            this._id = _id;
+            this.user_id = user_id;
+        }
         public Note(
             string _id,
             string user_id,
-            string name = "",
-            string note = "",
-            string created_at = "",
-            string last_edited_at = ""
+            string name
+)
+        {
+            this._id = _id;
+            this.user_id = user_id;
+            this.name = name;
+        }
+        public Note(
+            string _id,
+            string user_id,
+            string name,
+            string note
+        )
+        {
+            this._id = _id;
+            this.user_id = user_id;
+            this.name = name;
+            this.note = note;
+        }
+        public Note(
+            string _id,
+            string user_id,
+            string name,
+            string note,
+            string created_at
+        )
+        {
+            this._id = _id;
+            this.user_id = user_id;
+            this.name = name;
+            this.note = note;
+            this.created_at = created_at;
+        }
+        public Note(
+            string _id,
+            string user_id,
+            string name,
+            string note,
+            string created_at,
+            string last_edited_at
         )
         {
             this._id = _id;
@@ -28,6 +73,7 @@ namespace SecureSoftware.Classes
             this.created_at = created_at;
             this.last_edited_at = last_edited_at;
         }
+        #endregion
 
         async public Task<Note>? Get(string key)
         {
