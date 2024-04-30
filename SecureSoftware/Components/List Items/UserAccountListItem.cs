@@ -11,7 +11,7 @@ namespace SecureSoftware.Components
         private readonly UserAccount User;
         private readonly PasswordVault PasswordVault;
         private readonly Panel MainPanel;
-        private string jwt;
+        private readonly string jwt;
 
         #region Properties 
         private string? _id;
