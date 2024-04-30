@@ -1,5 +1,6 @@
 ﻿using SecureSoftware.Classes;
 using SecureSoftware.Forms;
+using SecureSoftware.Forms.Dialogs;
 
 namespace SecureSoftware.Components
 {
@@ -66,10 +67,19 @@ namespace SecureSoftware.Components
         private async void DeletePasswordsButton_Click(object sender, EventArgs e)
         {
             SetActionRowEnabled(false);
-            bool isDeleted = await User.DeleteAccountsAsync();
-            if (isDeleted)
+            PromptDeletion confirmationForm = new("Are you sure you want to delete all of your passwords?", "Yes, all of them!", "No, keep them!");
+            DialogResult results = confirmationForm.ShowDialog();
+            if (results == DialogResult.OK)
             {
-                MainPanel.Controls.Clear();
+                bool isDeleted = await User.DeleteAccountsAsync();
+                if (isDeleted)
+                {
+                    MainPanel.Controls.Clear();
+                }
+            }
+            else
+            {
+                confirmationForm.Dispose();
             }
             SetActionRowEnabled(true);
         }

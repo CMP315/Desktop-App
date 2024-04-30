@@ -1,5 +1,6 @@
 ﻿using SecureSoftware.Classes;
 using SecureSoftware.Forms;
+using SecureSoftware.Forms.Dialogs;
 using System.ComponentModel;
 
 
@@ -70,10 +71,20 @@ namespace SecureSoftware.Components
 
         async private void DeleteButton_Click(object sender, EventArgs e)
         {
-            bool isDeleted = await User.Delete();
-            if (isDeleted)
+            string SiteName = "[" + this.SiteNameProp + "] " + this.UsernameProp;
+            PromptDeletion confirmationForm = new("Are you sure you want to delete this Password: " + SiteName, "Yes, delete it!", "No, keep it!");
+            DialogResult results = confirmationForm.ShowDialog();
+            if (results == DialogResult.OK)
             {
-                this.Dispose();
+                bool isDeleted = await User.Delete();
+                if (isDeleted)
+                {
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                confirmationForm.Dispose();
             }
         }
 

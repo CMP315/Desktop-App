@@ -49,6 +49,9 @@
     <Compile Update="Forms\Dialogs\LoginOrRegister.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Dialogs\PromptDeletion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Dialogs\ViewNote.cs">
       <SubType>Form</SubType>
     </Compile>
