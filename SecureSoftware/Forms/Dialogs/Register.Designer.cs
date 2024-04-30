@@ -81,7 +81,7 @@
             NameInputBox.Name = "NameInputBox";
             NameInputBox.Size = new Size(311, 23);
             NameInputBox.TabIndex = 0;
-            NameInputBox.Text = "abc@test.com";
+            NameInputBox.Text = "Test User";
             // 
             // RegisterButton
             // 
@@ -256,6 +256,7 @@
             EMailInputBox.Name = "EMailInputBox";
             EMailInputBox.Size = new Size(311, 23);
             EMailInputBox.TabIndex = 1;
+            EMailInputBox.Text = "abc@test.com";
             // 
             // label6
             // 
@@ -290,6 +291,7 @@
             PasswordInputBox.Name = "PasswordInputBox";
             PasswordInputBox.Size = new Size(311, 23);
             PasswordInputBox.TabIndex = 2;
+            PasswordInputBox.Text = "testpass";
             PasswordInputBox.UseSystemPasswordChar = true;
             // 
             // ShowPasswordCheckBox
@@ -309,7 +311,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            CancelButton = CancelButton;
             ClientSize = new Size(367, 349);
             Controls.Add(ShowPasswordCheckBox);
             Controls.Add(label6);
