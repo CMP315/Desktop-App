@@ -3,7 +3,7 @@
     public partial class CustomMaximiseButton : UserControl
     {
         private FontAwesome.Sharp.IconChar Icon;
-        private PasswordVault Vault;
+        private readonly PasswordVault Vault;
         public CustomMaximiseButton(PasswordVault Vault)
         {
             InitializeComponent();
