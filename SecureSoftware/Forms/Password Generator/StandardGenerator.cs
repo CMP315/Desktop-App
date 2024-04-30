@@ -13,7 +13,7 @@ namespace SecureSoftware.Forms.Password_Generator
         private readonly string DIGITS = "01234567890";
         private readonly string SYMBOLS = "!\\\"£$%^&*()_+=-[]'#<>/?¬`{}@";
 
-        private readonly string[] EMOJIS = GetEmojis(",");
+        private readonly string[] EMOJIS = GetEmojis();
 
         public StandardGenerator()
         {
@@ -85,7 +85,7 @@ namespace SecureSoftware.Forms.Password_Generator
 
             return password.ToString();
         }
-        private static string[] GetEmojis(string separator)
+        private static string[] GetEmojis()
         {
             int start = 0x1F600;
             int end = 0x1F64F;

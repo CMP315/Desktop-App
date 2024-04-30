@@ -5,21 +5,19 @@ namespace SecureSoftware
 {
     public partial class PasswordGenerator : Form /* eslint-disable-line */
     {
-        private readonly RandomNumberGenerator RandomGenerator;
-        private HashSet<string> CharacterList;
+        private readonly HashSet<string> CharacterList;
 
         private readonly string UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private readonly string LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
         private readonly string DIGITS = "01234567890";
         private readonly string SYMBOLS = "!\\\"£$%^&*()_+=-[]'#<>/?¬`{}@";
 
-        private readonly string[] EMOJIS = GetEmojis(",");
+        private readonly string[] EMOJIS = GetEmojis();
 
         public PasswordGenerator()
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
-            RandomGenerator = RandomNumberGenerator.Create();
             CharacterList = new HashSet<string>();
             this.FormBorderStyle = FormBorderStyle.None;
 
@@ -85,7 +83,7 @@ namespace SecureSoftware
 
             return password.ToString();
         }
-        private static string[] GetEmojis(string separator)
+        private static string[] GetEmojis()
         {
             int start = 0x1F600;
             int end = 0x1F64F;
