@@ -117,10 +117,5 @@ namespace SecureSoftware.Forms
 
             PasswordInput.Text = new string(chars);
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
