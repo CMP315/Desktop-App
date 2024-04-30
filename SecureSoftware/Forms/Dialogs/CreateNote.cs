@@ -9,9 +9,9 @@ namespace SecureSoftware.Forms
 {
     public partial class CreateNote : Form
     {
-        private MasterAccount User;
-        private SecureNotePage SecureNote;
-        private Panel Panel;
+        private readonly MasterAccount User;
+        private readonly SecureNotePage SecureNote;
+        private readonly Panel Panel;
         public CreateNote(MasterAccount user, PasswordVault vault, Panel panel, SecureNotePage secureNote)
         {
             (new Core.DropShadow()).ApplyShadows(this);
