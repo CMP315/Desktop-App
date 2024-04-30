@@ -16,7 +16,36 @@ namespace SecureSoftware.Forms.Dialogs
         private readonly string _continueButtonLabel;
         private readonly string _cancelButtonLabel;
 
-        public PromptDeletion(string label, string continueButtonLabel = "Yes, continue!", string cancelButtonLabel = "No, go back!")
+        #region Constructors
+        public PromptDeletion(string label)
+        {
+            (new Core.DropShadow()).ApplyShadows(this);
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            this._label = label;
+            this._continueButtonLabel = "Yes, continue!";
+            this._cancelButtonLabel = "No, go back!";
+
+            EditableLabel.Text = this._label;
+            ContinueButton.Text = this._continueButtonLabel;
+            CancelButton.Text = this._cancelButtonLabel;
+        }
+        public PromptDeletion(string label, string continueButtonLabel)
+        {
+            (new Core.DropShadow()).ApplyShadows(this);
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            this._label = label;
+            this._continueButtonLabel = continueButtonLabel;
+            this._cancelButtonLabel = "No, go back!";
+
+            EditableLabel.Text = this._label;
+            ContinueButton.Text = this._continueButtonLabel;
+            CancelButton.Text = this._cancelButtonLabel;
+        }
+        public PromptDeletion(string label, string continueButtonLabel, string cancelButtonLabel)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
@@ -30,6 +59,7 @@ namespace SecureSoftware.Forms.Dialogs
             ContinueButton.Text = this._continueButtonLabel;
             CancelButton.Text = this._cancelButtonLabel;
         }
+        #endregion
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
