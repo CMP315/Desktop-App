@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson.Serialization;
+using System.Windows.Media.Animation;
 
 namespace SecureSoftware.Classes
 {
@@ -34,10 +35,12 @@ namespace SecureSoftware.Classes
             this.notes = notes;
         }
 
-        async public Task<UserAccount>? Get()
+        async public Task<UserAccount>? Get(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/passwords/{this.user_id}/{this._id}";
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
+
             try
             {
                 var response = await httpClient.GetAsync(apiUrl);
@@ -70,11 +73,13 @@ namespace SecureSoftware.Classes
             return null!;
         }
 
-        async public Task<bool> Delete()
+        async public Task<bool> Delete(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/passwords/{this.user_id}/{_id}";
 
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
+
             try
             {
                 var response = await httpClient.DeleteAsync(apiUrl);

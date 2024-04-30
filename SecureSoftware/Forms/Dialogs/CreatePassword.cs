@@ -4,6 +4,7 @@ using SecureSoftware.Components;
 using SecureSoftware.Forms.Password_Generator;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 
 namespace SecureSoftware.Forms
 {
@@ -43,6 +44,7 @@ namespace SecureSoftware.Forms
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", this.User.JWT);
             try
             {
                 var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
@@ -58,7 +60,7 @@ namespace SecureSoftware.Forms
                             return;
                         }
 
-                        UserAccountListItem panel = new(MainPanel, account, Vault)
+                        UserAccountListItem panel = new(MainPanel, account, Vault, this.User.JWT)
                         {
                             ID = account._id,
                             SiteNameProp = account.site_name,

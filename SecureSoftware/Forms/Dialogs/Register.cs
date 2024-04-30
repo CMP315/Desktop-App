@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
 using System.Text;
 using System.Text.Json;
@@ -41,22 +42,15 @@ namespace SecureSoftware.Forms
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonString = await response.Content.ReadAsStringAsync();
-                    try
+                    LoginRequest? request = BsonSerializer.Deserialize<LoginRequest>(jsonString);
+                    if (request.user is null)
                     {
-                        MessageBox.Show(jsonString);
-                        MasterAccount? user = BsonSerializer.Deserialize<MasterAccount>(jsonString);
-                        if (user is null)
-                        {
-                            return;
-                        }
-                        this.user = user;
-                        this.Close();
-
+                        return;
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
+                    httpClient.DefaultRequestHeaders.Add("Authorization", request.jwt);
+                    request.user.JWT = request.jwt;
+                    this.user = request.user;
+                    this.Close();
                 }
                 else
                 {

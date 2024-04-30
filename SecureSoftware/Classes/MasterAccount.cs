@@ -11,7 +11,7 @@ namespace SecureSoftware.Classes
         public string email { get; set; }
         public string salt { get; set; }
         public DateTime created_at { get; set; }
-
+        public string JWT { get; set; }
 
 
         public MasterAccount(string _id, string name, string image, string email, string password, string salt, DateTime created_at)
@@ -49,11 +49,12 @@ namespace SecureSoftware.Classes
             this.created_at = created_at;
         }
 
-        public async Task<UserAccount[]?> GetAccountsAsync()
+        public async Task<UserAccount[]?> GetAccountsAsync(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/passwords/{_id}";
 
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
             try
             {
                 var response = await httpClient.GetAsync(apiUrl);
@@ -89,11 +90,13 @@ namespace SecureSoftware.Classes
             return null;
         }
 
-        public async Task<bool> DeleteAccountsAsync()
+        public async Task<bool> DeleteAccountsAsync(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/passwords/{_id}";
 
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
+
             try
             {
                 var response = await httpClient.DeleteAsync(apiUrl);
@@ -115,11 +118,13 @@ namespace SecureSoftware.Classes
             return false;
         }
 
-        public async Task<Note[]?> GetNotesAsync()
+        public async Task<Note[]?> GetNotesAsync(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/notes/{_id}";
 
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
+
             try
             {
                 var response = await httpClient.GetAsync(apiUrl);
@@ -155,11 +160,13 @@ namespace SecureSoftware.Classes
             return null;
         }
 
-        public async Task<bool> DeleteNotesAsync()
+        public async Task<bool> DeleteNotesAsync(string key)
         {
             string apiUrl = $"{Globals.API_BASE_URL}/notes/{_id}";
 
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", key);
+
             try
             {
                 var response = await httpClient.DeleteAsync(apiUrl);

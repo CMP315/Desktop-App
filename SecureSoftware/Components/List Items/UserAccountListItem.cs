@@ -11,6 +11,7 @@ namespace SecureSoftware.Components
         private readonly UserAccount User;
         private readonly PasswordVault PasswordVault;
         private readonly Panel MainPanel;
+        private string jwt;
 
         #region Properties 
         private string? _id;
@@ -53,18 +54,19 @@ namespace SecureSoftware.Components
         #endregion
 
 
-        public UserAccountListItem(Panel MainPanel, UserAccount User, PasswordVault PasswordVault)
+        public UserAccountListItem(Panel MainPanel, UserAccount User, PasswordVault PasswordVault, string key)
         {
             this.MainPanel = MainPanel;
             this.PasswordVault = PasswordVault;
             InitializeComponent();
             this.Width = MainPanel.Width - 40;
             this.User = User;
+            this.jwt = key;
         }
 
         private void ViewButton_Click(object sender, EventArgs e)
         {
-            ViewPassword viewPassword = new(User);
+            ViewPassword viewPassword = new(User, this.jwt);
             viewPassword.ShowDialog();
             return;
         }
@@ -76,7 +78,7 @@ namespace SecureSoftware.Components
             DialogResult results = confirmationForm.ShowDialog();
             if (results == DialogResult.OK)
             {
-                bool isDeleted = await User.Delete();
+                bool isDeleted = await User.Delete(this.jwt);
                 if (isDeleted)
                 {
                     this.Dispose();
@@ -90,7 +92,7 @@ namespace SecureSoftware.Components
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            EditPassword editPassword = new(User, PasswordVault, MainPanel);
+            EditPassword editPassword = new(User, PasswordVault, MainPanel, this.jwt);
             editPassword.ShowDialog();
             return;
         }

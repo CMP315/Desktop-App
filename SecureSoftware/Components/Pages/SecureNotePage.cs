@@ -18,7 +18,7 @@ namespace SecureSoftware.Components
 
         async public Task CreatePanels()
         {
-            Note[]? notes = await User.GetNotesAsync();
+            Note[]? notes = await User.GetNotesAsync(this.User.JWT);
             if (notes is not null)
             {
                 MainPanel.Controls.Clear();
@@ -84,7 +84,7 @@ namespace SecureSoftware.Components
             DialogResult results = confirmationForm.ShowDialog();
             if (results == DialogResult.OK)
             {
-                bool isDeleted = await User.DeleteNotesAsync();
+                bool isDeleted = await User.DeleteNotesAsync(this.User.JWT);
                 if (isDeleted)
                 {
                     MainPanel.Controls.Clear();

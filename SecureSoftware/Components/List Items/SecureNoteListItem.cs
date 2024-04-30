@@ -76,7 +76,7 @@ namespace SecureSoftware.Components
 
         private void ViewNoteButton_Click(object sender, EventArgs e)
         {
-            ViewNote viewNote = new(Note);
+            ViewNote viewNote = new(Note, this.MasterAccount.JWT);
             viewNote.ShowDialog();
             return;
         }
@@ -94,7 +94,7 @@ namespace SecureSoftware.Components
             DialogResult results = confirmationForm.ShowDialog();
             if(results == DialogResult.OK)
             {
-                bool isDeleted = await Note.Delete();
+                bool isDeleted = await Note.Delete(this.MasterAccount.JWT);
                 if (isDeleted)
                 {
                     this.Dispose();

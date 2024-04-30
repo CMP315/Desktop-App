@@ -1,4 +1,5 @@
 ﻿using SecureSoftware.Classes;
+using System.Windows.Input;
 
 namespace SecureSoftware.Forms
 {
@@ -17,6 +18,7 @@ namespace SecureSoftware.Forms
         {
             string apiUrl = $"{Globals.API_BASE_URL}/users/{this.User._id}";
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", this.User.JWT);
             try
             {
                 var response = await httpClient.DeleteAsync(apiUrl);

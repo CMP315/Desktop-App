@@ -3,6 +3,7 @@ using SecureSoftware.Classes;
 using SecureSoftware.Components;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 
 namespace SecureSoftware.Forms.Dialogs
 {
@@ -41,6 +42,8 @@ namespace SecureSoftware.Forms.Dialogs
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", this.User.JWT);
+
             try
             {
                 var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
@@ -92,7 +95,7 @@ namespace SecureSoftware.Forms.Dialogs
 
         async private void EditNote_Load(object sender, EventArgs e)
         {
-            Note? note = await Note.Get()!;
+            Note? note = await Note.Get(this.User.JWT)!;
             if(note is not null)
             {
                 NameInput.Text = note.name;

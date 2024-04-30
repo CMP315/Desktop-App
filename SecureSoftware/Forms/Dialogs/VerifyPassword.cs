@@ -46,8 +46,8 @@ namespace SecureSoftware.Forms
                     string jsonString = await response.Content.ReadAsStringAsync();
                     try
                     {
-                        MasterAccount? user = BsonSerializer.Deserialize<MasterAccount>(jsonString);
-                        if (user is null)
+                        LoginRequest? request = BsonSerializer.Deserialize<LoginRequest>(jsonString);
+                        if (request.user is null)
                         {
                             return;
                         }

@@ -2,6 +2,7 @@
 using SecureSoftware.Classes;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 
 namespace SecureSoftware.Forms
 {
@@ -33,6 +34,7 @@ namespace SecureSoftware.Forms
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
             using var httpClient = new HttpClient();
+
             try
             {
                 var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
@@ -42,12 +44,15 @@ namespace SecureSoftware.Forms
                     string jsonString = await response.Content.ReadAsStringAsync();
                     try
                     {
-                        MasterAccount? user = BsonSerializer.Deserialize<MasterAccount>(jsonString);
-                        if (user is null)
+                        LoginRequest? request = BsonSerializer.Deserialize<LoginRequest>(jsonString);
+                        if (request.user is null)
                         {
                             return;
                         }
-                        this.user = user;
+                        httpClient.DefaultRequestHeaders.Add("Authorization", request.jwt);
+                        request.user.JWT = request.jwt;
+
+                        this.user = request.user;
                         this.Close();
 
                     }

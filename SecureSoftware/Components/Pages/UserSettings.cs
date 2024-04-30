@@ -2,6 +2,7 @@
 using SecureSoftware.Forms;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 namespace SecureSoftware.Components
 {
     public partial class UserSettings : UserControl
@@ -61,6 +62,8 @@ namespace SecureSoftware.Components
                 User.email = inputEmail;
                 var jsonRequestBody = JsonSerializer.Serialize(requestBody);
                 using var httpClient = new HttpClient();
+                httpClient.DefaultRequestHeaders.Add("Authorization", this.User.JWT);
+
                 try
                 {
                     var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");

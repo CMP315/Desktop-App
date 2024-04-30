@@ -19,7 +19,7 @@ namespace SecureSoftware.Components
 
         async public Task CreatePanels()
         {
-            UserAccount[]? accounts = await User.GetAccountsAsync();
+            UserAccount[]? accounts = await User.GetAccountsAsync(this.User.JWT);
             if (accounts is not null)
             {
                 MainPanel.Controls.Clear();
@@ -27,7 +27,7 @@ namespace SecureSoftware.Components
                 foreach (var account in accounts)
                 {
                     i++;
-                    UserAccountListItem panel = new(MainPanel, account, Vault)
+                    UserAccountListItem panel = new(MainPanel, account, Vault, this.User.JWT)
                     {
                         ID = account._id,
                         SiteNameProp = account.site_name,
@@ -71,7 +71,7 @@ namespace SecureSoftware.Components
             DialogResult results = confirmationForm.ShowDialog();
             if (results == DialogResult.OK)
             {
-                bool isDeleted = await User.DeleteAccountsAsync();
+                bool isDeleted = await User.DeleteAccountsAsync(this.User.JWT);
                 if (isDeleted)
                 {
                     MainPanel.Controls.Clear();

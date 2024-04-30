@@ -5,12 +5,14 @@ namespace SecureSoftware.Forms.Dialogs
     public partial class ViewNote : Form
     {
         private readonly Note Note;
-        public ViewNote(Note note)
+        private string key;
+        public ViewNote(Note note, string key)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.Note = note;
             this.FormBorderStyle = FormBorderStyle.None;
+            this.key = key;
         }
 
         private void CopyUsernameButton_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace SecureSoftware.Forms.Dialogs
 
         async private void ViewNote_Load(object sender, EventArgs e)
         {
-            Note? note = await Note.Get()!;
+            Note? note = await Note.Get(this.key)!;
             if (note is not null)
             {
                 CopyUsernameButton.Enabled = true;

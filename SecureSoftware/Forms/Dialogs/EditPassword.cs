@@ -4,6 +4,7 @@ using SecureSoftware.Components;
 using SecureSoftware.Forms.Password_Generator;
 using System.Text;
 using System.Text.Json;
+using System.Windows.Input;
 
 namespace SecureSoftware.Forms
 {
@@ -13,7 +14,8 @@ namespace SecureSoftware.Forms
         private readonly Panel MainPanel;
         private readonly UserAccount User;
         private string? UserPassword;
-        public EditPassword(UserAccount User, PasswordVault Vault, Panel MainPanel)
+        private string key;
+        public EditPassword(UserAccount User, PasswordVault Vault, Panel MainPanel, string key)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace SecureSoftware.Forms
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.key = key;
         }
 
 
@@ -46,6 +49,8 @@ namespace SecureSoftware.Forms
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
             using var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", this.key);
+
             try
             {
                 var content = new StringContent(jsonRequestBody, Encoding.UTF8, "application/json");
@@ -93,7 +98,7 @@ namespace SecureSoftware.Forms
 
         async private void EditPassword_Load(object sender, EventArgs e)
         {
-            UserAccount? Account = await this.User.Get()!;
+            UserAccount? Account = await this.User.Get(this.key)!;
             if (Account is not null)
             {
                 NameInput.Text = Account.username;

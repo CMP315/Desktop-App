@@ -5,7 +5,9 @@ namespace SecureSoftware.Forms
     public partial class ViewPassword : Form
     {
         private readonly UserAccount User;
-        public ViewPassword(UserAccount User)
+        private string key;
+
+        public ViewPassword(UserAccount User, string key)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             this.User = User;
@@ -13,6 +15,7 @@ namespace SecureSoftware.Forms
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.key = key;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -51,7 +54,7 @@ namespace SecureSoftware.Forms
 
         async private void ViewPassword_Load(object sender, EventArgs e)
         {
-            UserAccount? Account = await User.Get()!;
+            UserAccount? Account = await User.Get(this.key)!;
             if (Account is not null)
             {
                 CopyUsernameButton.Enabled = true;
