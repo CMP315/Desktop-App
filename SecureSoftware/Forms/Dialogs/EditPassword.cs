@@ -68,7 +68,6 @@ namespace SecureSoftware.Forms
                         this.Close();
                         this.MainPanel.Controls.Clear();
                         this.MainPanel.Controls.Add(new ProgressPanel());
-                        //await this.Vault.CreatePanels();
                     }
                     catch (Exception ex)
                     {
@@ -84,10 +83,6 @@ namespace SecureSoftware.Forms
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception: {ex.Message}");
-            }
-            finally
-            {
-                //this.Vault.SetActionRowEnabled(true);
             }
         }
 

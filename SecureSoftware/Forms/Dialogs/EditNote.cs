@@ -82,10 +82,6 @@ namespace SecureSoftware.Forms.Dialogs
             {
                 Console.WriteLine($"Exception: {ex.Message}");
             }
-            finally
-            {
-                //this.Vault.SetActionRowEnabled(true);
-            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
