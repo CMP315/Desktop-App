@@ -25,7 +25,7 @@ namespace SecureSoftware.Forms
         {
             if(string.IsNullOrEmpty(NameInput.Text) || string.IsNullOrEmpty(ContentInput.Text))
             {
-                MessageBox.Show("The Name and Content should both have some content. They are both required fields.");
+                MessageBox.Show("The Name and Content should both have some content. They are both required fields.", "Invalid Form Data");
                 return;
             }
 

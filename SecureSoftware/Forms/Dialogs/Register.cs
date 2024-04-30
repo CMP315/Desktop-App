@@ -17,6 +17,10 @@ namespace SecureSoftware.Forms
 
         private async void RegisterButton_ClickAsync(object sender, EventArgs e)
         {
+            if(string.IsNullOrWhiteSpace(NameInputBox.Text) || string.IsNullOrWhiteSpace(EMailInputBox.Text) || string.IsNullOrWhiteSpace(PasswordInputBox.Text)) {
+                MessageBox.Show("One of the input boxes has an invalid value. Ensure all required values are present.", "Invalid Form Details");
+                return;
+            }
             RegisterButton.Enabled = false;
             CancelButton.Enabled = false;
             string apiUrl = $"{Globals.API_BASE_URL}/users";

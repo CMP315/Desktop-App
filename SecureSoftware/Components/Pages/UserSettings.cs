@@ -41,6 +41,11 @@ namespace SecureSoftware.Components
 
         async private void Save_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(UsernameInput.Text) || string.IsNullOrWhiteSpace(EmailInput.Text))
+            {
+                MessageBox.Show("One of the input boxes has an invalid value. Ensure all required values are present.", "Invalid Form Details");
+                return;
+            }
             string inputUsername = UsernameInput.Text;
             string inputEmail = EmailInput.Text;
 

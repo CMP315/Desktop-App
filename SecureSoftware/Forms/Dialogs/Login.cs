@@ -17,6 +17,11 @@ namespace SecureSoftware.Forms
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(UsernameBox.Text) || string.IsNullOrWhiteSpace(PasswordInputBox.Text))
+            {
+                MessageBox.Show("One of the input boxes has an invalid value. Ensure all required values are present.", "Invalid Form Details");
+                return;
+            }
             LoginButton.Enabled = false;
             CancelButton.Enabled = false;
             string apiUrl = $"{Globals.API_BASE_URL}/login";
