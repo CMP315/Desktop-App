@@ -234,7 +234,6 @@
             label3.TabIndex = 0;
             label3.Text = "Your Account Email";
             label3.TextAlign = ContentAlignment.MiddleLeft;
-            label3.Click += label3_Click;
             // 
             // iconPictureBox2
             // 
