@@ -19,22 +19,22 @@ namespace SecureSoftware.Forms.Password_Generator
             InitializeComponent();
             CharacterList = new HashSet<string>();
 
-            foreach (char c in UPPERCASE.ToCharArray())
+            foreach (char c in UPPERCASE)
             {
                 CharacterList.Add(c.ToString());
             }
 
-            foreach (char c in LOWERCASE.ToCharArray())
+            foreach (char c in LOWERCASE)
             {
                 CharacterList.Add(c.ToString());
             }
 
-            foreach (char c in DIGITS.ToCharArray())
+            foreach (char c in DIGITS)
             {
                 CharacterList.Add(c.ToString());
             }
 
-            foreach (char c in SYMBOLS.ToCharArray())
+            foreach (char c in SYMBOLS)
             {
                 CharacterList.Add(c.ToString());
             }
@@ -253,14 +253,14 @@ namespace SecureSoftware.Forms.Password_Generator
         {
             if (shouldAdd)
             {
-                foreach (char c in stringToArray.ToCharArray())
+                foreach (char c in stringToArray)
                 {
                     CharacterList.Add(c.ToString());
                 }
             }
             else
             {
-                foreach (char c in stringToArray.ToCharArray())
+                foreach (char c in stringToArray)
                 {
                     CharacterList.Remove(c.ToString());
                 }
