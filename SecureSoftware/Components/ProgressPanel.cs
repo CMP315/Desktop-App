@@ -4,7 +4,7 @@ namespace SecureSoftware.Components
 {
     public partial class ProgressPanel : UserControl
     {
-        private int Value = 0;
+        private int Value;
         public ProgressPanel()
         {
             InitializeComponent();

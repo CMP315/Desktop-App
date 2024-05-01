@@ -17,20 +17,19 @@ namespace SecureSoftware.Components
         private readonly new Panel Parent;
         private readonly MasterAccount User;
         private readonly PasswordVault Vault;
-        private readonly MasterAccountUserComponent AccountInfo;
 
-        public SideBarMenuItem(Panel panel, MasterAccount user, MasterAccountUserComponent accountInfo)
+        public SideBarMenuItem(Panel panel, MasterAccount user, PasswordVault vault)
         {
             this.Parent = panel;
             this.User = user;
-            this.AccountInfo = accountInfo;
+            this.Vault = vault;
             InitializeComponent();
             this.MouseClick += SideBarMenuItem_MouseClick;
         }
 
         #region Properties 
         private VaultItemType _ID;
-        private string _label;
+        private string? _label;
         private FontAwesome.Sharp.IconChar _icon;
         private Color _backgroundColor;
         private Color _backgroundColorHover;
@@ -44,7 +43,7 @@ namespace SecureSoftware.Components
         }
 
         [Category("Custom Props")]
-        public string Label
+        public string? Label
         {
             get { return _label; }
             set { _label = value; SideBarLabel.Text = value; }

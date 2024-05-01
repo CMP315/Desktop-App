@@ -5,7 +5,7 @@ namespace SecureSoftware.Forms
     public partial class ViewPassword : Form
     {
         private readonly UserAccount User;
-        private string key;
+        private readonly string key;
 
         public ViewPassword(UserAccount User, string key)
         {

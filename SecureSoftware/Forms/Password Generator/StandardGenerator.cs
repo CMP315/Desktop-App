@@ -39,7 +39,6 @@ namespace SecureSoftware.Forms.Password_Generator
                 CharacterList.Add(c.ToString());
             }
 
-            this.CreatePassword(25);
             this.UpdatePasswordBox();
         }
 

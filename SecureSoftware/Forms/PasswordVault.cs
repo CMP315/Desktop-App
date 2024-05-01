@@ -33,7 +33,7 @@ namespace SecureSoftware
             Color backColour = Color.FromArgb(100, 48, 122);
             Color backColourHover = Color.FromArgb(155, 89, 182);
 
-            SideBarMenuItem item1 = new(Panel, User, AccountInfo)
+            SideBarMenuItem item1 = new(Panel, User, this)
             {
                 Label = "Password Vault",
                 BackColor = backColour,
@@ -44,7 +44,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item1);
 
-            SideBarMenuItem item2 = new(Panel, User, AccountInfo)
+            SideBarMenuItem item2 = new(Panel, User, this)
             {
                 Label = "Secure Notes",
                 BackColor = backColour,
@@ -55,7 +55,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item2);
 
-            SideBarMenuItem item3 = new(Panel, User, AccountInfo)
+            SideBarMenuItem item3 = new(Panel, User, this)
             {
                 Label = "User Settings",
                 BackColor = backColour,
@@ -66,7 +66,7 @@ namespace SecureSoftware
             };
             NavbarPanel.Controls.Add(item3);
 
-            SideBarMenuItem item4 = new(Panel, User, AccountInfo)
+            SideBarMenuItem item4 = new(Panel, User, this)
             {
                 Label = "Generate Password",
                 BackColor = backColour,

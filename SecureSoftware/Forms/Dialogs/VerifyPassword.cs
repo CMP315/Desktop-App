@@ -64,7 +64,7 @@ namespace SecureSoftware.Forms
                             var response2 = await httpClient.PatchAsync(apiUrl2, content2);
                             if (response2.IsSuccessStatusCode)
                             {
-                                string jsonString2 = await response.Content.ReadAsStringAsync();
+                                await response.Content.ReadAsStringAsync();
                                 ParentForm.Close();
                                 this.Close();
                             }

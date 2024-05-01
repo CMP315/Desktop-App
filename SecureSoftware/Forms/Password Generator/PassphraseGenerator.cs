@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Security.Cryptography;
 
 namespace SecureSoftware.Forms.Password_Generator
 {
@@ -13,7 +14,6 @@ namespace SecureSoftware.Forms.Password_Generator
         private void UpdatePasswordBox()
         {
             GeneratedPasswordTextBox.Text = GeneratePassphrase(PassphraseLengthTrackBar.Value);
-            return;
         }
         private void UpdatePasswordBox(object sender, EventArgs e)
         {
@@ -46,9 +46,14 @@ namespace SecureSoftware.Forms.Password_Generator
         static string GeneratePassphrase(int length)
         {
             string[] wordList = File.ReadAllLines("wordlist.txt");
-            Random rand = new();
-            return string.Join(" ", Enumerable.Range(0, length)
-                .Select(_ => wordList[rand.Next(wordList.Length)]));
+            byte[] randomNumber = new byte[length];
+
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(randomNumber);
+            }
+
+            return string.Join(" ", randomNumber.Select(b => wordList[b % wordList.Length]));
         }
     }
 }
