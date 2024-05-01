@@ -5,8 +5,7 @@ namespace SecureSoftware.Forms.Password_Generator
 {
     public partial class StandardGenerator : UserControl
     {
-        private readonly RandomNumberGenerator RandomGenerator;
-        private HashSet<string> CharacterList;
+        private readonly HashSet<string> CharacterList;
 
         private readonly string UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private readonly string LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
@@ -18,7 +17,6 @@ namespace SecureSoftware.Forms.Password_Generator
         public StandardGenerator()
         {
             InitializeComponent();
-            RandomGenerator = RandomNumberGenerator.Create();
             CharacterList = new HashSet<string>();
 
             foreach (char c in UPPERCASE.ToCharArray())

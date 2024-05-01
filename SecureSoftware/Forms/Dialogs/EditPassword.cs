@@ -4,23 +4,20 @@ using SecureSoftware.Components;
 using SecureSoftware.Forms.Password_Generator;
 using System.Text;
 using System.Text.Json;
-using System.Windows.Input;
 
 namespace SecureSoftware.Forms
 {
     public partial class EditPassword : Form
     {
-        private readonly PasswordVault Vault;
         private readonly Panel MainPanel;
         private readonly UserAccount User;
-        private string? UserPassword;
-        private string key;
-        public EditPassword(UserAccount User, PasswordVault Vault, Panel MainPanel, string key)
+        private readonly string? UserPassword;
+        private readonly string key;
+        public EditPassword(UserAccount User, Panel MainPanel, string key)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = User;
-            this.Vault = Vault;
             this.MainPanel = MainPanel;
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizeBox = false;

@@ -28,14 +28,14 @@ namespace SecureSoftware
                 {
                     login = new Login();
                     login.ShowDialog();
-                    User = login.user;
+                    User = login.User;
                     login.Dispose();
                 }
                 else if (loginOrRegister.Selected == "Register")
                 {
                     register = new Register();
                     register.ShowDialog();
-                    User = register.user;
+                    User = register.User;
                     register.Dispose();
                 }
 

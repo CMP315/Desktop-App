@@ -5,7 +5,7 @@ namespace SecureSoftware.Forms
 {
     public partial class DeleteAccountConfirmation : Form
     {
-        private MasterAccount User;
+        private readonly MasterAccount User;
         public DeleteAccountConfirmation(MasterAccount user)
         {
             (new Core.DropShadow()).ApplyShadows(this);

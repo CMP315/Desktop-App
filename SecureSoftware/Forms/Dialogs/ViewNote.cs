@@ -5,7 +5,7 @@ namespace SecureSoftware.Forms.Dialogs
     public partial class ViewNote : Form
     {
         private readonly Note Note;
-        private string key;
+        private readonly string key;
         public ViewNote(Note note, string key)
         {
             (new Core.DropShadow()).ApplyShadows(this);

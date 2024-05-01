@@ -7,14 +7,14 @@ namespace SecureSoftware.Forms
 {
     public partial class VerifyPassword : Form
     {
-        private MasterAccount User;
-        private Form Parent;
+        private readonly MasterAccount User;
+        private new readonly Form ParentForm;
         public VerifyPassword(MasterAccount user, Form parent)
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.User = user;
-            this.Parent = parent;
+            this.ParentForm = parent;
             this.FormBorderStyle = FormBorderStyle.None;
         }
 
@@ -65,7 +65,7 @@ namespace SecureSoftware.Forms
                             if (response2.IsSuccessStatusCode)
                             {
                                 string jsonString2 = await response.Content.ReadAsStringAsync();
-                                Parent.Close();
+                                ParentForm.Close();
                                 this.Close();
                             }
                             else

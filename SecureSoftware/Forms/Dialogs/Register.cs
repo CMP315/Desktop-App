@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using SecureSoftware.Classes;
+using SecureSoftware.Components;
 using System.Text;
 using System.Text.Json;
 
@@ -8,12 +9,17 @@ namespace SecureSoftware.Forms
 {
     public partial class Register : Form
     {
-        public MasterAccount? user;
+        private MasterAccount? UserAccount;
         public Register()
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        public MasterAccount? User
+        {
+            get { return this.UserAccount; }
         }
 
         private async void RegisterButton_ClickAsync(object sender, EventArgs e)
@@ -49,7 +55,7 @@ namespace SecureSoftware.Forms
                     }
                     httpClient.DefaultRequestHeaders.Add("Authorization", request.jwt);
                     request.user.JWT = request.jwt;
-                    this.user = request.user;
+                    this.UserAccount = request.user;
                     this.Close();
                 }
                 else

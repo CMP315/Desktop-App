@@ -2,12 +2,17 @@
 {
     public partial class LoginOrRegister : Form
     {
-        public string? Selected;
+        private string? SelectedOption;
         public LoginOrRegister()
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        public string? Selected
+        {
+            get { return this.SelectedOption; }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -17,13 +22,13 @@
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            this.Selected = "Login";
+            this.SelectedOption = "Login";
             this.Close();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            this.Selected = "Register";
+            this.SelectedOption = "Register";
             this.Close();
         }
 

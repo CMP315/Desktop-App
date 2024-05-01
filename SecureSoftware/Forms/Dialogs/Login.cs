@@ -8,12 +8,17 @@ namespace SecureSoftware.Forms
 {
     public partial class Login : Form
     {
-        public MasterAccount? user;
+        private MasterAccount? UserAccount;
         public Login()
         {
             (new Core.DropShadow()).ApplyShadows(this);
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        public MasterAccount? User
+        {
+            get { return this.UserAccount; }
         }
 
         private async void LoginButton_ClickAsync(object sender, EventArgs e)
@@ -52,7 +57,7 @@ namespace SecureSoftware.Forms
                         httpClient.DefaultRequestHeaders.Add("Authorization", request.jwt);
                         request.user.JWT = request.jwt;
 
-                        this.user = request.user;
+                        this.UserAccount = request.user;
                         this.Close();
 
                     }

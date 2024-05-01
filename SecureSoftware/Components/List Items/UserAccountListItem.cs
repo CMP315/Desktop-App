@@ -92,7 +92,7 @@ namespace SecureSoftware.Components
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            EditPassword editPassword = new(User, PasswordVault, MainPanel, this.jwt);
+            EditPassword editPassword = new(User, MainPanel, this.jwt);
             editPassword.ShowDialog();
             return;
         }
