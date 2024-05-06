@@ -28,6 +28,7 @@ namespace SecureSoftware.Forms
                 MessageBox.Show("One of the input boxes has an invalid value. Ensure all required values are present.", "Invalid Form Details");
                 return;
             }
+            
             RegisterButton.Enabled = false;
             CancelButton.Enabled = false;
             string apiUrl = $"{Globals.API_BASE_URL}/users";
@@ -37,6 +38,14 @@ namespace SecureSoftware.Forms
                 email = EMailInputBox.Text,
                 password = PasswordInputBox.Text,
                 image = "https://i.imgur.com/dESNvHe.png"
+            };
+
+            if(!IsValidEmail(EMailInputBox.Text))
+            {
+                MessageBox.Show("This is not a valid EMail address.");
+                RegisterButton.Enabled = true;
+                CancelButton.Enabled = true;
+                return;
             };
 
             var jsonRequestBody = JsonSerializer.Serialize(requestBody);
@@ -73,6 +82,14 @@ namespace SecureSoftware.Forms
                 RegisterButton.Enabled = true;
                 CancelButton.Enabled = true;
             }
+        }
+
+        static bool IsValidEmail(string email)
+        {
+            int atIndex = email.IndexOf('@');
+            int dotIndex = email.LastIndexOf('.');
+
+            return atIndex > 0 && dotIndex > atIndex;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
